@@ -42,7 +42,7 @@ function wpam_admain_js_reload(){
 function wpam_launch(){
     
     browserSync.init({
-      proxy: "https://mamp-sites.dev/wpam-dev-free/",
+      proxy: "https://mamp-sites.local/dev/menu-item-types/",
       // ghostMode: false,
       // open: false,
       // notify: false
