@@ -61,7 +61,16 @@ function mip_load_acf_fields(){
     
     // load fields
     if( is_admin() ){
-        include_once( MIP_ACF_PATH . 'fields/no-link.php' );
+        
+        include_once( MIP_INC_PATH . 'item-types.php' ) ;
+        
+        include_once( MIP_ACF_PATH . 'fields/nolink.php' );
+        
+        include_once( MIP_ACF_PATH . 'fields/heading.php' );
+        include_once( MIP_ACF_PATH . 'fields/image.php' );
+        include_once( MIP_ACF_PATH . 'fields/paragraph.php' );
+        include_once( MIP_ACF_PATH . 'fields/wpblock.php' );
+        
     }
 
 }

@@ -326,8 +326,10 @@ $mip_custom_menu_item_spec = array(
 
         'prefix' => $mip_prefix . 'nolink',
 
-        'acf_group'  => '',
-        'acf_fields' => array(),
+        'acf_group'  => array(
+            'key' => MIP_ACF_PREFIX_GROUP.'mip_group_nav_item_nolink',
+            'title' => __( 'Nolink settings group', 'menu-item-types' ),
+        ),
 
     ),
 

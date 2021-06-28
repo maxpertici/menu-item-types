@@ -13,9 +13,10 @@ define( 'MIP_PLUGIN_FOLDER_INSTALL' , plugin_dir_path( __DIR__ ) );
 define( 'MIP_FILE' , __FILE__ );
 define( 'MIP_PATH' , realpath( plugin_dir_path( MIP_FILE ) ) . '/' );
 
-define( 'MIP_INC_PATH' , realpath( MIP_PATH     . 'inc' )     . '/' );
-define( 'MIP_ACF_PATH' , realpath( MIP_INC_PATH . 'acf' )     . '/' );
-define( 'MIP_METABOX'  , realpath( MIP_INC_PATH . 'metabox' ) . '/' );
+define( 'MIP_INC_PATH'   , realpath( MIP_PATH     . 'inc' )     . '/' );
+define( 'MIP_ACF_PATH'   , realpath( MIP_INC_PATH . 'acf' )     . '/' );
+define( 'MIP_ADMIN_PATH' , realpath( MIP_INC_PATH . 'admin' ) . '/' );
+define( 'MIP_METABOX'    , realpath( MIP_INC_PATH . 'metabox' ) . '/' );
 
 // ACF
 define( 'MIP_ACF_PREFIX_GROUP'            , 'group_acf_key_' );

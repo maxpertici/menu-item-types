@@ -3,7 +3,7 @@
 Plugin Name:  Menu Item Types
 Plugin URI:   https://maxpertici.fr#menu-item-types
 Description:  —
-Version:      0.1
+Version:      0.1.0
 Author:       Maxime Pertici
 Author URI:   https://maxpertici.fr
 Contributors:
@@ -40,7 +40,6 @@ function mip_run(){
 	require( MIP_ACF_PATH . 'acf.php' );
 
 	if( ! wpam_is_acf_loaded() ){
-
 		add_action('admin_notices', 'mip_notice_acf_plugin_required');
 	}
 
@@ -68,6 +67,7 @@ function mip_init() {
 
 		// Admin ?
 		if( is_admin() ){
+			require_once( MIP_ADMIN_PATH . '/wp_admin.php' );
 			require_once( MIP_METABOX . 'mip-menu-item-types.php' ) ;
 		}
 
