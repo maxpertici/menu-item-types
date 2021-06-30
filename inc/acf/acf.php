@@ -36,7 +36,7 @@ function wpam_is_acf_loaded(){
  * 
  * @since 1.0
  */
-function mip_notice_acf_plugin_required(){
+function mitypes_notice_acf_plugin_required(){
     //print the message
     $acf_search_url = 'plugin-install.php?s=advanced-custom-fields&tab=search&type=term';
     $acf_link = get_admin_url() . $acf_search_url ;
@@ -57,19 +57,19 @@ function mip_notice_acf_plugin_required(){
  * Load ACF fields
  * @since 0.1.0
  */
-function mip_load_acf_fields(){
+function mitypes_load_acf_fields(){
     
     // load fields
     if( is_admin() ){
         
-        include_once( MIP_INC_PATH . 'item-types.php' ) ;
+        include_once( MITYPES_INC_PATH . 'item-types.php' ) ;
         
-        include_once( MIP_ACF_PATH . 'fields/nolink.php' );
+        include_once( MITYPES_ACF_PATH . 'fields/nolink.php' );
         
-        include_once( MIP_ACF_PATH . 'fields/heading.php' );
-        include_once( MIP_ACF_PATH . 'fields/image.php' );
-        include_once( MIP_ACF_PATH . 'fields/paragraph.php' );
-        include_once( MIP_ACF_PATH . 'fields/wpblock.php' );
+        include_once( MITYPES_ACF_PATH . 'fields/heading.php' );
+        include_once( MITYPES_ACF_PATH . 'fields/image.php' );
+        include_once( MITYPES_ACF_PATH . 'fields/paragraph.php' );
+        include_once( MITYPES_ACF_PATH . 'fields/wpblock.php' );
         
     }
 

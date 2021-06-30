@@ -28,7 +28,7 @@ require_once( 'config.php' );
  * @since 0.1.0
  */
 
-function mip_run(){
+function mitypes_run(){
 
 	// Get Translations
 	$locale = get_locale();
@@ -37,21 +37,21 @@ function mip_run(){
 	load_plugin_textdomain( 'menu-item-types', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
 
 	// Has ACF ?
-	require( MIP_ACF_PATH . 'acf.php' );
+	require( MITYPES_ACF_PATH . 'acf.php' );
 
 	if( ! wpam_is_acf_loaded() ){
-		add_action('admin_notices', 'mip_notice_acf_plugin_required');
+		add_action('admin_notices', 'mitypes_notice_acf_plugin_required');
 	}
 
 	if( wpam_is_acf_loaded() ){
 
 		if( is_admin() ){
-			add_action( 'acf/init', 'mip_load_acf_fields', 10 );
+			add_action( 'acf/init', 'mitypes_load_acf_fields', 10 );
 		}
 	}
 }
 
-add_action( 'plugins_loaded', 'mip_run' );
+add_action( 'plugins_loaded', 'mitypes_run' );
 
 
 
@@ -61,23 +61,23 @@ add_action( 'plugins_loaded', 'mip_run' );
  *
  * @since 0.1.0
  */
-function mip_init() {
+function mitypes_init() {
 
 	if( wpam_is_acf_loaded() ){
 
 		// Admin ?
 		if( is_admin() ){
-			require_once( MIP_ADMIN_PATH . '/wp_admin.php' );
-			require_once( MIP_METABOX . 'mip-menu-item-types.php' ) ;
+			require_once( MITYPES_ADMIN_PATH . '/wp_admin.php' );
+			require_once( MITYPES_METABOX . 'mitypes-menu-item-types.php' ) ;
 		}
 
 		/**
 		 * Fires when MIP is loaded
 		 * @since 0.1.0
 		*/
-		do_action( 'mip_loaded' );
+		do_action( 'mitypes_loaded' );
 	}
 }
 
 
-add_action( 'after_setup_theme', 'mip_init' );
+add_action( 'after_setup_theme', 'mitypes_init' );

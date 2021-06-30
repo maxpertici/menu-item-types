@@ -10,9 +10,9 @@ if( function_exists('acf_add_local_field_group') ){
 
     acf_add_local_field_group(array(
         
-        'key'      => $mip_custom_menu_item_spec['image']['acf_group']['key'],
-        'title'    => $mip_custom_menu_item_spec['image']['acf_group']['title'],
-        'fields'   => $mip_custom_menu_item_spec['image']['acf_fields'],
+        'key'      => $mitypes_custom_menu_item_spec['image']['acf_group']['key'],
+        'title'    => $mitypes_custom_menu_item_spec['image']['acf_group']['title'],
+        'fields'   => $mitypes_custom_menu_item_spec['image']['acf_fields'],
 
         'location' => array(
             array(
@@ -45,12 +45,12 @@ if( function_exists('acf_add_local_field_group') ){
      * 
      * @return array $field to ACF selctor
      */
-    function mip_load_nav_menu_image_item_sizes( $field ) {
+    function mitypes_load_nav_menu_image_item_sizes( $field ) {
         
         $field['choices'] = array();
-        $mip_image_sizes = get_intermediate_image_sizes() ;
+        $mitypes_image_sizes = get_intermediate_image_sizes() ;
         
-        foreach ( $mip_image_sizes as $key => $size ) {
+        foreach ( $mitypes_image_sizes as $key => $size ) {
             $field['choices'][ $size ] = $size;
         }
         
@@ -60,7 +60,7 @@ if( function_exists('acf_add_local_field_group') ){
         return $field;
     }
 
-    add_filter('acf/load_field/name=mip_nav_item_image_size', 'mip_load_nav_menu_image_item_sizes');
+    add_filter('acf/load_field/name=mitypes_nav_item_image_size', 'mitypes_load_nav_menu_image_item_sizes');
 
 
 

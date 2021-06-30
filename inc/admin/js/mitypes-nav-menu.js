@@ -10,21 +10,21 @@ jQuery(document).ready(function($){
      * 
      * 
      */
-    function mip_item_type_chekbox_handler(){
+    function mitypes_item_type_chekbox_handler(){
 
 
         
-        $('#mip-item-type-custom-metabox input[type="checkbox"]').on('change', function() {
+        $('#mitypes-item-type-custom-metabox input[type="checkbox"]').on('change', function() {
             $(this).parent().parent().parent().find('input[type="checkbox"]').not(this).prop('checked', false)
          });
 
 
-        $('#mip-item-type-post_type_archive-metabox input[type="checkbox"]').on('change', function() {
+        $('#mitypes-item-type-post_type_archive-metabox input[type="checkbox"]').on('change', function() {
             $(this).parent().parent().parent().find('input[type="checkbox"]').not(this).prop('checked', false)
          });
     }
 
-    mip_item_type_chekbox_handler();
+    mitypes_item_type_chekbox_handler();
 
     /**
      * 
@@ -34,16 +34,16 @@ jQuery(document).ready(function($){
      * 
      * 
      */
-    function mip_item_type_brand_maker(){
+    function mitypes_item_type_brand_maker(){
         
-        var sup_brand = '<sup style="position:absolute;margin-left:4px;font-weight:bold;font-size:0.8em;">MIP</sup>';
+        var sup_brand = '<sup style="position:absolute;margin-left:4px;font-weight:bold;font-size:0.8em;">MI•TYPES</sup>';
 
-        // $('#mip-item-type-post_type_archive-metabox .accordion-section-title').append(sup_brand);
-        $('#mip-item-type-custom-metabox .accordion-section-title').append( sup_brand) ;
+        // $('#mitypes-item-type-post_type_archive-metabox .accordion-section-title').append(sup_brand);
+        $('#mitypes-item-type-custom-metabox .accordion-section-title').append( sup_brand) ;
 
     }
 
-   mip_item_type_brand_maker();
+   mitypes_item_type_brand_maker();
    
 
 
@@ -62,15 +62,15 @@ jQuery(document).ready(function($){
         };
     })(jQuery);
     
-    function mip_menu_edit_item_add_mip_item_type_class( menu_item ){
+    function mitypes_menu_edit_item_add_mitypes_item_type_class( menu_item ){
         
         // WPAM item type
-        var $_mip_item_type = menu_item.find('input.menu-item-data-type').attr( 'data-mip-item') ;
-        if( $_mip_item_type ){ menu_item.addClass('mip-item-type mip-item__' + $_mip_item_type ); }
+        var $_mitypes_item_type = menu_item.find('input.menu-item-data-type').attr( 'data-mitypes-item') ;
+        if( $_mitypes_item_type ){ menu_item.addClass('mitypes-item-type mitypes-item__' + $_mitypes_item_type ); }
 
     }
 
-    function mip_get_menu_item_as_array( ){
+    function mitypes_get_menu_item_as_array( ){
 
         var $_item_list = [] ;
         $( "#menu-to-edit" ).find('.menu-item').each(function(e){
@@ -80,7 +80,7 @@ jQuery(document).ready(function($){
         return $_item_list ;
     }
 
-    function mip_compare_list_item( on_load, current_state, on_append ){
+    function mitypes_compare_list_item( on_load, current_state, on_append ){
 
         var item_to_parse = [] ;
         
@@ -103,27 +103,27 @@ jQuery(document).ready(function($){
         return item_to_parse ;
     }
 
-    function mip_menu_edit_add_item_type_class(){
+    function mitypes_menu_edit_add_item_type_class(){
 
         var $_menu_edit = $( "#menu-to-edit" ) ;
 
         // collect
-        var list_item_of_menu__on_load = mip_get_menu_item_as_array();
+        var list_item_of_menu__on_load = mitypes_get_menu_item_as_array();
         
         // addclass on load (on all item)
         $( "#menu-to-edit" ).find('.menu-item').each(function(e){
             var item_data_type =  $(this).find('input.menu-item-data-type').val() ;
             $(this).addClass('wp-item-type wp-item-type__' + item_data_type );
-            // mip_menu_edit_item_add_mip_item_type_class( $(this) );
+            // mitypes_menu_edit_item_add_mitypes_item_type_class( $(this) );
         });
 
         var list_item_of_menu__current_state = [] ;
 
         $( "#menu-to-edit" ).on( "append", function(e) {
 
-            var list_item_of_menu__on_append = mip_get_menu_item_as_array();
+            var list_item_of_menu__on_append = mitypes_get_menu_item_as_array();
         
-            var new_item_menu = mip_compare_list_item(
+            var new_item_menu = mitypes_compare_list_item(
                                     list_item_of_menu__on_load,
                                     list_item_of_menu__current_state,
                                     list_item_of_menu__on_append
@@ -135,7 +135,7 @@ jQuery(document).ready(function($){
 
                     var item_data_type =  $('#'+id).find('input.menu-item-data-type').val() ;
                     $('#'+id).addClass('wp-item-type wp-item-type__' + item_data_type );
-                    mip_menu_edit_item_add_mip_item_type_class( $('#'+id) );
+                    mitypes_menu_edit_item_add_mitypes_item_type_class( $('#'+id) );
                 });
             }
 
@@ -145,7 +145,7 @@ jQuery(document).ready(function($){
 
     }
 
-    mip_menu_edit_add_item_type_class();
+    mitypes_menu_edit_add_item_type_class();
         
 
 
@@ -157,8 +157,8 @@ jQuery(document).ready(function($){
      * 
      * 
      */
-    function mip_get_nav_menu_item_fields_key(){
-        return mip_nav_menu_js_vars.nav_item_fields_keys ;
+    function mitypes_get_nav_menu_item_fields_key(){
+        return mitypes_nav_menu_js_vars.nav_item_fields_keys ;
     }
 
 
@@ -169,7 +169,7 @@ jQuery(document).ready(function($){
      * 
      * 
      */
-    var mip_Nav_Menu_Item_Fields_Prepare = function( field ){
+    var mitypes_Nav_Menu_Item_Fields_Prepare = function( field ){
 
         var nav_menu_item = field.$el.parent().parent().parent() ;
                 
@@ -177,13 +177,13 @@ jQuery(document).ready(function($){
         var nav_menu_item_type_marker_text = nav_menu_item_type_marker.text() ;
         
         // clean pass 1
-        var re = /MIP \— /gi;
+        var re = /MI•TYPES \— /gi;
         var chn = nav_menu_item_type_marker_text;
         var nav_menu_item_type = chn.replace(re, '');
 
         // Test opur branding, etc
         var str = nav_menu_item_type_marker_text;
-        var re = /MIP/i;
+        var re = /MI•TYPES/i;
         var is_custom_nav_menu_item = str.match(re);
     
         the_custom_nav_item_type = false ;
@@ -194,12 +194,12 @@ jQuery(document).ready(function($){
             // Really ?
 
             // Already knew ?
-            var attr_data_mip_item = nav_menu_item.find('input.menu-item-data-type').attr( 'data-mip-item' );
+            var attr_data_mitypes_item = nav_menu_item.find('input.menu-item-data-type').attr( 'data-mitypes-item' );
             
             // if not -> do the trick
-            var nav_item_type_specs = Object.keys( mip_nav_menu_js_vars.custom_menu_item_spec );
+            var nav_item_type_specs = Object.keys( mitypes_nav_menu_js_vars.custom_menu_item_spec );
 
-            if( attr_data_mip_item === undefined ){
+            if( attr_data_mitypes_item === undefined ){
 
                 // Loop and find item type
                 for( var i = 0 ; i < nav_item_type_specs.length ; i++){
@@ -209,7 +209,7 @@ jQuery(document).ready(function($){
                     // stop on the first result for deine item type -> break;
                     // test are on label...
 
-                    if( nav_menu_item_type ===  mip_nav_menu_js_vars.custom_menu_item_spec[item_type].label ){
+                    if( nav_menu_item_type ===  mitypes_nav_menu_js_vars.custom_menu_item_spec[item_type].label ){
                         the_custom_nav_item_type = item_type ;
                         break;
                     }
@@ -219,32 +219,32 @@ jQuery(document).ready(function($){
                 // Brand item
                 if( the_custom_nav_item_type ){
                     var sup_brand_style = ' style="position:absolute;right:calc(100% - 10px);font-weight:bold;font-size:0.8em;" ';
-                    var sup_brand       = '<sup' + sup_brand_style + '>MIP</sup>' ;
+                    var sup_brand       = '<sup' + sup_brand_style + '>MI•TYPES</sup>' ;
 
                     nav_menu_item_type_marker.html( nav_menu_item_type + sup_brand );
                 }
                 
             
             }else{
-               the_custom_nav_item_type = attr_data_mip_item;
+               the_custom_nav_item_type = attr_data_mitypes_item;
 
             }
 
             // Write data attr for css icon in admin page
 
-            // nav_menu_item.find('input.menu-item-data-type').attr( 'data-mip-item', item_type);
-            // nav_menu_item.find('input.menu-item-data-type').attr( 'data-mip-item', the_custom_nav_item_type);
+            // nav_menu_item.find('input.menu-item-data-type').attr( 'data-mitypes-item', item_type);
+            // nav_menu_item.find('input.menu-item-data-type').attr( 'data-mitypes-item', the_custom_nav_item_type);
             
-            if( attr_data_mip_item === undefined ){
-                nav_menu_item.find('input.menu-item-data-type').attr( 'data-mip-item', the_custom_nav_item_type);    
+            if( attr_data_mitypes_item === undefined ){
+                nav_menu_item.find('input.menu-item-data-type').attr( 'data-mitypes-item', the_custom_nav_item_type);    
             }
 
-            mip_menu_edit_item_add_mip_item_type_class( nav_menu_item );
+            mitypes_menu_edit_item_add_mitypes_item_type_class( nav_menu_item );
             
 
             // Ajust item field and settings
             if( the_custom_nav_item_type ){
-                mip_nav_menu_item_field_prepare_css( the_custom_nav_item_type, nav_menu_item ) ;
+                mitypes_nav_menu_item_field_prepare_css( the_custom_nav_item_type, nav_menu_item ) ;
             }
 
         }
@@ -253,14 +253,14 @@ jQuery(document).ready(function($){
         // if Generic -> keep only generic field
         // if custom -> keep only generic field + specific field for this item type
        
-        var item_keys = mip_get_nav_menu_item_fields_key();
-        mip_nav_menu_item_field_remove_field( field, the_custom_nav_item_type, item_keys );
+        var item_keys = mitypes_get_nav_menu_item_fields_key();
+        mitypes_nav_menu_item_field_remove_field( field, the_custom_nav_item_type, item_keys );
        
 
     };
 
     // field preparation
-    function mip_nav_menu_item_field_prepare_css( item_type = false, nav_menu_item ){
+    function mitypes_nav_menu_item_field_prepare_css( item_type = false, nav_menu_item ){
         
         if( item_type ){
 
@@ -284,7 +284,7 @@ jQuery(document).ready(function($){
     }
 
     // field cleaning
-    function mip_nav_menu_item_field_remove_field( field, nav_item_type, item_keys ){
+    function mitypes_nav_menu_item_field_remove_field( field, nav_item_type, item_keys ){
 
         // Remove all field for specific custom item, keep all generic field
 
@@ -352,14 +352,14 @@ jQuery(document).ready(function($){
      * 
      */
     // Construc right list of field key to be filtered
-    var item_keys = mip_get_nav_menu_item_fields_key();
+    var item_keys = mitypes_get_nav_menu_item_fields_key();
     
     for (var i = 0; i < item_keys.length ; i++) {
         
         var field_key =  item_keys[ i ].key;
         
-        acf.addAction('load_field/key=' + field_key, mip_Nav_Menu_Item_Fields_Prepare);
-        acf.addAction('new_field/key='  + field_key, mip_Nav_Menu_Item_Fields_Prepare);
+        acf.addAction('load_field/key=' + field_key, mitypes_Nav_Menu_Item_Fields_Prepare);
+        acf.addAction('new_field/key='  + field_key, mitypes_Nav_Menu_Item_Fields_Prepare);
 
     }
 

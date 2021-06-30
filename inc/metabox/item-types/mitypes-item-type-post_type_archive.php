@@ -19,14 +19,14 @@ defined( 'ABSPATH' ) or	die();
  * @param object $object The meta box object
  * @link https://developer.wordpress.org/reference/functions/add_meta_box/
  */
-function mip_add_item_type_post_type_archive_metabox( $object ) {
+function mitypes_add_item_type_post_type_archive_metabox( $object ) {
 
-	add_meta_box( 'mip-item-type-post_type_archive-metabox', esc_html__( 'Post Type Archives', 'menu-item-types' ), 'mip_item_type_post_type_archive_metabox', 'nav-menus', 'side', 'low' );
+	add_meta_box( 'mitypes-item-type-post_type_archive-metabox', esc_html__( 'Post Type Archives', 'menu-item-types' ), 'mitypes_item_type_post_type_archive_metabox', 'nav-menus', 'side', 'low' );
 
 	return $object;
 }
 
-add_filter( 'nav_menu_meta_box_object', 'mip_add_item_type_post_type_archive_metabox', 10, 1 );
+add_filter( 'nav_menu_meta_box_object', 'mitypes_add_item_type_post_type_archive_metabox', 10, 1 );
 
 
 /**
@@ -38,13 +38,13 @@ add_filter( 'nav_menu_meta_box_object', 'mip_add_item_type_post_type_archive_met
  * @link https://core.trac.wordpress.org/browser/tags/4.5/src/wp-admin/includes/class-walker-nav-menu-edit.php
  * @link https://core.trac.wordpress.org/browser/tags/4.5/src/wp-admin/includes/class-walker-nav-menu-checklist.php
  */
-function mip_item_type_post_type_archive_metabox(){
+function mitypes_item_type_post_type_archive_metabox(){
 
 	global $nav_menu_selected_id;
 
 	$current_tab = 'all';
 
-	$mip_custom_item_prefix = '#mip_post_type_archive_';
+	$mitypes_custom_item_prefix = '#mitypes_post_type_archive_';
 
 	$cpts = array();
 	$has_archive_cps = get_post_types(
@@ -75,18 +75,18 @@ function mip_item_type_post_type_archive_metabox(){
 	if ( ! empty( $cpts ) ) {
 
 		?>
-		<div id="mip-item-type-post_type_archive" class="categorydiv">
-			<ul id="mip-item-type-post_type_archive-tabs" class="mip-item-type-post_type_archive-tabs add-menu-item-tabs">
+		<div id="mitypes-item-type-post_type_archive" class="categorydiv">
+			<ul id="mitypes-item-type-post_type_archive-tabs" class="mitypes-item-type-post_type_archive-tabs add-menu-item-tabs">
 				<li <?php echo ( 'all' == $current_tab ? ' class="tabs"' : '' ); ?>>
-					<a class="nav-tab-link" data-type="tabs-panel-mip-item-type-post_type_archive-all" href="<?php if ( $nav_menu_selected_id ) echo esc_url( add_query_arg( 'mip-item-type-post_type_archive-tab', 'all', remove_query_arg( $removed_args ) ) ); ?>#tabs-panel-mip-item-type-post_type_archive-all">
+					<a class="nav-tab-link" data-type="tabs-panel-mitypes-item-type-post_type_archive-all" href="<?php if ( $nav_menu_selected_id ) echo esc_url( add_query_arg( 'mitypes-item-type-post_type_archive-tab', 'all', remove_query_arg( $removed_args ) ) ); ?>#tabs-panel-mitypes-item-type-post_type_archive-all">
 						<?php echo esc_html__( 'View All' ); ?>
 					</a>
 				</li><!-- /.tabs -->
 
 			</ul>
 			
-			<div id="tabs-panel-mip-item-type-post_type_archive-all" class="tabs-panel tabs-panel-view-all <?php echo ( 'all' == $current_tab ? 'tabs-panel-active' : 'tabs-panel-inactive' ); ?>">
-				<ul id="mip-item-type-post_type_archive-checklist-all" class="categorychecklist form-no-clear">
+			<div id="tabs-panel-mitypes-item-type-post_type_archive-all" class="tabs-panel tabs-panel-view-all <?php echo ( 'all' == $current_tab ? 'tabs-panel-active' : 'tabs-panel-inactive' ); ?>">
+				<ul id="mitypes-item-type-post_type_archive-checklist-all" class="categorychecklist form-no-clear">
 				<?php
 
 				global $_nav_menu_placeholder;
@@ -103,7 +103,7 @@ function mip_item_type_post_type_archive_metabox(){
 					   ,'menu-item-url'    => get_post_type_archive_link( $item->name )
 					   );
 					   
-					   $url = $mip_custom_item_prefix . http_build_query($menu_item_data)  ;
+					   $url = $mitypes_custom_item_prefix . http_build_query($menu_item_data)  ;
 
 					?>
 					<li>
@@ -129,7 +129,7 @@ function mip_item_type_post_type_archive_metabox(){
 			<p class="button-controls wp-clearfix">
 
 				<span class="add-to-menu">
-					<input type="submit"<?php wp_nav_menu_disabled_check( $nav_menu_selected_id ); ?> class="button-secondary submit-add-to-menu right" value="<?php esc_attr_e('Add to Menu'); ?>" name="add-mip-item-type-post_type_archive-menu-item" id="submit-mip-item-type-post_type_archive" />
+					<input type="submit"<?php wp_nav_menu_disabled_check( $nav_menu_selected_id ); ?> class="button-secondary submit-add-to-menu right" value="<?php esc_attr_e('Add to Menu'); ?>" name="add-mitypes-item-type-post_type_archive-menu-item" id="submit-mitypes-item-type-post_type_archive" />
 					<span class="spinner"></span>
 				</span>
 			</p>

@@ -9,9 +9,9 @@ if( function_exists('acf_add_local_field_group') ){
 
     acf_add_local_field_group(array(
         
-        'key'      => $mip_custom_menu_item_spec['wpblock']['acf_group']['key'],
-        'title'    => $mip_custom_menu_item_spec['wpblock']['acf_group']['title'],
-        'fields'   => $mip_custom_menu_item_spec['wpblock']['acf_fields'],
+        'key'      => $mitypes_custom_menu_item_spec['wpblock']['acf_group']['key'],
+        'title'    => $mitypes_custom_menu_item_spec['wpblock']['acf_group']['title'],
+        'fields'   => $mitypes_custom_menu_item_spec['wpblock']['acf_fields'],
 
         'location' => array(
             array(

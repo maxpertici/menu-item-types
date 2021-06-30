@@ -19,14 +19,14 @@ defined( 'ABSPATH' ) or	die();
  * @param object $object The meta box object
  * @link https://developer.wordpress.org/reference/functions/add_meta_box/
  */
-function mip_add_item_type_custom_metabox( $object ) {
+function mitypes_add_item_type_custom_metabox( $object ) {
 
-	add_meta_box( 'mip-item-type-custom-metabox', esc_html__( 'Custom Items', 'menu-item-types' ), 'mip_item_type_custom_metabox', 'nav-menus', 'side', 'low' );
+	add_meta_box( 'mitypes-item-type-custom-metabox', esc_html__( 'Custom Items', 'menu-item-types' ), 'mitypes_item_type_custom_metabox', 'nav-menus', 'side', 'low' );
 
 	return $object;
 }
 
-add_filter( 'nav_menu_meta_box_object', 'mip_add_item_type_custom_metabox', 10, 1 );
+add_filter( 'nav_menu_meta_box_object', 'mitypes_add_item_type_custom_metabox', 10, 1 );
 
 
 /**
@@ -38,7 +38,7 @@ add_filter( 'nav_menu_meta_box_object', 'mip_add_item_type_custom_metabox', 10, 
  * @link https://core.trac.wordpress.org/browser/tags/4.5/src/wp-admin/includes/class-walker-nav-menu-edit.php
  * @link https://core.trac.wordpress.org/browser/tags/4.5/src/wp-admin/includes/class-walker-nav-menu-checklist.php
  */
-function mip_item_type_custom_metabox(){
+function mitypes_item_type_custom_metabox(){
 
 	global $nav_menu_selected_id;
 	$current_tab = 'all';
@@ -48,20 +48,20 @@ function mip_item_type_custom_metabox(){
 	// run
 
 	?>
-	<div id="mip-item-type-custom" class="categorydiv">
+	<div id="mitypes-item-type-custom" class="categorydiv">
 
-		<ul id="mip-item-type-custom-tabs" class="mip-item-type-custom-tabs add-menu-item-tabs">
+		<ul id="mitypes-item-type-custom-tabs" class="mitypes-item-type-custom-tabs add-menu-item-tabs">
 			<li <?php echo ( 'all' == $current_tab ? ' class="tabs"' : '' ); ?>>
-				<a class="nav-tab-link" data-type="tabs-panel-mip-item-type-custom-all" href="<?php if ( $nav_menu_selected_id ) echo esc_url( add_query_arg( 'mip-item-type-custom-tab', 'all', remove_query_arg( $removed_args ) ) ); ?>#tabs-panel-mip-item-type-custom-all">
+				<a class="nav-tab-link" data-type="tabs-panel-mitypes-item-type-custom-all" href="<?php if ( $nav_menu_selected_id ) echo esc_url( add_query_arg( 'mitypes-item-type-custom-tab', 'all', remove_query_arg( $removed_args ) ) ); ?>#tabs-panel-mitypes-item-type-custom-all">
 					<?php echo esc_html__( 'View All' ); ?>
 				</a>
 			</li><!-- /.tabs -->
 
 		</ul>
 		
-		<div id="tabs-panel-mip-item-type-custom-all" class="tabs-panel tabs-panel-view-all <?php echo ( 'all' == $current_tab ? 'tabs-panel-active' : 'tabs-panel-inactive' ); ?>">
+		<div id="tabs-panel-mitypes-item-type-custom-all" class="tabs-panel tabs-panel-view-all <?php echo ( 'all' == $current_tab ? 'tabs-panel-active' : 'tabs-panel-inactive' ); ?>">
 			
-			<ul id="mip-item-type-custom-checklist-all" class="categorychecklist form-no-clear">
+			<ul id="mitypes-item-type-custom-checklist-all" class="categorychecklist form-no-clear">
 			<?php
 			
 			global $_nav_menu_placeholder, $nav_menu_selected_id;
@@ -79,13 +79,13 @@ function mip_item_type_custom_metabox(){
 			 */
 			
 
-			$mip_custom_item_tag = '#mip_nolink' ;
+			$mitypes_custom_item_tag = '#mitypes_nolink' ;
 			$menu_item_data = array(
-				'menu-item-title'  => __( 'MIP', 'menu-item-types' )
-				,'menu-item-url'    => $mip_custom_item_tag
+				'menu-item-title'  => __( 'MITYPES', 'menu-item-types' )
+				,'menu-item-url'    => $mitypes_custom_item_tag
 				);
 
-			$url = $mip_custom_item_tag . '_' . http_build_query($menu_item_data)  ;
+			$url = $mitypes_custom_item_tag . '_' . http_build_query($menu_item_data)  ;
 
 			?>
 			<li>
@@ -110,13 +110,13 @@ function mip_item_type_custom_metabox(){
 			 */
 			
 
-			$mip_custom_item_tag = '#mip_heading' ;
+			$mitypes_custom_item_tag = '#mitypes_heading' ;
 			$menu_item_data = array(
-				'menu-item-title'  => __( 'MIP', 'menu-item-types' )
-				,'menu-item-url'    => $mip_custom_item_tag
+				'menu-item-title'  => __( 'MITYPES', 'menu-item-types' )
+				,'menu-item-url'    => $mitypes_custom_item_tag
 				);
 
-			$url = $mip_custom_item_tag . '_' . http_build_query($menu_item_data)  ;
+			$url = $mitypes_custom_item_tag . '_' . http_build_query($menu_item_data)  ;
 
 			?>
 			<li>
@@ -139,13 +139,13 @@ function mip_item_type_custom_metabox(){
 			 */
 			
 
-			$mip_custom_item_tag = '#mip_paragraph' ;
+			$mitypes_custom_item_tag = '#mitypes_paragraph' ;
 			$menu_item_data = array(
-				'menu-item-title'  => __( 'MIP', 'menu-item-types' )
-				,'menu-item-url'    => $mip_custom_item_tag
+				'menu-item-title'  => __( 'MITYPES', 'menu-item-types' )
+				,'menu-item-url'    => $mitypes_custom_item_tag
 				);
 
-			$url = $mip_custom_item_tag . '_' . http_build_query($menu_item_data)  ;
+			$url = $mitypes_custom_item_tag . '_' . http_build_query($menu_item_data)  ;
 
 			?>
 			<li>
@@ -170,13 +170,13 @@ function mip_item_type_custom_metabox(){
 			 * 
 			 */
 			
-			$mip_custom_item_tag = '#mip_image' ;
+			$mitypes_custom_item_tag = '#mitypes_image' ;
 			$menu_item_data = array(
 				'menu-item-title'  => esc_html__( 'Image', 'menu-item-types' )
-				,'menu-item-url'    => $mip_custom_item_tag
+				,'menu-item-url'    => $mitypes_custom_item_tag
 				);
 			
-			$url = $mip_custom_item_tag . '_' . http_build_query($menu_item_data)  ;
+			$url = $mitypes_custom_item_tag . '_' . http_build_query($menu_item_data)  ;
 
 			?>
 			<li>
@@ -203,13 +203,13 @@ function mip_item_type_custom_metabox(){
 			 */
 			
 
-			$mip_custom_item_tag = '#mip_wpblock' ;
+			$mitypes_custom_item_tag = '#mitypes_wpblock' ;
 			$menu_item_data = array(
-				'menu-item-title'  => __( 'MIP', 'menu-item-types' )
-				,'menu-item-url'    => $mip_custom_item_tag
+				'menu-item-title'  => __( 'MITYPES', 'menu-item-types' )
+				,'menu-item-url'    => $mitypes_custom_item_tag
 				);
 
-			$url = $mip_custom_item_tag . '_' . http_build_query($menu_item_data)  ;
+			$url = $mitypes_custom_item_tag . '_' . http_build_query($menu_item_data)  ;
 
 			?>
 			<li>
@@ -232,13 +232,13 @@ function mip_item_type_custom_metabox(){
 			 */
 			
 
-			$mip_custom_item_tag = '#mip_shortcode' ;
+			$mitypes_custom_item_tag = '#mitypes_shortcode' ;
 			$menu_item_data = array(
-				'menu-item-title'  => __( 'MIP', 'menu-item-types' )
-				,'menu-item-url'    => $mip_custom_item_tag
+				'menu-item-title'  => __( 'MITYPES', 'menu-item-types' )
+				,'menu-item-url'    => $mitypes_custom_item_tag
 				);
 
-			$url = $mip_custom_item_tag . '_' . http_build_query($menu_item_data)  ;
+			$url = $mitypes_custom_item_tag . '_' . http_build_query($menu_item_data)  ;
 
 			?>
 			<li>
@@ -262,13 +262,13 @@ function mip_item_type_custom_metabox(){
 			 */
 			
 
-			$mip_custom_item_tag = '#mip_dynamic' ;
+			$mitypes_custom_item_tag = '#mitypes_dynamic' ;
 			$menu_item_data = array(
-				'menu-item-title'  => __( 'MIP', 'menu-item-types' )
-				,'menu-item-url'    => $mip_custom_item_tag
+				'menu-item-title'  => __( 'MITYPES', 'menu-item-types' )
+				,'menu-item-url'    => $mitypes_custom_item_tag
 				);
 
-			$url = $mip_custom_item_tag . '_' . http_build_query($menu_item_data)  ;
+			$url = $mitypes_custom_item_tag . '_' . http_build_query($menu_item_data)  ;
 
 			?>
 			<li>
@@ -291,7 +291,7 @@ function mip_item_type_custom_metabox(){
 		<p class="button-controls wp-clearfix">
 
 			<span class="add-to-menu">
-				<input type="submit"<?php wp_nav_menu_disabled_check( $nav_menu_selected_id ); ?> class="button-secondary submit-add-to-menu right" value="<?php esc_attr_e('Add to Menu'); ?>" name="add-mip-item-type-custom-menu-item" id="submit-mip-item-type-custom" />
+				<input type="submit"<?php wp_nav_menu_disabled_check( $nav_menu_selected_id ); ?> class="button-secondary submit-add-to-menu right" value="<?php esc_attr_e('Add to Menu'); ?>" name="add-mitypes-item-type-custom-menu-item" id="submit-mitypes-item-type-custom" />
 				<span class="spinner"></span>
 			</span>
 		</p>

@@ -15,8 +15,8 @@ defined( 'ABSPATH' ) or	die();
 
 // Custom nav item specifications
 
-$mip_prefix = '#mip' . '_';
-$mip_custom_menu_item_spec = array(
+$mitypes_prefix = '#mitypes' . '_';
+$mitypes_custom_menu_item_spec = array(
 
     /**
      *  Heading
@@ -26,19 +26,19 @@ $mip_custom_menu_item_spec = array(
         'label' => __( 'Heading' , 'menu-item-types'),
 
         'slug'  => 'heading',
-        'prefix' => $mip_prefix . 'heading',
+        'prefix' => $mitypes_prefix . 'heading',
 
         'acf_group' => array(
-            'key'   => MIP_ACF_PREFIX_GROUP.'mip_group_nav_item_heading',
+            'key'   => MITYPES_ACF_PREFIX_GROUP.'mitypes_group_nav_item_heading',
             'title' => __( 'Heading settings group', 'menu-item-types' ),
         ),
 
         'acf_fields' => array(
             
             array(
-                'key'   => MIP_ACF_PREFIX_FIELD . 'mip_field_mip_nav_item_heading_selector',
+                'key'   => MITYPES_ACF_PREFIX_FIELD . 'mitypes_field_mitypes_nav_item_heading_selector',
                 'label' => __( 'Heading level' , 'menu-item-types'),
-                'name'  => 'mip_nav_item_heading_selector',
+                'name'  => 'mitypes_nav_item_heading_selector',
                 'type'  => 'select',
 
                 'instructions' => '',
@@ -47,7 +47,7 @@ $mip_custom_menu_item_spec = array(
 
                 'wrapper' => array(
                     'width' => '',
-                    'class' => 'mip-heading-settings-field__selector',
+                    'class' => 'mitypes-heading-settings-field__selector',
                     'id' => '',
                 ),
 
@@ -84,19 +84,19 @@ $mip_custom_menu_item_spec = array(
         'label'  => __( 'Paragraph' , 'menu-item-types'),
         'slug' => 'paragraph',
 
-        'prefix' => $mip_prefix . 'paragraph',
+        'prefix' => $mitypes_prefix . 'paragraph',
 
         'acf_group' => array(
-            'key'   => MIP_ACF_PREFIX_GROUP.'mip_group_nav_item_paragraph',
+            'key'   => MITYPES_ACF_PREFIX_GROUP.'mitypes_group_nav_item_paragraph',
             'title' => __( 'Paragraph settings group', 'menu-item-types' ),
         ),
 
         'acf_fields' => array(
 
             array(
-                'key'   => MIP_ACF_PREFIX_FIELD . 'mip_field_mip_nav_item_paragraph_text',
+                'key'   => MITYPES_ACF_PREFIX_FIELD . 'mitypes_field_mitypes_nav_item_paragraph_text',
                 'label' => __( 'Text' , 'menu-item-types'),
-                'name'  => 'mip_nav_item_paragraph_text',
+                'name'  => 'mitypes_nav_item_paragraph_text',
                 'type'  => 'textarea',
 
                 'instructions' => '',
@@ -105,7 +105,7 @@ $mip_custom_menu_item_spec = array(
 
                 'wrapper' => array(
                     'width' => '',
-                    'class' => 'mip-paragraph-settings-field__text',
+                    'class' => 'mitypes-paragraph-settings-field__text',
                     'id' => '',
                 ),
 
@@ -128,19 +128,19 @@ $mip_custom_menu_item_spec = array(
         'label'      => __( 'Image' , 'menu-item-types'),
         
         'slug' => 'image',
-        'prefix'     => $mip_prefix . 'image',
+        'prefix'     => $mitypes_prefix . 'image',
 
         'acf_group'  => array(
-            'key' => MIP_ACF_PREFIX_GROUP.'mip_group_nav_item_image',
+            'key' => MITYPES_ACF_PREFIX_GROUP.'mitypes_group_nav_item_image',
             'title' => __( 'Image settings group', 'menu-item-types' ),
         ),
         
         'acf_fields' => array(
             
             array(
-                'key' => MIP_ACF_PREFIX_FIELD.'mip_field_mip_nav_item_image_selector',
+                'key' => MITYPES_ACF_PREFIX_FIELD.'mitypes_field_mitypes_nav_item_image_selector',
                 'label' => __( 'Image', 'menu-item-types' ),
-                'name' => 'mip_nav_item_image_media',
+                'name' => 'mitypes_nav_item_image_media',
 
                 'type' => 'image',
                 'instructions' => '',
@@ -149,7 +149,7 @@ $mip_custom_menu_item_spec = array(
 
                 'wrapper' => array(
                     'width' => '50',
-                    'class' => 'mip-image-settings-field__media',
+                    'class' => 'mitypes-image-settings-field__media',
                     'id' => '',
                 ),
 
@@ -167,9 +167,9 @@ $mip_custom_menu_item_spec = array(
             ),
 
             array(
-                'key'   => MIP_ACF_PREFIX_FIELD.'mip_field_mip_nav_item_image_size',
+                'key'   => MITYPES_ACF_PREFIX_FIELD.'mitypes_field_mitypes_nav_item_image_size',
                 'label' => __( 'Size', 'menu-item-types' ),
-                'name'  => 'mip_nav_item_image_size',
+                'name'  => 'mitypes_nav_item_image_size',
 
                 'type' => 'select',
                 'instructions' => '',
@@ -178,7 +178,7 @@ $mip_custom_menu_item_spec = array(
 
                 'wrapper' => array(
                     'width' => '50',
-                    'class' => 'mip-image-settings-field__size',
+                    'class' => 'mitypes-image-settings-field__size',
                     'id'    => '',
                 ),
 
@@ -211,10 +211,10 @@ $mip_custom_menu_item_spec = array(
         'label'  => __( 'Content' , 'menu-item-types'),
         
         'slug' => 'content',
-        'prefix' => $mip_prefix . 'content',
+        'prefix' => $mitypes_prefix . 'content',
         
         'acf_group'  => array(
-            'key' => MIP_ACF_PREFIX_GROUP.'mip_group_nav_item_content',
+            'key' => MITYPES_ACF_PREFIX_GROUP.'mitypes_group_nav_item_content',
             'title' => __( 'Content settings group', 'menu-item-types' ),
         ),
 
@@ -222,15 +222,15 @@ $mip_custom_menu_item_spec = array(
             
             array(
 
-                'key' => MIP_ACF_PREFIX_FIELD.'mip_field_mip_nav_item_content_selector',
+                'key' => MITYPES_ACF_PREFIX_FIELD.'mitypes_field_mitypes_nav_item_content_selector',
                 'label' => __( 'Contents', 'menu-item-types' ),
-                'name' => 'mip_nav_item_content_selector',
+                'name' => 'mitypes_nav_item_content_selector',
 
                 'type' => 'post_object',
                 
                 'instructions' => 
                     sprintf(
-                        __( 'Choose your <a href="edit.php?post_type=mip-content">%s</a> or <a href="post-new.php?post_type=mip-content">%s</a> if empty.', 'menu-item-types' ) ,
+                        __( 'Choose your <a href="edit.php?post_type=mitypes-content">%s</a> or <a href="post-new.php?post_type=mitypes-content">%s</a> if empty.', 'menu-item-types' ) ,
                         __( 'content', 'menu-item-types' ),
                         __( 'create one', 'menu-item-types' )
                     ),
@@ -240,11 +240,11 @@ $mip_custom_menu_item_spec = array(
 
                 'wrapper' => array(
                     'width' => '',
-                    'class' => 'mip-content-settings-field__selector',
+                    'class' => 'mitypes-content-settings-field__selector',
                     'id' => '',
                 ),
                 'post_type' => array(
-                    0 => 'mip-content',
+                    0 => 'mitypes-content',
                 ),
                 'taxonomy' => '',
                 'allow_null' => 0,
@@ -269,19 +269,19 @@ $mip_custom_menu_item_spec = array(
         'label'      => __( 'Block' , 'menu-item-types'),
         
         'slug' => 'wpblock',
-        'prefix'     => $mip_prefix . 'wpblock',
+        'prefix'     => $mitypes_prefix . 'wpblock',
 
         'acf_group'  => array(
-            'key' => MIP_ACF_PREFIX_GROUP.'mip_group_nav_item_wpblock',
+            'key' => MITYPES_ACF_PREFIX_GROUP.'mitypes_group_nav_item_wpblock',
             'title' => __( 'Block settings group', 'menu-item-types' ),
         ),
         
         'acf_fields' => array(
             
             array(
-                'key' => MIP_ACF_PREFIX_FIELD.'mip_field_mip_nav_item_wpblock_selector',
+                'key' => MITYPES_ACF_PREFIX_FIELD.'mitypes_field_mitypes_nav_item_wpblock_selector',
                 'label' => __( 'Reusable Blocks', 'menu-item-types' ),
-                'name' => 'mip_nav_item_wpblock_selector',
+                'name' => 'mitypes_nav_item_wpblock_selector',
                 'type' => 'select',
                 
                 'instructions' => 
@@ -296,7 +296,7 @@ $mip_custom_menu_item_spec = array(
 
                 'wrapper' => array(
                     'width' => '',
-                    'class' => 'mip-wpblock-settings-field__selector',
+                    'class' => 'mitypes-wpblock-settings-field__selector',
                     'id' => '',
                 ),
 
@@ -324,10 +324,10 @@ $mip_custom_menu_item_spec = array(
         'label'  => __( 'No link' , 'menu-item-types'),
         'slug' => 'nolink',
 
-        'prefix' => $mip_prefix . 'nolink',
+        'prefix' => $mitypes_prefix . 'nolink',
 
         'acf_group'  => array(
-            'key' => MIP_ACF_PREFIX_GROUP.'mip_group_nav_item_nolink',
+            'key' => MITYPES_ACF_PREFIX_GROUP.'mitypes_group_nav_item_nolink',
             'title' => __( 'Nolink settings group', 'menu-item-types' ),
         ),
 
@@ -341,7 +341,7 @@ $mip_custom_menu_item_spec = array(
         'label'  => __( 'Post Type Archive' , 'menu-item-types'),
         'slug' => 'post_type_archive',
 
-        'prefix' => $mip_prefix . 'post_type_archive',
+        'prefix' => $mitypes_prefix . 'post_type_archive',
 
         'acf_group'  => '',
         'acf_fields' => array(),
@@ -359,7 +359,7 @@ $mip_custom_menu_item_spec = array(
         'label'  => __( 'Menu' , 'menu-item-types'),
         'slug' => 'menu',
 
-        'prefix' => $mip_prefix . 'menu',
+        'prefix' => $mitypes_prefix . 'menu',
 
         'acf_group'  => '',
         'acf_fields' => array(),
@@ -376,7 +376,7 @@ $mip_custom_menu_item_spec = array(
         'label'  => __( 'Shortcode' , 'menu-item-types'),
         'slug' => 'shortcode',
 
-        'prefix' => $mip_prefix . 'shortcode',
+        'prefix' => $mitypes_prefix . 'shortcode',
 
         'acf_group'  => '',
         'acf_fields' => array(),
@@ -393,7 +393,7 @@ $mip_custom_menu_item_spec = array(
         'label'  => __( 'Search' , 'menu-item-types'),
         'slug' => 'search',
 
-        'prefix' => $mip_prefix . 'search',
+        'prefix' => $mitypes_prefix . 'search',
 
         'acf_group'  => '',
         'acf_fields' => array(),
@@ -410,7 +410,7 @@ $mip_custom_menu_item_spec = array(
         'label'  => __( 'Dynamic' , 'menu-item-types'),
         'slug' => 'dynamic',
 
-        'prefix' => $mip_prefix . 'dynamic',
+        'prefix' => $mitypes_prefix . 'dynamic',
 
         'acf_group'  => '',
         'acf_fields' => array(),
@@ -426,26 +426,26 @@ $mip_custom_menu_item_spec = array(
         'label'  => __( 'Item' , 'menu-item-types'),
         'slug' => 'item',
 
-        'prefix' => $mip_prefix . 'item',
+        'prefix' => $mitypes_prefix . 'item',
 
         'acf_group'  => array(
-            'key' => MIP_ACF_PREFIX_GROUP.'mip_group_nav_item_generic',
+            'key' => MITYPES_ACF_PREFIX_GROUP.'mitypes_group_nav_item_generic',
             'title' => __( 'Item settings group', 'menu-item-types' ),
         ),
 
         'acf_fields' => array(
             
             array(
-                'key' => MIP_ACF_PREFIX_FIELD . 'mip_field_mip_nav_item_generic_submenu_type',
+                'key' => MITYPES_ACF_PREFIX_FIELD . 'mitypes_field_mitypes_nav_item_generic_submenu_type',
                 'label' => __( 'Submenu type' , 'menu-item-types'),
-                'name' => 'mip_nav_item_generic_submenu_type',
+                'name' => 'mitypes_nav_item_generic_submenu_type',
                 'type' => 'select',
                 'instructions' => '',
                 'required' => 0,
                 'conditional_logic' => 0,
                 'wrapper' => array(
                     'width' => '',
-                    'class' => 'mip-submenu-type-settings-field__type',
+                    'class' => 'mitypes-submenu-type-settings-field__type',
                     'id' => '',
                 ),
                 'choices' => array(
@@ -463,16 +463,16 @@ $mip_custom_menu_item_spec = array(
                 'placeholder' => '',
             ),
             array(
-                'key' => MIP_ACF_PREFIX_FIELD . 'mip_field_mip_nav_item_generic_submenu_colmuns_number',
+                'key' => MITYPES_ACF_PREFIX_FIELD . 'mitypes_field_mitypes_nav_item_generic_submenu_colmuns_number',
                 'label' => __( 'Number of columns' , 'menu-item-types') ,
-                'name' => 'mip_nav_item_generic_submenu_colmuns_number',
+                'name' => 'mitypes_nav_item_generic_submenu_colmuns_number',
                 'type' => 'select',
                 'instructions' => '',
                 'required' => 0,
                 'conditional_logic' => array(
                     array(
                         array(
-                            'field' => MIP_ACF_PREFIX_FIELD . 'mip_field_mip_nav_item_generic_submenu_type',
+                            'field' => MITYPES_ACF_PREFIX_FIELD . 'mitypes_field_mitypes_nav_item_generic_submenu_type',
                             'operator' => '==',
                             'value' => 'column',
                         ),
@@ -480,7 +480,7 @@ $mip_custom_menu_item_spec = array(
                 ),
                 'wrapper' => array(
                     'width' => '',
-                    'class' => 'mip-submenu-type-settings-field__colmuns-number',
+                    'class' => 'mitypes-submenu-type-settings-field__colmuns-number',
                     'id' => '',
                 ),
                 'choices' => array(
@@ -525,9 +525,9 @@ $mip_custom_menu_item_spec = array(
  * 
  */
 
-$mip_nav_item_fields_keys = array();
+$mitypes_nav_item_fields_keys = array();
  
-foreach( $mip_custom_menu_item_spec as $item_type => $spec ){
+foreach( $mitypes_custom_menu_item_spec as $item_type => $spec ){
   
     $acf_fields = $spec['acf_fields'] ;
     if(  is_array( $acf_fields ) && count( $acf_fields ) > 0 ){
@@ -535,7 +535,7 @@ foreach( $mip_custom_menu_item_spec as $item_type => $spec ){
         foreach(  $acf_fields as $acf_field ){
 
             array_push(
-                $mip_nav_item_fields_keys,
+                $mitypes_nav_item_fields_keys,
                 array(
                     'type' => $item_type ,
                     'key' => $acf_field['key']
