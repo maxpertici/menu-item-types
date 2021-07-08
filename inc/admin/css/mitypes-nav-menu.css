@@ -1,52 +1,15 @@
 /*
 Metabox
 */
-/*
 #tabs-panel-mitypes-item-type-custom-all {
   max-height: 270px; }
-*/
-/*
-ACF
-*/
-/*
-.acf-menu-settings .acf-fields .acf-range-wrap input[type="number"] {
-  min-width: 70px;
-  text-align: right; }
-
-.acf-menu-settings .acf-fields .acf-range-wrap .acf-append,
-.acf-menu-settings .acf-fields .acf-range-wrap .acf-prepend {
-  min-width: 70px; }
-*/
 
 /*
-Notice
-*/
-/*
-.mitypes-acf-notice {
-  margin-top: 0.4em;
-  padding: 0.2em 0.4em;
-  display: inline-block;
-  border-radius: 3px; }
+.acf-tab-wrap{}
 
-.mitypes-acf-notice_alert {
-  background: #b40000; }
-
-.mitypes-acf-notice .dashicons-warning {
-  color: #fff; }
-
-.mitypes-acf-notice_alert .mitypes-acf-notice-message {
-  padding: 0 0.2em;
-  color: #fff; }
-
-.acf-tab-wrap.mitypes-hide-options li:not(.active) {
-  display: none; }
-*/
-/*
-Menu selector
-*/
-/*
-.manage-menus form .submit-btn input[type="submit"] {
-  display: none !important; }
+.acf-tab-wrap.mitypes-hide-options li:not(.active){
+    display : none;
+}
 */
 /*
 Menu edit
@@ -116,18 +79,13 @@ Item types > icons
 #menu-to-edit .mitypes-item__menu .item-title:before {
   background: url(../img/icons/mitypes-menu.svg) center center/20px 20px no-repeat transparent; }
 
-#menu-to-edit .mitypes-item__nolink .item-title:before {
-  background: url(../img/icons/unlink.svg) center center/20px 20px no-repeat transparent; }
-
-    
 /*
 Menu item > submenu options
 */
-/*
 #menu-to-edit .acf-menu-item-fields {
   width: 100%;
   width: calc(100% - 10px); }
-*/
+
 /*
 
 #menu-to-edit .menu-item-bar:after{
@@ -142,39 +100,4 @@ Menu item > submenu options
 
     background-color: #aaa;
 }
-*/
-/*
-.mitypes-submenu-settings-fields .acf-table{
-    table-layout: fixed;
-}
-*/
-
-/*
-.mitypes-submenu-type-settings-field__type{
-  float: left;
-  width: 50%;
-}
-
-.mitypes-submenu-type-settings-field__colmuns-number{
-  float: left;
-  clear: none !important;
-  width: 50%;
-}
-*/
-.mitypes-image-settings-field__media .image-wrap{ max-width: 80px !important; }
-
-/*
-.mitypes-submenu-type-settings-field__type,
-.mitypes-submenu-type-settings-field__colmuns-number {
-  float: left;
-  width: 49%;
-  width: calc(50% - 3px);
-  margin-top: 16px !important;
-  margin-bottom: 16px !important; }
-
-.mitypes-submenu-type-settings-field__type {
-  clear: left; }
-
-.mitypes-submenu-type-settings-field__colmuns-number {
-  clear: none !important; }
 */

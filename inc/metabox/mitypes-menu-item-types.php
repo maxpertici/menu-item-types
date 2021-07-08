@@ -19,7 +19,7 @@ function mitypes_setup_nav_menu_item( $menu_item ){
 	
     if( $menu_item->type == 'custom' ){
 
-        // include( mitypes_LEGACY_MENU_METABOX . 'item-types/wpam-item-types-config.php' ) ;
+        // include( mitypes_LEGACY_MENU_METABOX . 'item-types/mitypes-item-types-config.php' ) ;
         include( MITYPES_INC_PATH . 'item-types.php' ) ;
 
         //Check flag FIRST, only deal with URL if flag hasn't been set

@@ -39,11 +39,11 @@ function mitypes_run(){
 	// Has ACF ?
 	require( MITYPES_ACF_PATH . 'acf.php' );
 
-	if( ! wpam_is_acf_loaded() ){
+	if( ! mitypes_is_acf_loaded() ){
 		add_action('admin_notices', 'mitypes_notice_acf_plugin_required');
 	}
 
-	if( wpam_is_acf_loaded() ){
+	if( mitypes_is_acf_loaded() ){
 
 		if( is_admin() ){
 			add_action( 'acf/init', 'mitypes_load_acf_fields', 10 );
@@ -57,18 +57,22 @@ add_action( 'plugins_loaded', 'mitypes_run' );
 
 
 /**
- * Second load, initialisation et fire wpam_loaded action
+ * Second load, initialisation et fire mitypes_loaded action
  *
  * @since 0.1.0
  */
 function mitypes_init() {
 
-	if( wpam_is_acf_loaded() ){
+	if( mitypes_is_acf_loaded() ){
 
 		// Admin ?
 		if( is_admin() ){
-			require_once( MITYPES_ADMIN_PATH . '/wp_admin.php' );
-			require_once( MITYPES_METABOX . 'mitypes-menu-item-types.php' ) ;
+			require_once( MITYPES_ADMIN_PATH . 'wp_admin.php' );
+			require_once( MITYPES_METABOX    . 'mitypes-menu-item-types.php' ) ;
+		}
+		
+		if( ! is_admin() ){
+			require_once( MITYPES_INC_PATH   . 'render/menu-item-types-render.php' );
 		}
 
 		/**

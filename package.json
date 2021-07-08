@@ -4,10 +4,10 @@
   "description": "",
   "main": "gulpfile.js",
   "dependencies": {
-    "gulp-plumber": "^1.2.0",
-    "gulp-sourcemaps": "^2.6.4",
     "@fancyapps/fancybox": "^3.5.7",
-    "gulp": "^4.0.2"
+    "gulp": "^4.0.2",
+    "gulp-plumber": "^1.2.0",
+    "gulp-sourcemaps": "^2.6.4"
   },
   "devDependencies": {
     "browser-sync": "^2.24.4",

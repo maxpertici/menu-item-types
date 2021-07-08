@@ -25,7 +25,7 @@ function mitypes_nav_menu_enqueue_scripts( $hook ){
     
     
     // Get custim item config.
-    // include( mitypes_LEGACY_MENU_METABOX . 'item-types/wpam-item-types-config.php' ) ;
+    // include( mitypes_LEGACY_MENU_METABOX . 'item-types/mitypes-item-types-config.php' ) ;
     include( MITYPES_INC_PATH . 'item-types.php' ) ;
 
     wp_enqueue_script( 'mitypes_nav_menu_script' );

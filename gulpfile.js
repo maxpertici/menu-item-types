@@ -9,7 +9,7 @@ var plumber      = require("gulp-plumber");
 var sourcemaps   = require('gulp-sourcemaps');
 
 
-function wpam_admin_sass_task(){
+function mitypes_admin_sass_task(){
 
     return (
         gulp
@@ -21,7 +21,7 @@ function wpam_admin_sass_task(){
 
 }
 
-function wpam_admin_js_task(){
+function mitypes_admin_js_task(){
 
     return (
         gulp.task('js', function () {
@@ -33,13 +33,13 @@ function wpam_admin_js_task(){
     );
 }
 
-function wpam_admain_js_reload(){
+function mitypes_admain_js_reload(){
     browserSync.reload();
     done();
 }
 
 
-function wpam_launch(){
+function mitypes_launch(){
     
     browserSync.init({
       proxy: "https://mamp-sites.local/dev/menu-item-types/",
@@ -49,12 +49,12 @@ function wpam_launch(){
     })
 
     // sass
-    gulp.watch("./inc/admin/sass/*.scss", wpam_admin_sass_task );
-    gulp.watch("./inc/admin/sass/**/*.scss", wpam_admin_sass_task );
+    gulp.watch("./inc/admin/sass/*.scss", mitypes_admin_sass_task );
+    gulp.watch("./inc/admin/sass/**/*.scss", mitypes_admin_sass_task );
     
     // js
-    // gulp.watch("./inc/admin/js/*.js", wpam_admin_js_task );
-    gulp.watch("./inc/admin/js/*.js", wpam_admain_js_reload );
+    // gulp.watch("./inc/admin/js/*.js", mitypes_admin_js_task );
+    gulp.watch("./inc/admin/js/*.js", mitypes_admain_js_reload );
 
     // php
     // gulp.watch("./*.php"   ).on('change', browserSync.reload);
@@ -62,4 +62,4 @@ function wpam_launch(){
 
 }
 
-gulp.task('default', wpam_launch );
+gulp.task('default', mitypes_launch );

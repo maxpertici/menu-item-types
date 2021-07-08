@@ -46,7 +46,7 @@ if( function_exists('acf_add_local_field_group') ){
      * 
      * @return 
      */
-    function wpam_load_wpblock_choices( $field ) {
+    function mitypes_load_wpblock_choices( $field ) {
         
         // Load reusable blocks
         $field['choices'] = array();
@@ -74,7 +74,7 @@ if( function_exists('acf_add_local_field_group') ){
         return $field;
     }
 
-    add_filter('acf/load_field/name=wpam_nav_item_wpblock_selector', 'wpam_load_wpblock_choices');
+    add_filter('acf/load_field/name=mitypes_nav_item_wpblock_selector', 'mitypes_load_wpblock_choices');
 
 
 

@@ -2,63 +2,18 @@
 /*
 Metabox
 */
-#tabs-panel-wpam-item-type-custom-all{
+#tabs-panel-mitypes-item-type-custom-all{
     max-height: 270px;
 }
 
 /*
-ACF
-*/
-.acf-menu-settings .acf-fields .acf-range-wrap input[type="number"] {
-    min-width: 70px;
-    text-align: right;
-}
-
-.acf-menu-settings .acf-fields .acf-range-wrap .acf-append,
-.acf-menu-settings .acf-fields .acf-range-wrap .acf-prepend {
-    min-width: 70px;
-}
-
-
-
-/*
-Notice
-*/
-.wpam-acf-notice{
-    margin-top: 0.4em;
-
-    padding: 0.2em 0.4em;
-    display: inline-block;
-    border-radius: 3px;
-}
-
-.wpam-acf-notice_alert{
-    background: rgb(180, 0, 0);
-}
-.wpam-acf-notice .dashicons-warning{
-    color: #fff;
-}
-
-.wpam-acf-notice_alert .wpam-acf-notice-message{
-    padding: 0 0.2em;
-    color : #fff;
-}
-
 .acf-tab-wrap{}
 
-.acf-tab-wrap.wpam-hide-options li:not(.active){
+.acf-tab-wrap.mitypes-hide-options li:not(.active){
     display : none;
 }
-
-
-
-/*
-Menu selector
 */
 
-.manage-menus form .submit-btn input[type="submit"]{
-    display: none !important;
-}
 
 
 
@@ -120,46 +75,46 @@ Item types > icons
 }
 
 
-.wpam-item-type{}
-.wpam-item__image{}
+.mitypes-item-type{}
+.mitypes-item__image{}
 
-#menu-to-edit .wpam-item__image .item-title:before{
+#menu-to-edit .mitypes-item__image .item-title:before{
     /* background-color: #fdec00; */
-    background: url(../img/icons/wpam-image.svg) center center / 20px 20px no-repeat transparent;
+    background: url(../img/icons/mitypes-image.svg) center center / 20px 20px no-repeat transparent;
 }
 
-#menu-to-edit .wpam-item__heading .item-title:before{
+#menu-to-edit .mitypes-item__heading .item-title:before{
     /* background-color: #fdec00; */
-    background: url(../img/icons/wpam-heading.svg) center center / 20px 20px no-repeat transparent;
+    background: url(../img/icons/mitypes-heading.svg) center center / 20px 20px no-repeat transparent;
 }
 
-#menu-to-edit .wpam-item__paragraph .item-title:before{
+#menu-to-edit .mitypes-item__paragraph .item-title:before{
     /* background-color: #fdec00; */
-    background: url(../img/icons/wpam-paragraph.svg) center center / 20px 20px no-repeat transparent;
+    background: url(../img/icons/mitypes-paragraph.svg) center center / 20px 20px no-repeat transparent;
 }
 
-#menu-to-edit .wpam-item__wpblock .item-title:before{
-    background: url(../img/icons/wpam-wpblock.svg) center center / 20px 20px no-repeat transparent;
+#menu-to-edit .mitypes-item__wpblock .item-title:before{
+    background: url(../img/icons/mitypes-wpblock.svg) center center / 20px 20px no-repeat transparent;
 }
 
-#menu-to-edit .wpam-item__content .item-title:before{
-    background: url(../img/icons/wpam-content.svg) center center / 20px 20px no-repeat transparent;
+#menu-to-edit .mitypes-item__content .item-title:before{
+    background: url(../img/icons/mitypes-content.svg) center center / 20px 20px no-repeat transparent;
 }
 
-#menu-to-edit .wpam-item__shortcode .item-title:before{
-    background: url(../img/icons/wpam-shortcode.svg) center center / 20px 20px no-repeat transparent;
+#menu-to-edit .mitypes-item__shortcode .item-title:before{
+    background: url(../img/icons/mitypes-shortcode.svg) center center / 20px 20px no-repeat transparent;
 }
 
-#menu-to-edit .wpam-item__search .item-title:before{
-    background: url(../img/icons/wpam-search.svg) center center / 20px 20px no-repeat transparent;
+#menu-to-edit .mitypes-item__search .item-title:before{
+    background: url(../img/icons/mitypes-search.svg) center center / 20px 20px no-repeat transparent;
 }
 
-#menu-to-edit .wpam-item__dynamic .item-title:before{    
-    background: url(../img/icons/wpam-dynamic.svg) center center / 20px 20px no-repeat transparent;
+#menu-to-edit .mitypes-item__dynamic .item-title:before{    
+    background: url(../img/icons/mitypes-dynamic.svg) center center / 20px 20px no-repeat transparent;
 }
 
-#menu-to-edit .wpam-item__menu .item-title:before{
-    background: url(../img/icons/wpam-menu.svg) center center / 20px 20px no-repeat transparent;
+#menu-to-edit .mitypes-item__menu .item-title:before{
+    background: url(../img/icons/mitypes-menu.svg) center center / 20px 20px no-repeat transparent;
 }
 
 
@@ -187,27 +142,3 @@ Menu item > submenu options
     background-color: #aaa;
 }
 */
-/*
-.wpam-submenu-settings-fields .acf-table{
-    table-layout: fixed;
-}
-*/
-
-.wpam-submenu-type-settings-field__type,
-.wpam-submenu-type-settings-field__colmuns-number{
-    float: left;
-
-    width: 49%;
-    width: calc(50% - 3px);
-
-    margin-top: 16px !important;
-    margin-bottom: 16px !important;
-}
-.wpam-submenu-type-settings-field__type{
-    clear: left;
-}
-
-
-.wpam-submenu-type-settings-field__colmuns-number{
-    clear: none !important;
-}

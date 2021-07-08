@@ -5,7 +5,7 @@ defined( 'ABSPATH' ) or	die();
 if( function_exists('acf_add_local_field_group') ){
     
     // Field data
-    // include( WPAM_LEGACY_MENU_METABOX . 'item-types/wpam-item-types-config.php' ) ;
+    // include( WPAM_LEGACY_MENU_METABOX . 'item-types/mitypes-item-types-config.php' ) ;
     // include( WPAM_CORE_PATH . 'item-types.php' ) ;
 
     acf_add_local_field_group(array(
@@ -37,9 +37,9 @@ if( function_exists('acf_add_local_field_group') ){
 
     /* Filters */
     /*
-    add_filter( 'acf/load_field_group', 'wpam_nav_item_field_group_loader' );
+    add_filter( 'acf/load_field_group', 'mitypes_nav_item_field_group_loader' );
 
-    function wpam_nav_item_field_group_loader( $field_group ){
+    function mitypes_nav_item_field_group_loader( $field_group ){
 
         var_dump($field_group);
         
@@ -48,9 +48,9 @@ if( function_exists('acf_add_local_field_group') ){
     */
 
     /*
-    add_filter('acf/prepare_field/key='.WPAM_ACF_PREFIX_FIELD.'wpam_field_wpam_menu_nav_item_image_selector', 'wpam_nav_item_image_prepare_field' );
+    add_filter('acf/prepare_field/key='.WPAM_ACF_PREFIX_FIELD.'mitypes_field_mitypes_menu_nav_item_image_selector', 'mitypes_nav_item_image_prepare_field' );
     
-    function wpam_nav_item_image_prepare_field( $field ) {
+    function mitypes_nav_item_image_prepare_field( $field ) {
         return $field;
     }
     */

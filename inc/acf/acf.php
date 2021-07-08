@@ -7,7 +7,7 @@ defined( 'ABSPATH' ) or	die();
  *
  * @since 0.1.0
  */
-function wpam_is_acf_loaded(){
+function mitypes_is_acf_loaded(){
 
     /**
      * Load ACF & configure it
@@ -47,7 +47,7 @@ function mitypes_notice_acf_plugin_required(){
     </div>';
     
     //make sure to remove notice after its displayed so its only displayed when needed.
-    remove_action('admin_notices', 'wpam_notice_acf_plugin_required');
+    remove_action('admin_notices', 'mitypes_notice_acf_plugin_required');
 
     // shutdown
     deactivate_plugins( 'menu-item-types/menu-item-types.php' );
