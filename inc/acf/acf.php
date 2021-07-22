@@ -74,3 +74,19 @@ function mitypes_load_acf_fields(){
     }
 
 }
+
+
+/**
+ * 
+ * 
+ */
+
+function mitypes_location_types() {
+
+    // Check function exists, then include and register the custom location type class.
+    if( function_exists('acf_register_location_type') ) {
+
+        require( MITYPES_ACF_PATH . 'location/acf-mitypes-locations.php' );
+        acf_register_location_type( 'MITYPES_ACF_Location_Menu_Item_Types' );
+    }
+}

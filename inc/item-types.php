@@ -29,14 +29,14 @@ $mitypes_custom_menu_item_spec = array(
         'prefix' => $mitypes_prefix . 'heading',
 
         'acf_group' => array(
-            'key'   => MITYPES_ACF_PREFIX_GROUP.'mitypes_group_nav_item_heading',
+            'key'   => MITYPES_ACF_PREFIX_GROUP.'heading',
             'title' => __( 'Heading settings group', 'menu-item-types' ),
         ),
 
         'acf_fields' => array(
             
             array(
-                'key'   => MITYPES_ACF_PREFIX_FIELD . 'mitypes_field_mitypes_nav_item_heading_selector',
+                'key'   => MITYPES_ACF_PREFIX_FIELD . 'heading_selector',
                 'label' => __( 'Heading level' , 'menu-item-types'),
                 'name'  => 'mitypes_nav_item_heading_selector',
                 'type'  => 'select',
@@ -47,7 +47,7 @@ $mitypes_custom_menu_item_spec = array(
 
                 'wrapper' => array(
                     'width' => '',
-                    'class' => 'mitypes-heading-settings-field__selector',
+                    'class' => 'mitypes-heading__selector',
                     'id' => '',
                 ),
 
@@ -87,14 +87,14 @@ $mitypes_custom_menu_item_spec = array(
         'prefix' => $mitypes_prefix . 'paragraph',
 
         'acf_group' => array(
-            'key'   => MITYPES_ACF_PREFIX_GROUP.'mitypes_group_nav_item_paragraph',
+            'key'   => MITYPES_ACF_PREFIX_GROUP.'paragraph',
             'title' => __( 'Paragraph settings group', 'menu-item-types' ),
         ),
 
         'acf_fields' => array(
 
             array(
-                'key'   => MITYPES_ACF_PREFIX_FIELD . 'mitypes_field_mitypes_nav_item_paragraph_text',
+                'key'   => MITYPES_ACF_PREFIX_FIELD . 'paragraph_text',
                 'label' => __( 'Text' , 'menu-item-types'),
                 'name'  => 'mitypes_nav_item_paragraph_text',
                 'type'  => 'textarea',
@@ -105,7 +105,7 @@ $mitypes_custom_menu_item_spec = array(
 
                 'wrapper' => array(
                     'width' => '',
-                    'class' => 'mitypes-paragraph-settings-field__text',
+                    'class' => 'mitypes-paragraph__text',
                     'id' => '',
                 ),
 
@@ -131,16 +131,16 @@ $mitypes_custom_menu_item_spec = array(
         'prefix'     => $mitypes_prefix . 'image',
 
         'acf_group'  => array(
-            'key' => MITYPES_ACF_PREFIX_GROUP.'mitypes_group_nav_item_image',
+            'key' => MITYPES_ACF_PREFIX_GROUP.'image',
             'title' => __( 'Image settings group', 'menu-item-types' ),
         ),
         
         'acf_fields' => array(
             
             array(
-                'key' => MITYPES_ACF_PREFIX_FIELD.'mitypes_field_mitypes_nav_item_image_selector',
+                'key' => MITYPES_ACF_PREFIX_FIELD.'image_selector',
                 'label' => __( 'Image', 'menu-item-types' ),
-                'name' => 'mitypes_nav_item_image_media',
+                'name' => 'mitypes_image_media',
 
                 'type' => 'image',
                 'instructions' => '',
@@ -149,7 +149,7 @@ $mitypes_custom_menu_item_spec = array(
 
                 'wrapper' => array(
                     'width' => '50',
-                    'class' => 'mitypes-image-settings-field__media',
+                    'class' => 'mitypes-image__media',
                     'id' => '',
                 ),
 
@@ -167,7 +167,7 @@ $mitypes_custom_menu_item_spec = array(
             ),
 
             array(
-                'key'   => MITYPES_ACF_PREFIX_FIELD.'mitypes_field_mitypes_nav_item_image_size',
+                'key'   => MITYPES_ACF_PREFIX_FIELD.'image_size',
                 'label' => __( 'Size', 'menu-item-types' ),
                 'name'  => 'mitypes_nav_item_image_size',
 
@@ -178,7 +178,7 @@ $mitypes_custom_menu_item_spec = array(
 
                 'wrapper' => array(
                     'width' => '50',
-                    'class' => 'mitypes-image-settings-field__size',
+                    'class' => 'mitypes-image__size',
                     'id'    => '',
                 ),
 
@@ -214,7 +214,7 @@ $mitypes_custom_menu_item_spec = array(
         'prefix' => $mitypes_prefix . 'content',
         
         'acf_group'  => array(
-            'key' => MITYPES_ACF_PREFIX_GROUP.'mitypes_group_nav_item_content',
+            'key' => MITYPES_ACF_PREFIX_GROUP.'content',
             'title' => __( 'Content settings group', 'menu-item-types' ),
         ),
 
@@ -222,9 +222,9 @@ $mitypes_custom_menu_item_spec = array(
             
             array(
 
-                'key' => MITYPES_ACF_PREFIX_FIELD.'mitypes_field_mitypes_nav_item_content_selector',
+                'key' => MITYPES_ACF_PREFIX_FIELD.'content_selector',
                 'label' => __( 'Contents', 'menu-item-types' ),
-                'name' => 'mitypes_nav_item_content_selector',
+                'name' => 'mitypes_content_selector',
 
                 'type' => 'post_object',
                 
@@ -240,7 +240,7 @@ $mitypes_custom_menu_item_spec = array(
 
                 'wrapper' => array(
                     'width' => '',
-                    'class' => 'mitypes-content-settings-field__selector',
+                    'class' => 'mitypes-content__selector',
                     'id' => '',
                 ),
                 'post_type' => array(
@@ -272,16 +272,16 @@ $mitypes_custom_menu_item_spec = array(
         'prefix'     => $mitypes_prefix . 'wpblock',
 
         'acf_group'  => array(
-            'key' => MITYPES_ACF_PREFIX_GROUP.'mitypes_group_nav_item_wpblock',
+            'key' => MITYPES_ACF_PREFIX_GROUP.'wpblock',
             'title' => __( 'Block settings group', 'menu-item-types' ),
         ),
         
         'acf_fields' => array(
             
             array(
-                'key' => MITYPES_ACF_PREFIX_FIELD.'mitypes_field_mitypes_nav_item_wpblock_selector',
+                'key' => MITYPES_ACF_PREFIX_FIELD.'wpblock_selector',
                 'label' => __( 'Reusable Blocks', 'menu-item-types' ),
-                'name' => 'mitypes_nav_item_wpblock_selector',
+                'name' => 'mitypes_wpblock_selector',
                 'type' => 'select',
                 
                 'instructions' => 
@@ -296,7 +296,7 @@ $mitypes_custom_menu_item_spec = array(
 
                 'wrapper' => array(
                     'width' => '',
-                    'class' => 'mitypes-wpblock-settings-field__selector',
+                    'class' => 'mitypes-wpblock__selector',
                     'id' => '',
                 ),
 
@@ -327,7 +327,7 @@ $mitypes_custom_menu_item_spec = array(
         'prefix' => $mitypes_prefix . 'nolink',
 
         'acf_group'  => array(
-            'key' => MITYPES_ACF_PREFIX_GROUP.'mitypes_group_nav_item_nolink',
+            'key' => MITYPES_ACF_PREFIX_GROUP.'nolink',
             'title' => __( 'Nolink settings group', 'menu-item-types' ),
         ),
 
@@ -417,104 +417,10 @@ $mitypes_custom_menu_item_spec = array(
 
     ),
 
-    
-
-    /**
-     *  Generic item type (all item)
-     */
-    'item' => array(
-        'label'  => __( 'Item' , 'menu-item-types'),
-        'slug' => 'item',
-
-        'prefix' => $mitypes_prefix . 'item',
-
-        'acf_group'  => array(
-            'key' => MITYPES_ACF_PREFIX_GROUP.'mitypes_group_nav_item_generic',
-            'title' => __( 'Item settings group', 'menu-item-types' ),
-        ),
-
-        'acf_fields' => array(
-            
-            array(
-                'key' => MITYPES_ACF_PREFIX_FIELD . 'mitypes_field_mitypes_nav_item_generic_submenu_type',
-                'label' => __( 'Submenu type' , 'menu-item-types'),
-                'name' => 'mitypes_nav_item_generic_submenu_type',
-                'type' => 'select',
-                'instructions' => '',
-                'required' => 0,
-                'conditional_logic' => 0,
-                'wrapper' => array(
-                    'width' => '',
-                    'class' => 'mitypes-submenu-type-settings-field__type',
-                    'id' => '',
-                ),
-                'choices' => array(
-                    'default' => __( 'Default' , 'menu-item-types'),
-                    'column' => __( 'Columns' , 'menu-item-types'),
-                ),
-                'default_value' => array(
-                    0 => 'default',
-                ),
-                'allow_null' => 0,
-                'multiple' => 0,
-                'ui' => 0,
-                'return_format' => 'value',
-                'ajax' => 0,
-                'placeholder' => '',
-            ),
-            array(
-                'key' => MITYPES_ACF_PREFIX_FIELD . 'mitypes_field_mitypes_nav_item_generic_submenu_colmuns_number',
-                'label' => __( 'Number of columns' , 'menu-item-types') ,
-                'name' => 'mitypes_nav_item_generic_submenu_colmuns_number',
-                'type' => 'select',
-                'instructions' => '',
-                'required' => 0,
-                'conditional_logic' => array(
-                    array(
-                        array(
-                            'field' => MITYPES_ACF_PREFIX_FIELD . 'mitypes_field_mitypes_nav_item_generic_submenu_type',
-                            'operator' => '==',
-                            'value' => 'column',
-                        ),
-                    ),
-                ),
-                'wrapper' => array(
-                    'width' => '',
-                    'class' => 'mitypes-submenu-type-settings-field__colmuns-number',
-                    'id' => '',
-                ),
-                'choices' => array(
-                    'auto' => 'Auto',
-                    2 =>  __( 'Two'   , 'menu-item-types') ,
-                    3 =>  __( 'Three' , 'menu-item-types') ,
-                    4 =>  __( 'Four'  , 'menu-item-types') ,
-                    5 =>  __( 'Five'  , 'menu-item-types') ,
-                    6 =>  __( 'Six'   , 'menu-item-types') ,
-                    7 =>  __( 'Seven' , 'menu-item-types') ,
-                    8 =>  __( 'Eight' , 'menu-item-types') ,
-                    9 =>  __( 'Nine'  , 'menu-item-types') ,
-                    10 => __( 'Ten'   , 'menu-item-types') ,
-                ),
-                'default_value' => array(
-                    0 => 'auto',
-                ),
-                'allow_null' => 0,
-                'multiple' => 0,
-                'ui' => 0,
-                'return_format' => 'value',
-                'ajax' => 0,
-                'placeholder' => '',
-            ),
-            
-        ),
-        
-    ),
-
-    /**
-     * 
-     * 
-     */
+    // — — — — — — —
 );
+
+
 
 
 /**
@@ -534,11 +440,13 @@ foreach( $mitypes_custom_menu_item_spec as $item_type => $spec ){
 
         foreach(  $acf_fields as $acf_field ){
 
+            // echo '<pre>' ; var_dump( $acf_field ); echo '</pre>'; die;
+
             array_push(
                 $mitypes_nav_item_fields_keys,
                 array(
                     'type' => $item_type ,
-                    'key' => $acf_field['key']
+                    'key'  => $acf_field['key']
                 )
             );
 

@@ -185,7 +185,7 @@ jQuery(document).ready(function($){
         var str = nav_menu_item_type_marker_text;
         var re = /MI•TYPES/i;
         var is_custom_nav_menu_item = str.match(re);
-    
+        
         the_custom_nav_item_type = false ;
 
         if( is_custom_nav_menu_item != null){

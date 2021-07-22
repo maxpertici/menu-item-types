@@ -9,7 +9,7 @@ Author URI:   https://maxpertici.fr
 Contributors:
 License:      GPLv2
 License URI:  https://www.gnu.org/licenses/gpl-2.0.html
-Text Domain:  meni-item-types
+Text Domain:  menu-item-types
 Domain Path:  /languages
 */
 
@@ -47,6 +47,7 @@ function mitypes_run(){
 
 		if( is_admin() ){
 			add_action( 'acf/init', 'mitypes_load_acf_fields', 10 );
+			add_action( 'acf/init', 'mitypes_location_types');
 		}
 	}
 }
