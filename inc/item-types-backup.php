@@ -202,6 +202,62 @@ $mitypes_custom_menu_item_spec = array(
 
 
 
+    /**
+     *  Content
+     */
+    
+    'content' => array(
+        
+        'label'  => __( 'Content' , 'menu-item-types'),
+        
+        'slug' => 'content',
+        'prefix' => $mitypes_prefix . 'content',
+        
+        'acf_group'  => array(
+            'key' => MITYPES_ACF_PREFIX_GROUP.'content',
+            'title' => __( 'Content settings group', 'menu-item-types' ),
+        ),
+
+        'acf_fields' => array(
+            
+            array(
+
+                'key' => MITYPES_ACF_PREFIX_FIELD.'content_selector',
+                'label' => __( 'Contents', 'menu-item-types' ),
+                'name' => 'mitypes_content_selector',
+
+                'type' => 'post_object',
+                
+                'instructions' => 
+                    sprintf(
+                        __( 'Choose your <a href="edit.php?post_type=mitypes-content">%s</a> or <a href="post-new.php?post_type=mitypes-content">%s</a> if empty.', 'menu-item-types' ) ,
+                        __( 'content', 'menu-item-types' ),
+                        __( 'create one', 'menu-item-types' )
+                    ),
+
+                'required' => 0,
+                'conditional_logic' => 0,
+
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => 'mitypes-content__selector',
+                    'id' => '',
+                ),
+                'post_type' => array(
+                    0 => 'mitypes-content',
+                ),
+                'taxonomy' => '',
+                'allow_null' => 0,
+                'multiple' => 0,
+                'return_format' => 'object',
+                'ui' => 1,
+            ),
+        ),
+
+
+
+
+    ),
 
 
 
@@ -275,8 +331,6 @@ $mitypes_custom_menu_item_spec = array(
             'title' => __( 'Nolink settings group', 'menu-item-types' ),
         ),
 
-        'acf_fields' => array(),
-
     ),
 
     /**
@@ -296,6 +350,72 @@ $mitypes_custom_menu_item_spec = array(
 
 
 
+
+    /**
+     *  Menu
+     */
+    
+    'menu' => array(
+        'label'  => __( 'Menu' , 'menu-item-types'),
+        'slug' => 'menu',
+
+        'prefix' => $mitypes_prefix . 'menu',
+
+        'acf_group'  => '',
+        'acf_fields' => array(),
+
+    ),
+
+
+    
+    /**
+     *  Shortcode
+     */
+    
+    'shortcode' => array(
+        'label'  => __( 'Shortcode' , 'menu-item-types'),
+        'slug' => 'shortcode',
+
+        'prefix' => $mitypes_prefix . 'shortcode',
+
+        'acf_group'  => '',
+        'acf_fields' => array(),
+
+    ),
+
+
+
+    /**
+     *  Search
+     */
+    
+    'search' => array(
+        'label'  => __( 'Search' , 'menu-item-types'),
+        'slug' => 'search',
+
+        'prefix' => $mitypes_prefix . 'search',
+
+        'acf_group'  => '',
+        'acf_fields' => array(),
+
+    ),
+
+
+
+    /**
+     *  Dynamic
+     */
+    
+    'dynamic' => array(
+        'label'  => __( 'Dynamic' , 'menu-item-types'),
+        'slug' => 'dynamic',
+
+        'prefix' => $mitypes_prefix . 'dynamic',
+
+        'acf_group'  => '',
+        'acf_fields' => array(),
+
+    ),
 
     // — — — — — — —
 );

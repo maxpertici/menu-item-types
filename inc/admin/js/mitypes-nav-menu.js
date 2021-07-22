@@ -252,10 +252,10 @@ jQuery(document).ready(function($){
         
         // if Generic -> keep only generic field
         // if custom -> keep only generic field + specific field for this item type
-       
-        var item_keys = mitypes_get_nav_menu_item_fields_key();
-        mitypes_nav_menu_item_field_remove_field( field, the_custom_nav_item_type, item_keys );
-       
+        /* — disable : acf location
+            var item_keys = mitypes_get_nav_menu_item_fields_key();
+            mitypes_nav_menu_item_field_remove_field( field, the_custom_nav_item_type, item_keys );
+        */
 
     };
 
