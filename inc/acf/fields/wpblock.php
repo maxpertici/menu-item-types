@@ -9,9 +9,44 @@ if( function_exists('acf_add_local_field_group') ){
 
     acf_add_local_field_group(array(
         
-        'key'      => $mitypes_custom_menu_item_spec['wpblock']['acf_group']['key'],
-        'title'    => $mitypes_custom_menu_item_spec['wpblock']['acf_group']['title'],
-        'fields'   => $mitypes_custom_menu_item_spec['wpblock']['acf_fields'],
+        'key'      => MITYPES_ACF_PREFIX_GROUP.'wpblock',
+        'title'    => __( 'Block settings group', 'menu-item-types' ),
+
+        'fields' => array(
+            
+            array(
+                'key' => MITYPES_ACF_PREFIX_FIELD.'wpblock_selector',
+                'label' => __( 'Reusable Blocks', 'menu-item-types' ),
+                'name' => 'mitypes_wpblock_selector',
+                'type' => 'select',
+                
+                'instructions' => 
+                    sprintf(
+                        __( 'Choose your <a href="edit.php?post_type=wp_block">%s</a> or <a href="post-new.php?post_type=wp_block">%s</a> if empty.', 'menu-item-types' ) ,
+                        __( 'reusable block', 'menu-item-types' ),
+                        __( 'create one', 'menu-item-types' )
+                    ),
+
+                'required' => 0,
+                'conditional_logic' => 0,
+
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => 'mitypes-wpblock__selector',
+                    'id' => '',
+                ),
+
+                'choices' => array(),
+                'default_value' => array(),
+                'allow_null' => 0,
+                'multiple' => 0,
+                'ui' => 0,
+                'return_format' => 'array',
+                'ajax' => 0,
+                'placeholder' => '',
+            ),
+        ),
+
 
         'location' => array(
             array(
@@ -36,8 +71,6 @@ if( function_exists('acf_add_local_field_group') ){
    
 
 
-    /**/
-    
 
     /**
      * Load ...
@@ -76,7 +109,7 @@ if( function_exists('acf_add_local_field_group') ){
         return $field;
     }
 
-    add_filter('acf/load_field/name=mitypes_nav_item_wpblock_selector', 'mitypes_load_wpblock_choices');
+    add_filter('acf/load_field/name=mitypes_wpblock_selector', 'mitypes_load_wpblock_choices');
 
 
 

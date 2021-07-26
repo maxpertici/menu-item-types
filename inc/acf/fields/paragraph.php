@@ -4,15 +4,39 @@ defined( 'ABSPATH' ) or	die();
 
 if( function_exists('acf_add_local_field_group') ){
     
-    // Field data
-    // include( WPAM_LEGACY_MENU_METABOX . 'item-types/mitypes-item-types-config.php' ) ;
-    // include( WPAM_CORE_PATH . 'item-types.php' ) ;
+
 
     acf_add_local_field_group(array(
         
-        'key'      => $mitypes_custom_menu_item_spec['paragraph']['acf_group']['key'],
-        'title'    => $mitypes_custom_menu_item_spec['paragraph']['acf_group']['title'],
-        'fields'   => $mitypes_custom_menu_item_spec['paragraph']['acf_fields'],
+        'key'      => MITYPES_ACF_PREFIX_GROUP.'paragraph',
+        'title'    => __( 'Paragraph settings group', 'menu-item-types' ),
+        
+        'fields' => array(
+
+            array(
+                'key'   => MITYPES_ACF_PREFIX_FIELD . 'paragraph_text',
+                'label' => __( 'Text' , 'menu-item-types'),
+                'name'  => 'mitypes_nav_item_paragraph_text',
+                'type'  => 'textarea',
+
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => 'mitypes-paragraph__text',
+                    'id' => '',
+                ),
+
+                'default_value' => '',
+                'placeholder' => '',
+                'maxlength' => '',
+                'rows' => '',
+                'new_lines' => 'br',
+            ),
+
+        ),
 
         'location' => array(
             array(

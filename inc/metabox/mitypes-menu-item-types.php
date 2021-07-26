@@ -33,14 +33,14 @@ function mitypes_setup_nav_menu_item( $menu_item ){
         // Find MIP item type with prefix
         $mitypes_item_types_prefix = array();
 
-        foreach( $mitypes_custom_menu_item_spec as $item_type_spec ){
+        foreach( $menu_item_types as $type ){
             
-            array_push( $mitypes_item_types_prefix, $item_type_spec['prefix'] );
+            array_push( $mitypes_item_types_prefix, $mitypes_prefix . $type['slug'] );
 
         }
 
         foreach( $mitypes_item_types_prefix as $mitypes_type_prefix ){
-            
+
             if( strpos( $mitypes_data , $mitypes_type_prefix ) === 0 ){
 
                 $mitypes_item_type = substr( $mitypes_type_prefix, strlen( $mitypes_prefix ) ) ;
@@ -86,13 +86,14 @@ function mitypes_setup_nav_menu_item( $menu_item ){
         if( $is_mitypes_item ){
             
             // Label
-            $label =  esc_html( $mitypes_custom_menu_item_spec[ $custom_item_type ][ 'label' ] );
+
+            $label =  esc_html( $menu_item_types[ $custom_item_type ][ 'label' ] );
 
             if( $custom_item_type === 'post_type_archive' ){
                 $menu_item->object  = $custom_item_data['menu-item-object'];
                 $menu_item->type    = 'post_type_archive';
 
-                $label =  esc_html( $mitypes_custom_menu_item_spec[ $custom_item_type ][ 'label' ] );
+                $label =  esc_html( $menu_item_types[ $custom_item_type ][ 'label' ] );
             }
 
             $menu_item->type_label = esc_html( $label );

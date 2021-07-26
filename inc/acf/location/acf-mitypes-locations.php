@@ -6,7 +6,7 @@ class MITYPES_ACF_Location_Menu_Item_Types extends ACF_Location {
 
     public function initialize() {
         $this->name = 'mitypes';
-        $this->label = __( "MI•TYPES", 'menu-item-types' );
+        $this->label = __( "Menu Item Types", 'menu-item-types' );
         $this->category = 'forms';
         // $this->object_type = 'post';
     }
@@ -17,7 +17,8 @@ class MITYPES_ACF_Location_Menu_Item_Types extends ACF_Location {
 
         $choices = array();
 
-        foreach( $mitypes_custom_menu_item_spec as $type ){
+        // foreach( $mitypes_custom_menu_item_spec as $type ){
+        foreach( $menu_item_types as $type ){
             if( 'post_type_archive' === $type['slug'] ){ continue; }
             $choices[ $type['slug'] ] = $type['label'];
         }

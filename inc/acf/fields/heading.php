@@ -4,23 +4,53 @@ defined( 'ABSPATH' ) or	die();
 
 if( function_exists('acf_add_local_field_group') ){
     
-    // Field data
-    // include( WPAM_LEGACY_MENU_METABOX . 'item-types/mitypes-item-types-config.php' ) ;
-    // include( WPAM_CORE_PATH . 'item-types.php' ) ;
 
     acf_add_local_field_group(array(
+
+        'key'      => MITYPES_ACF_PREFIX_GROUP.'heading',
+        'title'    => __( 'Heading settings group', 'menu-item-types' ),
         
-        'key'      => $mitypes_custom_menu_item_spec['heading']['acf_group']['key'],
-        'title'    => $mitypes_custom_menu_item_spec['heading']['acf_group']['title'],
-        'fields'   => $mitypes_custom_menu_item_spec['heading']['acf_fields'],
+        'fields' => array(
+            
+            array(
+                'key'   => MITYPES_ACF_PREFIX_FIELD . 'heading_selector',
+                'label' => __( 'Heading level' , 'menu-item-types'),
+                'name'  => 'mitypes_nav_item_heading_selector',
+                'type'  => 'select',
+
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => 'mitypes-heading__selector',
+                    'id' => '',
+                ),
+
+                'choices' => array(
+                    'h2' => __( 'Heading 2', 'menu-item-types' ),
+                    'h3' => __( 'Heading 3', 'menu-item-types' ),
+                    'h4' => __( 'Heading 4', 'menu-item-types' ),
+                    'h5' => __( 'Heading 5', 'menu-item-types' ),
+                    'h6' => __( 'Heading 6', 'menu-item-types' ),
+                ),
+
+                'default_value' => false,
+                'allow_null' => 0,
+                'multiple' => 0,
+                'ui' => 0,
+                'return_format' => 'value',
+                'ajax' => 0,
+                'placeholder' => '',
+            ),
+        ),
 
         'location' => array(
             array(
                 array(
-                    // 'param' => 'nav_menu_item',
                     'param' => 'mitypes',
                     'operator' => '==',
-                    // 'value' => 'all',
                     'value' => 'heading',
                 ),
             ),
@@ -34,27 +64,5 @@ if( function_exists('acf_add_local_field_group') ){
         'active' => true,
         'description' => '',
     ));
-
-
-
-    /* Filters */
-    /*
-    add_filter( 'acf/load_field_group', 'mitypes_nav_item_field_group_loader' );
-
-    function mitypes_nav_item_field_group_loader( $field_group ){
-
-        var_dump($field_group);
-        
-        return $field_group ;
-    }
-    */
-
-    /*
-    add_filter('acf/prepare_field/key='.WPAM_ACF_PREFIX_FIELD.'mitypes_field_mitypes_menu_nav_item_image_selector', 'mitypes_nav_item_image_prepare_field' );
-    
-    function mitypes_nav_item_image_prepare_field( $field ) {
-        return $field;
-    }
-    */
     
 }

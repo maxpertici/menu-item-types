@@ -63,14 +63,15 @@ function mitypes_load_acf_fields(){
     if( is_admin() ){
         
         include_once( MITYPES_INC_PATH . 'item-types.php' ) ;
-        
-        include_once( MITYPES_ACF_PATH . 'fields/nolink.php' );
-        
-        include_once( MITYPES_ACF_PATH . 'fields/heading.php' );
-        include_once( MITYPES_ACF_PATH . 'fields/image.php' );
-        include_once( MITYPES_ACF_PATH . 'fields/paragraph.php' );
-        include_once( MITYPES_ACF_PATH . 'fields/wpblock.php' );
-        
+
+
+        // TODO : filtre nouveau item !
+
+        foreach( $menu_item_types as $type ){
+            if( 'post_type_archive' === $type['slug'] ){ continue; }
+            include_once( MITYPES_ACF_PATH . 'fields/'.$type['slug'].'.php' );
+        }
+
     }
 
 }

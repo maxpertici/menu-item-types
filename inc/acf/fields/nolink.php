@@ -6,10 +6,10 @@ if( function_exists('acf_add_local_field_group') ){
 
     acf_add_local_field_group(array(
 
+        'key'      => MITYPES_ACF_PREFIX_GROUP.'nolink',
+        'title'    => __( 'Nolink settings group', 'menu-item-types' ),
         
-        'key'      => $mitypes_custom_menu_item_spec['nolink']['acf_group']['key'],
-        'title'    => $mitypes_custom_menu_item_spec['nolink']['acf_group']['title'],
-        'fields'   => $mitypes_custom_menu_item_spec['nolink']['acf_fields'],
+        'fields'   => array(),
 
         'location' => array(
             array(

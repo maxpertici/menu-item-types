@@ -4,15 +4,72 @@ defined( 'ABSPATH' ) or	die();
 
 if( function_exists('acf_add_local_field_group') ){
     
-    // Field data
-    // include( WPAM_LEGACY_MENU_METABOX . 'item-types/mitypes-item-types-config.php' ) ;
-    // include( WPAM_CORE_PATH . 'item-types.php' ) ;
-
     acf_add_local_field_group(array(
         
-        'key'      => $mitypes_custom_menu_item_spec['image']['acf_group']['key'],
-        'title'    => $mitypes_custom_menu_item_spec['image']['acf_group']['title'],
-        'fields'   => $mitypes_custom_menu_item_spec['image']['acf_fields'],
+        'key'      => MITYPES_ACF_PREFIX_GROUP.'image',
+        'title'    => __( 'Image settings group', 'menu-item-types' ),
+
+        'fields' => array(
+            
+            array(
+                'key' => MITYPES_ACF_PREFIX_FIELD.'image_selector',
+                'label' => __( 'Image', 'menu-item-types' ),
+                'name' => 'mitypes_image_media',
+
+                'type' => 'image',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+
+                'wrapper' => array(
+                    'width' => '50',
+                    'class' => 'mitypes-image__media',
+                    'id' => '',
+                ),
+
+                'return_format' => 'array',
+                'preview_size' => 'thumbnail',
+                'library' => 'all',
+
+                'min_width' => '',
+                'min_height' => '',
+                'min_size' => '',
+                'max_width' => '',
+                'max_height' => '',
+                'max_size' => '',
+                'mime_types' => '',
+            ),
+
+            array(
+                'key'   => MITYPES_ACF_PREFIX_FIELD.'image_size',
+                'label' => __( 'Size', 'menu-item-types' ),
+                'name'  => 'mitypes_nav_item_image_size',
+
+                'type' => 'select',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+
+                'wrapper' => array(
+                    'width' => '50',
+                    'class' => 'mitypes-image__size',
+                    'id'    => '',
+                ),
+
+                'choices' => array(),
+
+                'default_value' => false,
+                'allow_null' => 0,
+                'multiple' => 0,
+                'ui' => 0,
+
+                'return_format' => 'array',
+                'ajax' => 0,
+                'placeholder' => '',
+            ),
+            
+        ),
+
 
         'location' => array(
             array(
@@ -63,26 +120,20 @@ if( function_exists('acf_add_local_field_group') ){
     }
 
     add_filter('acf/load_field/name=mitypes_nav_item_image_size', 'mitypes_load_nav_menu_image_item_sizes');
-
-
-
-    /*
-    add_filter( 'acf/load_field_group', 'mitypes_nav_item_field_group_loader' );
-
-    function mitypes_nav_item_field_group_loader( $field_group ){
-
-        var_dump($field_group);
-        
-        return $field_group ;
-    }
-    */
-
-    /*
-    add_filter('acf/prepare_field/key='.WPAM_ACF_PREFIX_FIELD.'mitypes_field_mitypes_menu_nav_item_image_selector', 'mitypes_nav_item_image_prepare_field' );
-    
-    function mitypes_nav_item_image_prepare_field( $field ) {
-        return $field;
-    }
-    */
     
 }
+
+
+
+
+function mitypes_nav_menu_enqueue_scripts__for_image_type( $hook ){
+
+    if ( 'nav-menus.php' != $hook ) {
+        return;
+    }
+
+    wp_enqueue_media();
+}
+
+
+add_action( 'admin_enqueue_scripts', 'mitypes_nav_menu_enqueue_scripts__for_image_type' );

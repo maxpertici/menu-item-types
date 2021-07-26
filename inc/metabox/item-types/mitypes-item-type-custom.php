@@ -81,8 +81,8 @@ function mitypes_item_type_custom_metabox(){
 
 			$mitypes_custom_item_tag = '#mitypes_nolink' ;
 			$menu_item_data = array(
-				'menu-item-title'  => __( 'MITYPES', 'menu-item-types' )
-				,'menu-item-url'    => $mitypes_custom_item_tag
+				'menu-item-title'  => __( 'MITYPES', 'menu-item-types' ),
+				'menu-item-url'    => $mitypes_custom_item_tag
 				);
 
 			$url = $mitypes_custom_item_tag . '_' . http_build_query($menu_item_data)  ;
