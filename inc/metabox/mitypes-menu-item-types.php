@@ -19,7 +19,6 @@ function mitypes_setup_nav_menu_item( $menu_item ){
 	
     if( $menu_item->type == 'custom' ){
 
-        // include( mitypes_LEGACY_MENU_METABOX . 'item-types/mitypes-item-types-config.php' ) ;
         include( MITYPES_INC_PATH . 'item-types.php' ) ;
 
         //Check flag FIRST, only deal with URL if flag hasn't been set
@@ -87,7 +86,7 @@ function mitypes_setup_nav_menu_item( $menu_item ){
         if( $is_mitypes_item ){
             
             // Label
-            $label =  esc_html( __( 'MI•TYPES' , 'menu-item-types') . ' — ' . $mitypes_custom_menu_item_spec[ $custom_item_type ][ 'label' ] );
+            $label =  esc_html( $mitypes_custom_menu_item_spec[ $custom_item_type ][ 'label' ] );
 
             if( $custom_item_type === 'post_type_archive' ){
                 $menu_item->object  = $custom_item_data['menu-item-object'];

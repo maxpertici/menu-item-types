@@ -43,7 +43,7 @@ jQuery(document).ready(function($){
 
     }
 
-   mitypes_item_type_brand_maker();
+   // mitypes_item_type_brand_maker();
    
 
 
@@ -188,8 +188,10 @@ jQuery(document).ready(function($){
         
         the_custom_nav_item_type = false ;
 
+        console.log(is_custom_nav_menu_item);
+
         if( is_custom_nav_menu_item != null){
-            
+
             // OK : it's a custiom item :)
             // Really ?
 
@@ -198,7 +200,7 @@ jQuery(document).ready(function($){
             
             // if not -> do the trick
             var nav_item_type_specs = Object.keys( mitypes_nav_menu_js_vars.custom_menu_item_spec );
-
+            
             if( attr_data_mitypes_item === undefined ){
 
                 // Loop and find item type
@@ -229,6 +231,7 @@ jQuery(document).ready(function($){
                the_custom_nav_item_type = attr_data_mitypes_item;
 
             }
+            
 
             // Write data attr for css icon in admin page
 
@@ -243,6 +246,8 @@ jQuery(document).ready(function($){
             
 
             // Ajust item field and settings
+            // console.log(the_custom_nav_item_type);
+            
             if( the_custom_nav_item_type ){
                 mitypes_nav_menu_item_field_prepare_css( the_custom_nav_item_type, nav_menu_item ) ;
             }
@@ -352,17 +357,20 @@ jQuery(document).ready(function($){
      * 
      */
     // Construc right list of field key to be filtered
+    /*
     var item_keys = mitypes_get_nav_menu_item_fields_key();
     
     for (var i = 0; i < item_keys.length ; i++) {
         
         var field_key =  item_keys[ i ].key;
-        
+    
         acf.addAction('load_field/key=' + field_key, mitypes_Nav_Menu_Item_Fields_Prepare);
         acf.addAction('new_field/key='  + field_key, mitypes_Nav_Menu_Item_Fields_Prepare);
-
+    
     }
+    */
 
+    
     /**
      * 
      * 

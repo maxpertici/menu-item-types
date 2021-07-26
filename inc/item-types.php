@@ -311,6 +311,8 @@ $mitypes_custom_menu_item_spec = array(
  * 
  */
 
+/*
+
 $mitypes_nav_item_fields_keys = array();
  
 foreach( $mitypes_custom_menu_item_spec as $item_type => $spec ){
@@ -335,3 +337,5 @@ foreach( $mitypes_custom_menu_item_spec as $item_type => $spec ){
     }
 }
 
+
+*/

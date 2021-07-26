@@ -49,6 +49,10 @@ Item types > icons
   /* background-color: #8a8a8a; */
   background: url(../img/icons/custom.svg) center center/20px 20px no-repeat transparent; }
 
+#menu-to-edit .mitypes-item__nolink .item-title:before {
+  /* background-color: #fdec00; */
+  background: url(../img/icons/mitypes-nolink.svg) center center/20px 20px no-repeat transparent; }
+
 #menu-to-edit .mitypes-item__image .item-title:before {
   /* background-color: #fdec00; */
   background: url(../img/icons/mitypes-image.svg) center center/20px 20px no-repeat transparent; }
