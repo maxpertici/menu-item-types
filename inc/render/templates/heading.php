@@ -1,6 +1,6 @@
 <?php
 
-$hn = get_field('mitypes_nav_item_heading_selector', $item->ID );
+$hn = get_field('mitypes_heading_selector', $item->ID );
 
 
 echo $args->before;

@@ -15,7 +15,7 @@ if( function_exists('acf_add_local_field_group') ){
             array(
                 'key'   => MITYPES_ACF_PREFIX_FIELD . 'heading_selector',
                 'label' => __( 'Heading level' , 'menu-item-types'),
-                'name'  => 'mitypes_nav_item_heading_selector',
+                'name'  => 'mitypes_heading_selector',
                 'type'  => 'select',
 
                 'instructions' => '',

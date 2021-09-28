@@ -29,7 +29,7 @@ class MITYPES_ACF_Location_Menu_Item_Types extends ACF_Location {
 
     public function match( $rule, $screen, $field_group ) {
         
-        if( 'custom' != $screen['nav_menu_item'] ) { return false ; }
+        if( ! isset( $screen['nav_menu_item'] ) || 'custom' != $screen['nav_menu_item'] ) { return false ; }
             
         $custom_item_type = get_post_meta( $screen['nav_menu_item_id'] , '_mitypes_custom_item_type' , true );
 

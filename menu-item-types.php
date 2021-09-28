@@ -46,8 +46,8 @@ function mitypes_run(){
 	if( mitypes_is_acf_loaded() ){
 
 		if( is_admin() ){
-			add_action( 'acf/init', 'mitypes_location_types');
-			add_action( 'acf/init', 'mitypes_load_acf_fields', 10 );
+			add_action( 'acf/init', 'mitypes_location_types'  );
+			add_action( 'acf/init', 'mitypes_load_acf_fields' );
 		}
 	}
 }

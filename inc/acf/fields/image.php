@@ -43,7 +43,7 @@ if( function_exists('acf_add_local_field_group') ){
             array(
                 'key'   => MITYPES_ACF_PREFIX_FIELD.'image_size',
                 'label' => __( 'Size', 'menu-item-types' ),
-                'name'  => 'mitypes_nav_item_image_size',
+                'name'  => 'mitypes_image_size',
 
                 'type' => 'select',
                 'instructions' => '',
@@ -96,7 +96,7 @@ if( function_exists('acf_add_local_field_group') ){
 
     /* Filters */
     /**
-     * Load image size in "mitypes_nav_item_image_size" field
+     * Load image size in "mitypes_image_size" field
      *
      * @since 1.8
      * 
@@ -119,7 +119,7 @@ if( function_exists('acf_add_local_field_group') ){
         return $field;
     }
 
-    add_filter('acf/load_field/name=mitypes_nav_item_image_size', 'mitypes_load_nav_menu_image_item_sizes');
+    add_filter('acf/load_field/name=mitypes_image_size', 'mitypes_load_nav_menu_image_item_sizes');
     
 }
 

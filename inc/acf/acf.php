@@ -64,12 +64,16 @@ function mitypes_load_acf_fields(){
         
         include_once( MITYPES_INC_PATH . 'item-types.php' ) ;
 
-
         // TODO : filtre nouveau item !
 
         foreach( $menu_item_types as $type ){
+            
             if( 'post_type_archive' === $type['slug'] ){ continue; }
-            include_once( MITYPES_ACF_PATH . 'fields/'.$type['slug'].'.php' );
+
+            // include_once( MITYPES_ACF_PATH . 'fields/'.$type['slug'].'.php' );
+            if( isset( $type['fields'] ) && '' != $type['fields'] ){
+                include_once( $type['fields'] );
+            }
         }
 
     }

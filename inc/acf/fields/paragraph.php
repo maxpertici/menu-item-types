@@ -16,7 +16,7 @@ if( function_exists('acf_add_local_field_group') ){
             array(
                 'key'   => MITYPES_ACF_PREFIX_FIELD . 'paragraph_text',
                 'label' => __( 'Text' , 'menu-item-types'),
-                'name'  => 'mitypes_nav_item_paragraph_text',
+                'name'  => 'mitypes_paragraph_text',
                 'type'  => 'textarea',
 
                 'instructions' => '',

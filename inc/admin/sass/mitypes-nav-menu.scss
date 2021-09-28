@@ -6,16 +6,6 @@ Metabox
     max-height: 270px;
 }
 
-/*
-.acf-tab-wrap{}
-
-.acf-tab-wrap.mitypes-hide-options li:not(.active){
-    display : none;
-}
-*/
-
-
-
 
 /*
 Menu edit
@@ -36,10 +26,7 @@ Menu edit
 
     margin-left: -2em;
     background-color: #fafafa;
-
     vertical-align: middle;
-
-    /* border-radius : 50%; */
 }
 
 
@@ -49,28 +36,21 @@ Item types > icons
 #23282d
 */
 
-#menu-to-edit .menu-item-page .item-title:before{
+#menu-to-edit .mitypes-item__post_type .item-title:before{
     background: url(../img/icons/post_type.svg) center center / 20px 20px no-repeat transparent;
 }
 
-#menu-to-edit .wp-item-type__taxonomy .item-title:before{
+#menu-to-edit .mitypes-item__taxonomy .item-title:before{
     background: url(../img/icons/taxonomy.svg) center center / 20px 20px no-repeat transparent;
 }
-
-
-
 
 #menu-to-edit .mitypes-item__post_type_archive .item-title:before{
     background: url(../img/icons/post_type_archive.svg) center center / 20px 20px no-repeat transparent;
 }
 
-#menu-to-edit .wp-item-type__custom .item-title:before{
+#menu-to-edit .mitypes-item__custom .item-title:before{
     background: url(../img/icons/custom.svg) center center / 20px 20px no-repeat transparent;
 }
-
-
-.mitypes-item-type{}
-.mitypes-item__image{}
 
 #menu-to-edit .mitypes-item__nolink .item-title:before{
     background: url(../img/icons/mitypes-nolink.svg) center center / 20px 20px no-repeat transparent;

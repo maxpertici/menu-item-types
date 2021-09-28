@@ -16,7 +16,7 @@ if( function_exists('acf_add_local_field_group') ){
             
             array(
                 'key' => MITYPES_ACF_PREFIX_FIELD.'wpblock_selector',
-                'label' => __( 'Reusable Blocks', 'menu-item-types' ),
+                'label' => __( 'Reusable Block', 'menu-item-types' ),
                 'name' => 'mitypes_wpblock_selector',
                 'type' => 'select',
                 

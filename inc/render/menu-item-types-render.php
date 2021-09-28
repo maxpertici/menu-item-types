@@ -10,7 +10,7 @@ function mitypes_menu_item_custom_output( $item_output, $item, $depth, $args ) {
     $custom_item_type = get_post_meta( $item->ID , '_mitypes_custom_item_type' , true );
     // $custom_item_data = get_post_meta( $item->ID , '_mitypes_custom_item_data' , true );
 
-    if( 'post_type_archive' != $custom_item_type ){
+    if( 'post_type_archive' != $custom_item_type && '' != $custom_item_type ){
 
 
         $atts           = array();
@@ -33,13 +33,16 @@ function mitypes_menu_item_custom_output( $item_output, $item, $depth, $args ) {
 
             if ( is_scalar( $value ) && '' !== $value && false !== $value ) {
                 
-                // filter ?
-                if( ( 'nolink' === $custom_item_type ) && ( ( 'href'=== $attr ) ) ){ continue; }
-                if( ( 'heading' === $custom_item_type ) && ( ( 'href'=== $attr ) ) ){ continue; }
+                // TODO : filter !
+
+                if( ( 'heading'   === $custom_item_type ) && ( ( 'href'=== $attr ) ) ){ continue; }
+                if( ( 'image'     === $custom_item_type ) && ( ( 'href'=== $attr ) ) ){ continue; }
+                if( ( 'nolink'    === $custom_item_type ) && ( ( 'href'=== $attr ) ) ){ continue; }
+                if( ( 'paragraph' === $custom_item_type ) && ( ( 'href'=== $attr ) ) ){ continue; }
+                if( ( 'wpblock'   === $custom_item_type ) && ( ( 'href'=== $attr ) ) ){ continue; }
 
                 $value       = ( 'href' === $attr ) ? esc_url( $value ) : esc_attr( $value );
                 $attributes .= ' ' . $attr . '="' . $value . '"';
-            
             }
         }
 
@@ -47,7 +50,7 @@ function mitypes_menu_item_custom_output( $item_output, $item, $depth, $args ) {
         $title = apply_filters( 'mitypes_nav_menu_item_title', $title, $item, $args, $depth );
         
         ob_start();
-        include( plugin_dir_path( __FILE__ ) . 'templates/'.$custom_item_type.'.php' ) ;
+        include( plugin_dir_path( __FILE__ ) . 'templates/' . esc_html( $custom_item_type ) . '.php' ) ;
         $custom_menu_item_html = ob_get_clean();
         
         $item_output = $custom_menu_item_html ;
