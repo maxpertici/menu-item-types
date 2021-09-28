@@ -70,161 +70,36 @@ function mitypes_item_type_custom_metabox(){
 			
 			global $_nav_menu_placeholder, $nav_menu_selected_id;
 			
-
-
-
-			/**
-			 * 
-			 * Heading item
-			 * 
-			 */
-			
-
-			$mitypes_custom_item_tag = '#mitypes_heading' ;
-			$menu_item_data = array(
-				'menu-item-title'  => __( 'MITYPES', 'menu-item-types' )
-				,'menu-item-url'    => $mitypes_custom_item_tag
-				);
-
-			$url = $mitypes_custom_item_tag . '_' . http_build_query($menu_item_data)  ;
-
-			?>
-			<li>
-				<label class="menu-item-title">
-					<input type="checkbox" class="menu-item-checkbox" name="menu-item[<?php echo esc_attr( $_nav_menu_placeholder ) ; ?>][menu-item-label]" value="0"> <?php echo esc_html__( 'Heading', 'menu-item-types' ) ; ?>
-				</label>
-
-				<input type="hidden" class="menu-item-type"   name="menu-item[<?php echo esc_attr( $_nav_menu_placeholder ) ; ?>][menu-item-type]" value="custom">
-				<input type="hidden" class="menu-item-object" name="menu-item[<?php echo esc_attr( $_nav_menu_placeholder ) ; ?>][menu-item-object]" value="custom">
-				<input type="hidden" class="menu-item-title"  name="menu-item[<?php echo esc_attr( $_nav_menu_placeholder ) ; ?>][menu-item-title]" value="<?php echo esc_attr__( 'Heading', 'menu-item-types' ) ; ?>">
-				<input type="hidden" class="menu-item-url"    name="menu-item[<?php echo esc_attr( $_nav_menu_placeholder ) ; ?>][menu-item-url]" value="<?php echo  esc_url( $url ) ; ?>">
-				<input type="hidden" class="menu-item-url"    name="menu-item[<?php echo esc_attr( $_nav_menu_placeholder ) ; ?>][menu-item-data]" value="<?php echo esc_url( $url )  ; ?>">
+			foreach( $menu_item_types as $type => $item  ) : 
 				
-			</li>
-			<?php
-			/**
-			 * 
-			 * Paragraph item
-			 * 
-			 */
-			
-
-			$mitypes_custom_item_tag = '#mitypes_paragraph' ;
-			$menu_item_data = array(
-				'menu-item-title'  => __( 'MITYPES', 'menu-item-types' )
-				,'menu-item-url'    => $mitypes_custom_item_tag
-				);
-
-			$url = $mitypes_custom_item_tag . '_' . http_build_query($menu_item_data)  ;
-
-			?>
-			<li>
-				<label class="menu-item-title">
-					<input type="checkbox" class="menu-item-checkbox" name="menu-item[<?php echo esc_attr( $_nav_menu_placeholder ) ; ?>][menu-item-label]" value="0"> <?php echo esc_html__( 'Paragraph', 'menu-item-types' ) ; ?>
-				</label>
-
-				<input type="hidden" class="menu-item-type"   name="menu-item[<?php echo esc_attr( $_nav_menu_placeholder ) ; ?>][menu-item-type]" value="custom">
-				<input type="hidden" class="menu-item-object" name="menu-item[<?php echo esc_attr( $_nav_menu_placeholder ) ; ?>][menu-item-object]" value="custom">
-				<input type="hidden" class="menu-item-title"  name="menu-item[<?php echo esc_attr( $_nav_menu_placeholder ) ; ?>][menu-item-title]" value="<?php echo esc_attr__( 'Paragraph', 'menu-item-types' ) ; ?>">
-				<input type="hidden" class="menu-item-url"    name="menu-item[<?php echo esc_attr( $_nav_menu_placeholder ) ; ?>][menu-item-url]" value="<?php echo  esc_url( $url ) ; ?>">
-				<input type="hidden" class="menu-item-url"    name="menu-item[<?php echo esc_attr( $_nav_menu_placeholder ) ; ?>][menu-item-data]" value="<?php echo esc_url( $url )  ; ?>">
+				if( 'post_type_archive' === $type ){ continue ; }
 				
-			</li>
-			<?php
-			
+				/**
+				 * item
+				 */
 
+				$mitypes_custom_item_tag = '#mitypes_' . esc_html( $item['slug'] ) ;
+				$menu_item_data = array(
+					'menu-item-title'  => __( 'MITYPES', 'menu-item-types' )
+					,'menu-item-url'    => $mitypes_custom_item_tag
+					);
 
-			/**
-			 * 
-			 * Image type
-			 * 
-			 */
-			
-			$mitypes_custom_item_tag = '#mitypes_image' ;
-			$menu_item_data = array(
-				'menu-item-title'  => esc_html__( 'Image', 'menu-item-types' )
-				,'menu-item-url'    => $mitypes_custom_item_tag
-				);
-			
-			$url = $mitypes_custom_item_tag . '_' . http_build_query($menu_item_data)  ;
+				$url = $mitypes_custom_item_tag . '_' . http_build_query( $menu_item_data )  ;
 
-			?>
-			<li>
-				<label class="menu-item-title">
-					<input type="checkbox" class="menu-item-checkbox" name="menu-item[<?php echo esc_attr( $_nav_menu_placeholder ) ; ?>][menu-item-label]" value="0"> <?php echo esc_html__( 'Image', 'menu-item-types' ) ; ?>
-				</label>
+				?>
+				<li>
+					<label class="menu-item-title">
+						<input type="checkbox" class="menu-item-checkbox" name="menu-item[<?php echo esc_attr( $_nav_menu_placeholder ) ; ?>][menu-item-label]" value="0"> <?php echo esc_html( $item['label'] ) ; ?>
+					</label>
 
-				<input type="hidden" class="menu-item-type"   name="menu-item[<?php echo esc_attr( $_nav_menu_placeholder ) ; ?>][menu-item-type]" value="custom">
-				<input type="hidden" class="menu-item-object" name="menu-item[<?php echo esc_attr( $_nav_menu_placeholder ) ; ?>][menu-item-object]" value="custom">
-				<input type="hidden" class="menu-item-title"  name="menu-item[<?php echo esc_attr( $_nav_menu_placeholder ) ; ?>][menu-item-title]" value="<?php echo esc_attr__( 'Image', 'menu-item-types' ) ; ?>">
-				<input type="hidden" class="menu-item-url"    name="menu-item[<?php echo esc_attr( $_nav_menu_placeholder ) ; ?>][menu-item-url]" value="<?php echo esc_url( $url ); ?>">
-				<input type="hidden" class="menu-item-url"    name="menu-item[<?php echo esc_attr( $_nav_menu_placeholder ) ; ?>][menu-item-data]" value="<?php echo esc_url( $url )  ; ?>">
-			</li>
-			
-			<hr>
-			<?php
-
-
-			/**
-			 * 
-			 * no link
-			 * 
-			 */
-
-
-			$mitypes_custom_item_tag = '#mitypes_nolink' ;
-			$menu_item_data = array(
-				'menu-item-title'  => __( 'MITYPES', 'menu-item-types' ),
-				'menu-item-url'    => $mitypes_custom_item_tag
-				);
-
-			$url = $mitypes_custom_item_tag . '_' . http_build_query($menu_item_data)  ;
-
-			?>
-			<li>
-				<label class="menu-item-title">
-					<input type="checkbox" class="menu-item-checkbox" name="menu-item[<?php echo esc_attr( $_nav_menu_placeholder ) ; ?>][menu-item-label]" value="0"> <?php echo esc_html__( 'No link', 'menu-item-types' ) ; ?>
-				</label>
-
-				<input type="hidden" class="menu-item-type"   name="menu-item[<?php echo esc_attr( $_nav_menu_placeholder ) ; ?>][menu-item-type]" value="custom">
-				<input type="hidden" class="menu-item-object" name="menu-item[<?php echo esc_attr( $_nav_menu_placeholder ) ; ?>][menu-item-object]" value="custom">
-				<input type="hidden" class="menu-item-title"  name="menu-item[<?php echo esc_attr( $_nav_menu_placeholder ) ; ?>][menu-item-title]" value="<?php echo esc_attr__( 'No link', 'menu-item-types' ) ; ?>">
-				<input type="hidden" class="menu-item-url"    name="menu-item[<?php echo esc_attr( $_nav_menu_placeholder ) ; ?>][menu-item-url]" value="<?php echo  esc_url( $url ) ; ?>">
-				<input type="hidden" class="menu-item-url"    name="menu-item[<?php echo esc_attr( $_nav_menu_placeholder ) ; ?>][menu-item-data]" value="<?php echo esc_url( $url )  ; ?>">
-				
-			</li>
-			<?php
-
-
-
-			/**
-			 * 
-			 * Block item
-			 * 
-			 */
-			
-
-			$mitypes_custom_item_tag = '#mitypes_wpblock' ;
-			$menu_item_data = array(
-				'menu-item-title'  => __( 'MITYPES', 'menu-item-types' )
-				,'menu-item-url'    => $mitypes_custom_item_tag
-				);
-
-			$url = $mitypes_custom_item_tag . '_' . http_build_query($menu_item_data)  ;
-
-			?>
-			<li>
-				<label class="menu-item-title">
-					<input type="checkbox" class="menu-item-checkbox" name="menu-item[<?php echo esc_attr( $_nav_menu_placeholder ) ; ?>][menu-item-label]" value="0"> <?php echo esc_html__( 'Reusable Block', 'menu-item-types' ) ; ?>
-				</label>
-
-				<input type="hidden" class="menu-item-type"   name="menu-item[<?php echo esc_attr( $_nav_menu_placeholder ) ; ?>][menu-item-type]" value="custom">
-				<input type="hidden" class="menu-item-object" name="menu-item[<?php echo esc_attr( $_nav_menu_placeholder ) ; ?>][menu-item-object]" value="custom">
-				<input type="hidden" class="menu-item-title"  name="menu-item[<?php echo esc_attr( $_nav_menu_placeholder ) ; ?>][menu-item-title]" value="<?php echo esc_attr__( 'Reusable Block', 'menu-item-types' ) ; ?>">
-				<input type="hidden" class="menu-item-url"    name="menu-item[<?php echo esc_attr( $_nav_menu_placeholder ) ; ?>][menu-item-url]" value="<?php echo  esc_url( $url ) ; ?>">
-				<input type="hidden" class="menu-item-url"    name="menu-item[<?php echo esc_attr( $_nav_menu_placeholder ) ; ?>][menu-item-data]" value="<?php echo esc_url( $url )  ; ?>">
-				
-			</li>
+					<input type="hidden" class="menu-item-type"   name="menu-item[<?php echo esc_attr( $_nav_menu_placeholder ) ; ?>][menu-item-type]" value="custom">
+					<input type="hidden" class="menu-item-object" name="menu-item[<?php echo esc_attr( $_nav_menu_placeholder ) ; ?>][menu-item-object]" value="custom">
+					<input type="hidden" class="menu-item-title"  name="menu-item[<?php echo esc_attr( $_nav_menu_placeholder ) ; ?>][menu-item-title]" value="<?php echo esc_attr( $item['label'] ) ; ?>">
+					<input type="hidden" class="menu-item-url"    name="menu-item[<?php echo esc_attr( $_nav_menu_placeholder ) ; ?>][menu-item-url]" value="<?php echo  esc_url( $url ) ; ?>">
+					<input type="hidden" class="menu-item-url"    name="menu-item[<?php echo esc_attr( $_nav_menu_placeholder ) ; ?>][menu-item-data]" value="<?php echo esc_url( $url )  ; ?>">
+					
+				</li>
+			<?php endforeach; ?>
 			
 			
 
