@@ -52,9 +52,6 @@ Item types > icons
 #menu-to-edit .mitypes-item__paragraph .item-title:before {
   background: url(../img/icons/mitypes-paragraph.svg) center center/20px 20px no-repeat transparent; }
 
-#menu-to-edit .mitypes-item__wpblock .item-title:before {
-  background: url(../img/icons/mitypes-wpblock.svg) center center/20px 20px no-repeat transparent; }
-
 #menu-to-edit .mitypes-item__content .item-title:before {
   background: url(../img/icons/mitypes-content.svg) center center/20px 20px no-repeat transparent; }
 

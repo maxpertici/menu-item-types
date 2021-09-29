@@ -8,9 +8,7 @@ $menu_item_types_buildin[ 'nolink'    ] = array( 'slug' => 'nolink'    , 'label'
 $menu_item_types_buildin[ 'heading'   ] = array( 'slug' => 'heading'   , 'label' => __( 'Heading'        , 'menu-item-types') );
 $menu_item_types_buildin[ 'paragraph' ] = array( 'slug' => 'paragraph' , 'label' => __( 'Paragraph'      , 'menu-item-types') );
 $menu_item_types_buildin[ 'image'     ] = array( 'slug' => 'image'     , 'label' => __( 'Image'          , 'menu-item-types') );
-$menu_item_types_buildin[ 'wpblock'   ] = array( 'slug' => 'wpblock'   , 'label' => __( 'Reusable Block' , 'menu-item-types') );
 
-// $menu_item_types[ 'post_type_archive' ] = array( 'slug' => 'post_type_archive',  'label' => __( 'Post Type Archive', 'menu-item-types') );
 $menu_item_types_buildin['post_type_archive'] = array( 'slug' => 'post_type_archive',  'label' => __( 'Post Type Archive', 'menu-item-types') );
 
 ksort( $menu_item_types_buildin );
