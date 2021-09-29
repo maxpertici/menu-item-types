@@ -50,7 +50,9 @@ function mitypes_menu_item_custom_output( $item_output, $item, $depth, $args ) {
         $title = apply_filters( 'mitypes_nav_menu_item_title', $title, $item, $args, $depth );
         
         ob_start();
-        include( plugin_dir_path( __FILE__ ) . 'templates/' . esc_html( $custom_item_type ) . '.php' ) ;
+        if( is_file( plugin_dir_path( __FILE__ ) . 'templates/' . esc_html( $custom_item_type ) . '.php' ) ){
+            include( plugin_dir_path( __FILE__ ) . 'templates/' . esc_html( $custom_item_type ) . '.php' ) ;
+        }
         $custom_menu_item_html = ob_get_clean();
         
         $item_output = $custom_menu_item_html ;

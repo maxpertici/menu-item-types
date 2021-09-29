@@ -33,10 +33,15 @@ function mitypes_setup_nav_menu_item( $menu_item ){
         // Find MIP item type with prefix
         $mitypes_item_types_prefix = array();
 
-        foreach( $menu_item_types as $type ){
-            
-            array_push( $mitypes_item_types_prefix, $mitypes_prefix . $type['slug'] );
+        foreach( $menu_item_types as $k => $collection ){
 
+            foreach( $collection as $type ){
+                
+                if( isset( $type['slug'] ) ){
+                    array_push( $mitypes_item_types_prefix, $mitypes_prefix . $type['slug'] );
+                }
+
+            }
         }
 
         foreach( $mitypes_item_types_prefix as $mitypes_type_prefix ){
@@ -86,8 +91,23 @@ function mitypes_setup_nav_menu_item( $menu_item ){
         if( $is_mitypes_item ){
             
             // Label
+            
+            if( array_key_exists( $custom_item_type, $menu_item_types['buildin'] ) ){
 
-            $label =  esc_html( $menu_item_types[ $custom_item_type ][ 'label' ] );
+                if( isset( $menu_item_types['buildin'][ $custom_item_type ][ 'label' ] ) ){
+                    $label =  esc_html( $menu_item_types['buildin'][ $custom_item_type ][ 'label' ] );
+                }
+            }
+
+            if( array_key_exists( $custom_item_type, $menu_item_types['plugin'] ) ){
+                if( isset( $menu_item_types['plugin'][ $custom_item_type ][ 'label' ] ) ){
+                    $label =  esc_html( $menu_item_types['plugin'][ $custom_item_type ][ 'label' ] );
+                }
+            }
+
+            // if( isset( $menu_item_types[ $custom_item_type ][ 'label' ] ) ){
+            //     $label =  esc_html( $menu_item_types[ $custom_item_type ][ 'label' ] );
+            // }
 
             if( $custom_item_type === 'post_type_archive' ){
                 $menu_item->object  = $custom_item_data['menu-item-object'];
@@ -96,7 +116,11 @@ function mitypes_setup_nav_menu_item( $menu_item ){
                 $label =  esc_html( $menu_item_types[ $custom_item_type ][ 'label' ] );
             }
 
-            $menu_item->type_label = esc_html( $label );
+
+            if( isset( $label ) ){
+                $menu_item->type_label = esc_html( $label );
+            }
+            
             $menu_item->url = esc_url( $custom_item_data['menu-item-url'] );
         }
 

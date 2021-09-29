@@ -66,13 +66,16 @@ function mitypes_load_acf_fields(){
 
         // TODO : filtre nouveau item !
 
-        foreach( $menu_item_types as $type ){
-            
-            if( 'post_type_archive' === $type['slug'] ){ continue; }
+        foreach( $menu_item_types as $k => $collection ){
 
-            // include_once( MITYPES_ACF_PATH . 'fields/'.$type['slug'].'.php' );
-            if( isset( $type['fields'] ) && '' != $type['fields'] ){
-                include_once( $type['fields'] );
+            foreach( $collection as $i => $type ){
+
+                if( isset( $type['slug'] ) ){ if( 'post_type_archive' === $type['slug'] ){ continue; } }
+
+                // include_once( MITYPES_ACF_PATH . 'fields/'.$type['slug'].'.php' );
+                if( isset( $type['fields'] ) && '' != $type['fields'] ){
+                    include_once( $type['fields'] );
+                }
             }
         }
 

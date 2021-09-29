@@ -17,11 +17,16 @@ class MITYPES_ACF_Location_Menu_Item_Types extends ACF_Location {
 
         $choices = array();
 
-        // foreach( $mitypes_custom_menu_item_spec as $type ){
-        foreach( $menu_item_types as $type ){
-            if( 'post_type_archive' === $type['slug'] ){ continue; }
-            $choices[ $type['slug'] ] = $type['label'];
+        
+        foreach( $menu_item_types as $k => $collection ){
+
+            foreach( $collection as $type ){
+                if( 'post_type_archive' === $type['slug'] ){ continue; }
+                $choices[ $type['slug'] ] = $type['label'];
+            }
+
         }
+
 
         
         return $choices;
