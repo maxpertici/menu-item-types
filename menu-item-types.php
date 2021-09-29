@@ -3,7 +3,7 @@
 Plugin Name:  Menu Item Types
 Plugin URI:   https://maxpertici.fr#menu-item-types
 Description:  —
-Version:      0.1.0
+Version:      1.0
 Author:       Maxime Pertici
 Author URI:   https://maxpertici.fr
 Contributors:
@@ -18,14 +18,14 @@ defined( 'ABSPATH' ) or	die();
 
 /**
  * Load defines
- * @since 0.1.0
+ * @since 1.0
  */
 require_once( 'config.php' );
 
 
 /**
  * Run plugin
- * @since 0.1.0
+ * @since 1.0
  */
 
 function mitypes_run(){
@@ -60,7 +60,7 @@ add_action( 'plugins_loaded', 'mitypes_run' );
 /**
  * Second load, initialisation et fire mitypes_loaded action
  *
- * @since 0.1.0
+ * @since 1.0
  */
 function mitypes_init() {
 
@@ -78,7 +78,7 @@ function mitypes_init() {
 
 		/**
 		 * Fires when MIP is loaded
-		 * @since 0.1.0
+		 * @since 1.0
 		*/
 		do_action( 'mitypes_loaded' );
 	}

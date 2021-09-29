@@ -73,13 +73,8 @@ if( function_exists('acf_add_local_field_group') ){
 
 
     /**
-     * Load ...
-     *
-     * @since 0.10.5
-     * 
-     * @param 
-     * 
-     * @return 
+     * Load Reusables lbocks in nav item selector of mitypes wpblock
+     * @since 1.0
      */
     function mitypes_load_wpblock_choices( $field ) {
         

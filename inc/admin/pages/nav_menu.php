@@ -5,7 +5,7 @@ defined( 'ABSPATH' ) or	die();
 /**
  * Enqueue script for admin WP:AM setings page
  *
- * @since 0.1.0
+ * @since 1.0
  */
 add_action( 'admin_enqueue_scripts', 'mitypes_nav_menu_enqueue_scripts' );
 
@@ -37,19 +37,21 @@ function mitypes_nav_menu_mark_item_type( $item_id, $item, $depth, $args, $id ) 
     if( '' != $custom_item_type ){
     
         // find item type
+
         $mit_buildin = array_keys( $menu_item_types['buildin'] );
         $mit_plugin  = array_keys( $menu_item_types['plugin'] );
         $miytpes_supported = array_merge( $mit_buildin, $mit_plugin );
-
         
         if( in_array( $custom_item_type , $miytpes_supported ) ){
             $item_type = $custom_item_type ;
             $hide_url_of_nav_item = true ;
         }
-        
-        echo '<script> mitypes_set_menu_item_type_css( '.$item_id.', "' . $item_type . '", ' . $hide_url_of_nav_item . ' ); </script>';
+
     }
+
+    // $wp_buildin  = array( 'post_type', 'taxonomy' );
     
+    echo '<script> mitypes_set_menu_item_type_css( '.$item_id.', "' . $item_type . '", ' . $hide_url_of_nav_item . ' ); </script>';
 
 }
 

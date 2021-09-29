@@ -2,6 +2,9 @@
 
 defined( 'ABSPATH' ) or	die();
 
+// Plugin version
+define( 'MITYPES_VERSION', 1.0 );
+
 // Plugin names
 define( 'MITYPES_PLUGIN_NAME' , 'Menu Item types' );
 define( 'MITYPES_PLUGIN_SLUG' , sanitize_key( MITYPES_PLUGIN_NAME ) );
@@ -22,9 +25,4 @@ define( 'MITYPES_METABOX'    , realpath( MITYPES_INC_PATH . 'metabox' ) . '/' );
 define( 'MITYPES_ACF_PREFIX_GROUP'            , 'group_mit_' );
 define( 'MITYPES_ACF_PREFIX_FIELD'            , 'field_mit_' );
 
-// Plugin version
-if( ! function_exists('get_plugin_data') ){
-    require_once( ABSPATH . 'wp-admin/includes/plugin.php' );
-}
-$mitypes_plugin_data = get_plugin_data( MITYPES_PATH . 'menu-item-types.php', false, false ) ;
-define( 'MITYPES_VERSION', $mitypes_plugin_data['Version'] );
+

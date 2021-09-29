@@ -72,7 +72,7 @@ function mitypes_item_type_custom_metabox(){
 			
 			foreach( $menu_item_types as $k => $collection ){
 
-				if( 'plugin' === $k ){ echo '<hr>'; }
+				if( 'plugin' === $k && count( $collection ) > 0 ){ echo '<hr>'; }
 
 				foreach( $collection as $type => $item  ) : 
 					

@@ -21,7 +21,7 @@ $mitypes_prefix = '#mitypes' . '_' ;
 // setup fields for buildin items
 foreach( $menu_item_types_buildin as $type ){
     if( 'post_type_archive' === $type['slug'] ){ continue; }
-    $menu_item_types_buildin[ $type['slug'] ]['fields'] = MITYPES_ACF_PATH . 'fields/'.$type['slug'].'.php' ;
+    $menu_item_types_buildin[ $type['slug'] ]['field-group'] = MITYPES_ACF_PATH . 'field-groups/'.$type['slug'].'.php' ;
 }
 
 $menu_item_types['buildin'] = $menu_item_types_buildin ;

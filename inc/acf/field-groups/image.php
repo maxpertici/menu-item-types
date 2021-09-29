@@ -94,11 +94,10 @@ if( function_exists('acf_add_local_field_group') ){
 
 
 
-    /* Filters */
     /**
      * Load image size in "mitypes_image_size" field
      *
-     * @since 1.8
+     * @since 1.0
      * 
      * @param array $field values of ACF selector
      * 

@@ -5,13 +5,8 @@
  */
 function mitypes_set_menu_item_type_css( item_id, item_type, hide_url = false  ){
 
-    console.log( item_type );
-    console.log( hide_url );
-
     jQuery("#menu-item-" + item_id ).addClass( "mitypes-item-type mitypes-item__" + item_type );
-    if( hide_url ){
-        jQuery("#menu-item-" + item_id ).find( ".field-url" ).hide();
-    }
+    if( hide_url ){ jQuery("#menu-item-" + item_id ).find( ".field-url" ).hide(); }
 
 }
 

@@ -5,7 +5,7 @@ defined( 'ABSPATH' ) or	die();
 /**
  * Wrapper for loading ACF build-in plugin if not ACF (free and pro) already active
  *
- * @since 0.1.0
+ * @since 1.0
  */
 function mitypes_is_acf_loaded(){
 
@@ -55,7 +55,7 @@ function mitypes_notice_acf_plugin_required(){
 
 /**
  * Load ACF fields
- * @since 0.1.0
+ * @since 1.0
  */
 function mitypes_load_acf_fields(){
     
@@ -72,9 +72,8 @@ function mitypes_load_acf_fields(){
 
                 if( isset( $type['slug'] ) ){ if( 'post_type_archive' === $type['slug'] ){ continue; } }
 
-                // include_once( MITYPES_ACF_PATH . 'fields/'.$type['slug'].'.php' );
-                if( isset( $type['fields'] ) && '' != $type['fields'] ){
-                    include_once( $type['fields'] );
+                if( isset( $type['field-group'] ) && '' != (string) $type['field-group'] ){
+                    include_once( $type['field-group'] );
                 }
             }
         }
