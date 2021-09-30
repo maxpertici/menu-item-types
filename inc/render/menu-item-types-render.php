@@ -35,17 +35,13 @@ function mitypes_menu_item_custom_output( $item_output, $item, $depth, $args ) {
         $atts['href']         = ! empty( $item->url ) ? $item->url : '';
         $atts['aria-current'] = $item->current ? 'page' : '';
 
-        $atts = apply_filters( 'mitypes_nav_menu_link_attributes', $atts, $item, $args, $depth );
+        $atts = apply_filters( 'mitypes_nav_menu_link_attributes', $atts, $item, $args, $depth, $custom_item_type );
 
         $attributes = '';
 
         foreach ( $atts as $attr => $value ) {
 
             if ( is_scalar( $value ) && '' !== $value && false !== $value ) {
-                
-                $skip = apply_filters( 'mitypes_nav_menu_link_attributes_builder_skip', false, $custom_item_type, $attr, $value );
-                if( $skip ){ continue ; }
-                
                 $value       = ( 'href' === $attr ) ? esc_url( $value ) : esc_attr( $value );
                 $attributes .= ' ' . $attr . '="' . $value . '"';
             }
@@ -80,3 +76,21 @@ function mitypes_menu_item_custom_output( $item_output, $item, $depth, $args ) {
     
     return $item_output ;
 }
+
+
+
+/**
+ * Handle attributes : skip href
+ */
+
+function mitypes_nav_menu_link_attributes_skiper( $atts, $item, $args, $depth, $custom_item_type ){
+
+	if( 'heading'   === $custom_item_type ){ unset( $atts['href'] ); }	
+	if( 'image'     === $custom_item_type ){ unset( $atts['href'] ); }	
+	if( 'nolink'    === $custom_item_type ){ unset( $atts['href'] ); }	
+	if( 'paragraph' === $custom_item_type ){ unset( $atts['href'] ); }	
+
+	return $atts ;
+}
+
+add_filter( 'mitypes_nav_menu_link_attributes', 'mitypes_nav_menu_link_attributes_skiper', 11, 5 );

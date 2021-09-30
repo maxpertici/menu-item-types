@@ -11,6 +11,8 @@ $menu_item_types_buildin[ 'image'     ] = array( 'slug' => 'image'     , 'label'
 
 $menu_item_types_buildin['post_type_archive'] = array( 'slug' => 'post_type_archive',  'label' => __( 'Post Type Archive', 'menu-item-types') );
 
+
+// TODO : sort by label
 ksort( $menu_item_types_buildin );
 
 $mitypes_prefix = '#mitypes' . '_' ;
@@ -24,11 +26,12 @@ foreach( $menu_item_types_buildin as $type ){
 
 $menu_item_types['buildin'] = $menu_item_types_buildin ;
 
-// filter for plugin items
 
+// filter for plugin items
 $menu_item_types_plugin_items = array();
 $menu_item_types_plugin_items = apply_filters( 'mitypes_item_types', $menu_item_types_plugin_items );
 
+// TODO : sort by label
 ksort( $menu_item_types_plugin_items );
 
 $menu_item_types['plugin'] = array();

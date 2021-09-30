@@ -88,13 +88,3 @@ function mitypes_init() {
 add_action( 'after_setup_theme', 'mitypes_init' );
 
 
-function mitypes_nav_menu_link_attributes_skiper( $skip, $custom_item_type, $attr, $value ) {
-	
-	if( ( 'heading'   === $custom_item_type ) && ( ( 'href'=== $attr ) ) ){ return true ; }	
-	if( ( 'image'     === $custom_item_type ) && ( ( 'href'=== $attr ) ) ){ return true ; }	
-	if( ( 'nolink'    === $custom_item_type ) && ( ( 'href'=== $attr ) ) ){ return true ; }	
-	if( ( 'paragraph' === $custom_item_type ) && ( ( 'href'=== $attr ) ) ){ return true ; }	
-
-}
-
-add_filter( 'mitypes_nav_menu_link_attributes_builder_skip', 'mitypes_nav_menu_link_attributes_skiper', 10, 4 );
