@@ -13,11 +13,10 @@ class MITYPES_ACF_Location_Menu_Item_Types extends ACF_Location {
 
     public function get_values( $rule ) {
 
-        include_once( MITYPES_INC_PATH . 'item-types.php' ) ;
+        include( MITYPES_INC_PATH . 'item-types.php' ) ;
 
         $choices = array();
 
-        
         foreach( $menu_item_types as $k => $collection ){
 
             foreach( $collection as $type ){

@@ -62,18 +62,18 @@ function mitypes_load_acf_fields(){
     // load fields
     if( is_admin() ){
         
-        include_once( MITYPES_INC_PATH . 'item-types.php' ) ;
-
-        // TODO : filtre nouveau item !
+        include( MITYPES_INC_PATH . 'item-types.php' ) ;
 
         foreach( $menu_item_types as $k => $collection ){
 
             foreach( $collection as $i => $type ){
 
+                // var_dump( $type );
+
                 if( isset( $type['slug'] ) ){ if( 'post_type_archive' === $type['slug'] ){ continue; } }
 
                 if( isset( $type['field-group'] ) && '' != (string) $type['field-group'] ){
-                    include_once( $type['field-group'] );
+                    include( $type['field-group'] );
                 }
             }
         }
