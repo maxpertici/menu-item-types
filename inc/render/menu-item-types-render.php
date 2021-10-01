@@ -51,23 +51,28 @@ function mitypes_menu_item_custom_output( $item_output, $item, $depth, $args ) {
         $title = apply_filters( 'mitypes_nav_menu_item_title', $title, $item, $args, $depth );
         
         include( MITYPES_INC_PATH . 'item-types.php' ) ;
-        
+
         ob_start();
-        
+
+        // path
+        $path = plugin_dir_path( __FILE__ ) . 'templates/' . esc_html( $custom_item_type ) . '.php' ;
+        $path = apply_filters( 'mitypes_render_path', $path, $custom_item_type );
+
         if( array_key_exists( $custom_item_type, $menu_item_types['buildin'] )) {
-            
-            if( is_file( plugin_dir_path( __FILE__ ) . 'templates/' . esc_html( $custom_item_type ) . '.php' ) ){
-                include( plugin_dir_path( __FILE__ ) . 'templates/' . esc_html( $custom_item_type ) . '.php' ) ;
-            }
+            if( is_file( $path ) ){ include( $path ) ; }
         }
+        
 
-        if( array_key_exists( $custom_item_type, $menu_item_types['plugin'] )) {
-            
-            if( is_file( $menu_item_types['plugin'][$custom_item_type]['render'] ) ){
-                include( $menu_item_types['plugin'][$custom_item_type]['render'] ) ;
+        // additionnals paths
+        if( isset( $menu_item_types['plugin'][$custom_item_type]['render'] ) ) :
+            $path = $menu_item_types['plugin'][$custom_item_type]['render'] ;
+            $path = apply_filters( 'mitypes_render_path', $path, $custom_item_type );
+
+            if( array_key_exists( $custom_item_type, $menu_item_types['plugin'] )) {
+                if( is_file( $path ) ){ include( $path ) ; }
             }
-        }
-
+        endif;
+        
         $custom_menu_item_html = ob_get_clean();
         
         $item_output = $custom_menu_item_html ;
