@@ -42,7 +42,7 @@ function mitypes_nav_menu_mark_item_type( $item_id, $item, $depth, $args, $id ) 
         $mit_plugin  = array_keys( $menu_item_types['plugin'] );
         $miytpes_supported = array_merge( $mit_buildin, $mit_plugin );
         
-        if( in_array( $custom_item_type , $miytpes_supported ) ){
+        if( in_array( $custom_item_type , $miytpes_supported ) && ( 'post_type_archive' != $custom_item_type  ) ){
             $item_type = $custom_item_type ;
             $hide_url_of_nav_item = true ;
         }

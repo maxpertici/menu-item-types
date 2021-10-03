@@ -90,12 +90,14 @@ function mitypes_menu_item_custom_output( $item_output, $item, $depth, $args ) {
 
 function mitypes_nav_menu_link_attributes_skiper( $atts, $item, $args, $depth, $custom_item_type ){
 
-	if( 'heading'   === $custom_item_type ){ unset( $atts['href'] ); }	
-	if( 'image'     === $custom_item_type ){ unset( $atts['href'] ); }	
-	if( 'nolink'    === $custom_item_type ){ unset( $atts['href'] ); }	
-	if( 'paragraph' === $custom_item_type ){ unset( $atts['href'] ); }	
+	if( 'heading'   === $custom_item_type ){ unset( $atts['href'] ); unset( $atts['target'] ); unset( $atts['rel'] ) ; unset( $atts['title'] ) ; }	
+	if( 'image'     === $custom_item_type ){ unset( $atts['href'] ); unset( $atts['target'] ); unset( $atts['rel'] ) ; unset( $atts['title'] ) ; }	
+	if( 'nolink'    === $custom_item_type ){ unset( $atts['href'] ); unset( $atts['target'] ); unset( $atts['rel'] ) ; unset( $atts['title'] ) ; }	
+	if( 'paragraph' === $custom_item_type ){ unset( $atts['href'] ); unset( $atts['target'] ); unset( $atts['rel'] ) ; unset( $atts['title'] ) ; }	
 
 	return $atts ;
 }
 
 add_filter( 'mitypes_nav_menu_link_attributes', 'mitypes_nav_menu_link_attributes_skiper', 11, 5 );
+
+

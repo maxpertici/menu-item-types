@@ -11,13 +11,13 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 
 == Description ==
-Use elements of a personalized type in the navigation menus.
-You can easily create your own! 
+Menu Item Types makes it easy to add links to your archive pages, titles, items without URL, paragraphs or images to your navigation menus.
+You can also easily override the templates and/or create your own custom elements.
 
 == Installation ==
 1. Install the plugin and activate.
 2. Go to Apparence > Menu
-3. If Custom Items Metabox is not visible, use screen options
+3. If the new metaboxes are not visible, use screen options
 
 
 == Changelog ==

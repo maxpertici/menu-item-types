@@ -2,8 +2,27 @@
 
 $p = get_field('mitypes_paragraph_text', $item->ID );
 
-echo $args->before;
-echo '<p' . $attributes . '>';
-echo $args->link_before . esc_html( $p ) . $args->link_after;
-echo '</p>';
-echo $args->after;
+if( ! isset( $p ) || '' === $p ){ return ; }
+
+
+$attr = array(
+    'title'  => array(),
+    'class'  => array()
+);
+
+$p_tags = array(
+    'p'    => $attr,
+    'span' => $attr
+);
+
+$p_tags = apply_filters( 'mitypes_wpkses_p_tags', $p_tags );
+
+
+
+echo wp_kses( $args->before, $p_tags );
+echo '<div' . $attributes . '>';
+
+    echo wp_kses( $args->link_before, $p_tags ) . '<p>' . esc_html( $p ) . '</p>' . wp_kses( $args->link_after, $p_tags );
+
+echo '</div>';
+echo wp_kses( $args->after, $p_tags );
