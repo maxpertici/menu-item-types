@@ -1,0 +1,141 @@
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Project-Id-Version: Menu Item Types\n"
+"POT-Creation-Date: 2021-10-05 20:57+0200\n"
+"PO-Revision-Date: 2021-10-05 20:57+0200\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.12\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: menu-item-types.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"Last-Translator: \n"
+"Language: fr\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: inc/acf/acf.php:45
+msgid "Please install and activate"
+msgstr ""
+
+#: inc/acf/acf.php:45
+msgid "for using Menu Item Types plugin."
+msgstr ""
+
+#: inc/acf/field-groups/heading.php:11
+msgid "Heading settings group"
+msgstr ""
+
+#: inc/acf/field-groups/heading.php:17
+msgid "Heading level"
+msgstr ""
+
+#: inc/acf/field-groups/heading.php:32
+msgid "Heading 2"
+msgstr ""
+
+#: inc/acf/field-groups/heading.php:33
+msgid "Heading 3"
+msgstr ""
+
+#: inc/acf/field-groups/heading.php:34
+msgid "Heading 4"
+msgstr ""
+
+#: inc/acf/field-groups/heading.php:35
+msgid "Heading 5"
+msgstr ""
+
+#: inc/acf/field-groups/heading.php:36
+msgid "Heading 6"
+msgstr ""
+
+#: inc/acf/field-groups/image.php:10
+msgid "Image settings group"
+msgstr ""
+
+#: inc/acf/field-groups/image.php:16 inc/item-types.php:10
+msgid "Image"
+msgstr ""
+
+#: inc/acf/field-groups/image.php:45
+msgid "Size"
+msgstr ""
+
+#: inc/acf/field-groups/nolink.php:10
+msgid "Nolink settings group"
+msgstr ""
+
+#: inc/acf/field-groups/paragraph.php:12
+msgid "Paragraph settings group"
+msgstr ""
+
+#: inc/acf/field-groups/paragraph.php:18
+msgid "Text"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+#: inc/acf/location/acf-mitypes-locations.php:9
+msgid "Menu Item Types"
+msgstr ""
+
+#: inc/item-types.php:7
+msgid "No link"
+msgstr ""
+
+#: inc/item-types.php:8
+msgid "Heading"
+msgstr ""
+
+#: inc/item-types.php:9
+msgid "Paragraph"
+msgstr ""
+
+#: inc/item-types.php:12
+msgid "Post Type Archive"
+msgstr ""
+
+#: inc/metabox/item-types/mitypes-item-type-custom.php:24
+msgid "Custom Items"
+msgstr ""
+
+#: inc/metabox/item-types/mitypes-item-type-custom.php:89
+msgid "MITYPES"
+msgstr ""
+
+#: inc/metabox/item-types/mitypes-item-type-custom.php:121
+#: inc/metabox/item-types/mitypes-item-type-post_type_archive.php:129
+msgid "Add to Menu"
+msgstr ""
+
+#: inc/metabox/item-types/mitypes-item-type-post_type_archive.php:24
+msgid "Post Type Archives"
+msgstr ""
+
+#: inc/metabox/item-types/mitypes-item-type-post_type_archive.php:70
+msgid "No items."
+msgstr ""
+
+#: inc/metabox/item-types/mitypes-item-type-post_type_archive.php:82
+msgid "View All"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "https://maxpertici.fr#menu-item-types"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Use elements of a personalized type in the navigation menus."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Maxime Pertici"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://maxpertici.fr"
+msgstr ""
