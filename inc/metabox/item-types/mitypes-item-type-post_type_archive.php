@@ -67,7 +67,7 @@ function mitypes_item_type_post_type_archive_metabox(){
 
 	// Inform user no CPTs available to be shown.
 	if ( empty( $cpts ) ) {
-		echo '<p>' . esc_html__( 'No items.' ) . '</p>';
+		echo '<p>' . esc_html__( 'No items.', 'menu-iem-types' ) . '</p>';
 		return;
 	}
 	
@@ -77,15 +77,15 @@ function mitypes_item_type_post_type_archive_metabox(){
 		?>
 		<div id="mitypes-item-type-post_type_archive" class="categorydiv">
 			<ul id="mitypes-item-type-post_type_archive-tabs" class="mitypes-item-type-post_type_archive-tabs add-menu-item-tabs">
-				<li <?php echo ( 'all' == $current_tab ? ' class="tabs"' : '' ); ?>>
+				<li <?php echo esc_attr( 'all' == $current_tab ? ' class="tabs"' : '' ); ?>>
 					<a class="nav-tab-link" data-type="tabs-panel-mitypes-item-type-post_type_archive-all" href="<?php if ( $nav_menu_selected_id ) echo esc_url( add_query_arg( 'mitypes-item-type-post_type_archive-tab', 'all', remove_query_arg( $removed_args ) ) ); ?>#tabs-panel-mitypes-item-type-post_type_archive-all">
-						<?php echo esc_html__( 'View All' ); ?>
+						<?php echo esc_html__( 'View All', 'menu-item-types' ); ?>
 					</a>
 				</li><!-- /.tabs -->
 
 			</ul>
 			
-			<div id="tabs-panel-mitypes-item-type-post_type_archive-all" class="tabs-panel tabs-panel-view-all <?php echo ( 'all' == $current_tab ? 'tabs-panel-active' : 'tabs-panel-inactive' ); ?>">
+			<div id="tabs-panel-mitypes-item-type-post_type_archive-all" class="tabs-panel tabs-panel-view-all <?php echo esc_attr( ( 'all' == $current_tab ? 'tabs-panel-active' : 'tabs-panel-inactive' ) ); ?>">
 				<ul id="mitypes-item-type-post_type_archive-checklist-all" class="categorychecklist form-no-clear">
 				<?php
 

@@ -42,7 +42,7 @@ function mitypes_notice_acf_plugin_required(){
     $acf_link = get_admin_url() . $acf_search_url ;
 
     echo '<div id="message" class="error notice is-dismissible">
-    <p>'. __( 'Please install and activate', 'menu-item-types') . ' ' . '<a href="'.$acf_link.'">Advanced Custom Fields</a>'. ' ' . __('for using Menu Item Types plugin.' , 'menu-item-types').'</p>
+    <p>'. esc_html__( 'Please install and activate', 'menu-item-types') . ' ' . '<a href="' . esc_url( $acf_link ).'">Advanced Custom Fields</a>'. ' ' . esc_html__('for using Menu Item Types plugin.' , 'menu-item-types').'</p>
     </div>';
     
     //make sure to remove notice after its displayed so its only displayed when needed.

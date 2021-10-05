@@ -63,7 +63,7 @@ function mitypes_item_type_custom_metabox(){
 		</ul>
 		*/ ?>
 		
-		<div id="tabs-panel-mitypes-item-type-custom-all" class="tabs-panel tabs-panel-view-all <?php echo ( 'all' == $current_tab ? 'tabs-panel-active' : 'tabs-panel-inactive' ); ?>">
+		<div id="tabs-panel-mitypes-item-type-custom-all" class="tabs-panel tabs-panel-view-all <?php echo esc_attr( ( 'all' == $current_tab ? 'tabs-panel-active' : 'tabs-panel-inactive' ) ); ?>">
 			
 			<ul id="mitypes-item-type-custom-checklist-all" class="categorychecklist form-no-clear">
 			<?php
