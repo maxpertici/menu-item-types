@@ -41,10 +41,8 @@ if( function_exists('acf_add_local_field_group') ){
         'location' => array(
             array(
                 array(
-                    // 'param' => 'nav_menu_item',
                     'param' => 'mitypes',
                     'operator' => '==',
-                    // 'value' => 'all',
                     'value' => 'paragraph',
                 ),
             ),

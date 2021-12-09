@@ -15,7 +15,7 @@ $p_tags = array(
     'span' => $attr
 );
 
-$p_tags = apply_filters( 'mitypes_wpkses_p_tags', $p_tags );
+$p_tags = apply_filters( 'mitypes_wpkses_paragraph_tags', $p_tags );
 
 
 

@@ -20,7 +20,7 @@ if( isset( $img_id ) && (int) $img_id > 0 ) :
         'p' => $attr,
     );
 
-    $img_tags = apply_filters( 'mitypes_wpkses_img_tags', $img_tags );
+    $img_tags = apply_filters( 'mitypes_wpkses_image_tags', $img_tags );
 
 
     $size = 'thumbnail' ;

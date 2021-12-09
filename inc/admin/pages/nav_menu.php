@@ -56,3 +56,34 @@ function mitypes_nav_menu_mark_item_type( $item_id, $item, $depth, $args, $id ) 
 }
 
 add_action( 'wp_nav_menu_item_custom_fields', 'mitypes_nav_menu_mark_item_type', 10, 5 );
+
+
+
+/**
+ * 
+ * @since : 1.1
+ */
+
+add_action( 'admin_head', 'mitypes_mit_items_icons_css' );
+
+function mitypes_mit_items_icons_css( $hook ){
+
+    include( MITYPES_INC_PATH . 'item-types.php' ) ;
+
+    if( isset( $menu_item_types['plugin'] ) && count( $menu_item_types['plugin'] ) > 0 ){
+
+        echo '<style>';
+        foreach( $menu_item_types['plugin'] as $item ) :
+            
+            if(  isset( $item['icon'] ) && '' != $item['icon'] ){
+                echo '#menu-to-edit .mitypes-item__'.$item['slug'].' .item-title:before {';
+                echo 'background: url('.esc_url($item['icon']).') center center / 20px 20px no-repeat transparent;';
+                echo '}';
+            }
+
+        endforeach;
+        echo '</style>';
+        
+    }
+
+}
