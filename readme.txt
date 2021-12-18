@@ -22,5 +22,9 @@ You can also easily override the templates and/or create your own custom element
 
 == Changelog ==
 
+= 1.1 =
+* Improved support for custom elements with the ability to register an icon.
+* FIX post_type_archive label
+
 = 1.0 =
 * Launch
