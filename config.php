@@ -3,7 +3,7 @@
 defined( 'ABSPATH' ) or	die();
 
 // Plugin version
-define( 'MITYPES_VERSION', 1.0 );
+define( 'MITYPES_VERSION', 1.1 );
 
 // Plugin names
 define( 'MITYPES_PLUGIN_NAME' , 'Menu Item types' );
@@ -18,7 +18,7 @@ define( 'MITYPES_PATH' , realpath( plugin_dir_path( MITYPES_FILE ) ) . '/' );
 
 define( 'MITYPES_INC_PATH'   , realpath( MITYPES_PATH     . 'inc' )     . '/' );
 define( 'MITYPES_ACF_PATH'   , realpath( MITYPES_INC_PATH . 'acf' )     . '/' );
-define( 'MITYPES_ADMIN_PATH' , realpath( MITYPES_INC_PATH . 'admin' ) . '/' );
+define( 'MITYPES_ADMIN_PATH' , realpath( MITYPES_INC_PATH . 'admin' )   . '/' );
 define( 'MITYPES_METABOX'    , realpath( MITYPES_INC_PATH . 'metabox' ) . '/' );
 
 // ACF

@@ -22,12 +22,11 @@ function mitypes_menu_item_custom_output( $item_output, $item, $depth, $args ) {
 
     if( 'post_type_archive' != $custom_item_type && '' != $custom_item_type ){
 
-
         $atts           = array();
         $atts['title']  = ! empty( $item->attr_title ) ? $item->attr_title : '';
         $atts['target'] = ! empty( $item->target ) ? $item->target : '';
         if ( '_blank' === $item->target && empty( $item->xfn ) ) {
-            $atts['rel'] = 'noopener';
+            $atts['rel'] = 'noopener noreferrer';
         } else {
             $atts['rel'] = $item->xfn;
         }
@@ -81,6 +80,21 @@ function mitypes_menu_item_custom_output( $item_output, $item, $depth, $args ) {
     
     return $item_output ;
 }
+
+
+/**
+ * Apply specific classses to nav menu item <li>
+ */
+function mitypes_nav_menu_item_class( $classes, $item, $args ) {
+ 
+    $custom_item_type = get_post_meta( $item->ID , '_mitypes_custom_item_type' , true );
+    if( '' != $custom_item_type ){
+        $classes[] = 'mitypes-' . $custom_item_type ;
+    }
+    return $classes;
+}
+
+add_filter( 'nav_menu_css_class' , 'mitypes_nav_menu_item_class', 10, 4 );
 
 
 

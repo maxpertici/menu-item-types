@@ -113,9 +113,8 @@ function mitypes_setup_nav_menu_item( $menu_item ){
                 $menu_item->object  = $custom_item_data['menu-item-object'];
                 $menu_item->type    = 'post_type_archive';
 
-                $label =  esc_html( $menu_item_types[ $custom_item_type ][ 'label' ] );
+                $label =  esc_html( $menu_item_types['buildin'][ $custom_item_type ][ 'label' ] );
             }
-
 
             if( isset( $label ) ){
                 $menu_item->type_label = esc_html( $label );
