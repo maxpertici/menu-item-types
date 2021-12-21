@@ -14,6 +14,8 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Menu Item Types makes it easy to add links to your archive pages, titles, items without URL, paragraphs or images to your navigation menus.
 You can also easily override the templates and/or create your own custom elements.
 
+[vimeo https://vimeo.com/659116094]
+
 = Menu Item Types can be extended =
 
 There are already additional plugins.
@@ -31,7 +33,7 @@ You can also create your own elements like these plugins do:
 
 == Frequently Asked Questions ==
 
-= my elements haven't styles =
+= My elements haven't styles =
 Menu Item Types does not provide graphic formatting. It provides the tools to create your own elements.
 
 = Is ACF essential?  =
