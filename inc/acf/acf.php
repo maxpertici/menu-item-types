@@ -15,9 +15,7 @@ function mitypes_is_acf_loaded(){
     include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
     
     if (
-        ( ! is_plugin_active( 'advanced-custom-fields/acf.php'     ) ) &&
-        ( ! is_plugin_active( 'advanced-custom-fields-pro/acf.php' ) )
-
+        ( ! class_exists( 'ACF' ) )
     ){
 
         return false ;
