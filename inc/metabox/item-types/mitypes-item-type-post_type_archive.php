@@ -26,7 +26,9 @@ function mitypes_add_item_type_post_type_archive_metabox( $object ) {
 	return $object;
 }
 
-add_filter( 'nav_menu_meta_box_object', 'mitypes_add_item_type_post_type_archive_metabox', 10, 1 );
+if( apply_filters( 'mitypes_has_post_type_archive_metabox', true ) ){
+	add_filter( 'nav_menu_meta_box_object', 'mitypes_add_item_type_post_type_archive_metabox', 10, 1 );
+}
 
 
 /**
