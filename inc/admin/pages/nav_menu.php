@@ -74,16 +74,17 @@ function mitypes_mit_items_icons_css( $hook ){
 
         echo '<style>';
         foreach( $menu_item_types['plugin'] as $item ) :
-            
-            if(  isset( $item['icon'] ) && '' != $item['icon'] ){
+            $icon = isset( $item['icon'] ) && '' != $item['icon'] ? $item['icon'] : false;
+            $icon = str_contains( $icon, '<svg') ? str_replace('"', '\'', 'data:image/svg+xml;utf8,'. preg_replace("/\s+/", " ", $icon)) : esc_url($icon);
+            if( $icon ){
                 echo '#menu-to-edit .mitypes-item__'.$item['slug'].' .item-title:before {';
-                echo 'background: url('.esc_url($item['icon']).') center center / 20px 20px no-repeat transparent;';
+                echo 'background: url("'.$icon.'") center center / 20px 20px no-repeat transparent;';
                 echo '}';
             }
 
         endforeach;
         echo '</style>';
-        
+
     }
 
 }
