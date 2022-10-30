@@ -5,15 +5,14 @@
   "main": "gulpfile.js",
   "dependencies": {
     "@fancyapps/fancybox": "^3.5.7",
-    "gulp": "^4.0.2",
     "gulp-plumber": "^1.2.0",
     "gulp-sourcemaps": "^2.6.4"
   },
   "devDependencies": {
     "browser-sync": "^2.24.4",
-    "gulp": "^4.0.2",
-    "gulp-autoprefixer": "^5.0.0",
-    "gulp-sass": "^4.0.1",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^6.1.0",
+    "gulp-sass": "^5.1.0",
     "sass": "^1.4.0"
   },
   "scripts": {
