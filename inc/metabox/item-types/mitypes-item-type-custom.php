@@ -68,16 +68,91 @@ function mitypes_item_type_custom_metabox(){
 			<ul id="mitypes-item-type-custom-checklist-all" class="categorychecklist form-no-clear">
 			<?php
 			
-			global $_nav_menu_placeholder, $nav_menu_selected_id;
-			
-			foreach( $menu_item_types as $k => $collection ){
+			global $_nav_menu_placeholder, $nav_menu_selected_id ;
 
-				if( 'plugin' === $k && count( $collection ) > 0 ){ echo '<hr>'; }
+            /**
+             * Reorder items by label & mark origin
+             */
+
+            $supported_types = [] ;
+
+            foreach( $menu_item_types as $k => $collection ){
+
+                uasort($collection, function ( $a, $b ){ return strcmp( $a['label'], $b['label'] ); } );
+
+                foreach ( $collection as $i => $item ){
+                    $item['origin'] = $k ;
+                    $collection[ $i ] = $item ;
+                    if( 'post_type_archive' === $item['slug'] ){ continue ; }
+                    $supported_types[] = $item['slug'] ;
+                }
+
+                $menu_item_types[ $k ] = $collection ;
+            }
+
+
+            /**
+             * filter supported types
+             */
+            $supported_types = apply_filters( 'mitypres_supported_types', $supported_types ) ;
+
+
+            /**
+             * Mix item types
+             * — merge collection
+             */
+
+            $types_is_mixed = false ;
+
+            if( apply_filters( 'mitypes_mix_metabox_item_type', false ) ){
+
+                $types_is_mixed = true ;
+
+                $merged_collection = [] ;
+
+                foreach( $menu_item_types as $k => $collection ){
+
+                    $merged_collection = array_merge( $merged_collection, $collection );
+                }
+
+                uasort($merged_collection, function ( $a, $b ){ return strcmp( $a['label'], $b['label'] ); } );
+
+                $menu_item_types = [] ;
+                $menu_item_types['mixed'] = $merged_collection ;
+
+
+            }
+
+            if( ! $types_is_mixed ){
+
+                echo '<style>' . '
+                    .menu-item-type--buildin + .menu-item-type--plugin{
+                        border-top: 1px solid #ddd;
+                        padding-top: 0.5em;
+                        margin-top: 1em;
+                    }
+                    ' . '</style>';
+            }
+
+
+            /**
+             *  output
+             *
+             */
+
+			foreach( $menu_item_types as $k => $collection ){
 
 				foreach( $collection as $type => $item  ) : 
 					
 					if( 'post_type_archive' === $type ){ continue ; }
-					
+
+                    if( ! in_array( $type, $supported_types ) ){ continue ; }
+
+					if( 'buildin' === $item['origin'] && false === apply_filters( 'mitypes_has_buildin_item_type', true ) ){ continue ; }
+
+                    if( false === apply_filters( "mitypes_has_{$type}_item_type_support", true ) ){ continue ; }
+
+
 					/**
 					 * item
 					 */
@@ -93,7 +168,7 @@ function mitypes_item_type_custom_metabox(){
 					$url = $mitypes_custom_item_tag . '_' . http_build_query( $menu_item_data )  ;
 
 					?>
-					<li>
+					<li class="menu-item-type--<?php echo esc_html( $item['origin'] ); ?>">
 						<label class="menu-item-title">
 							<input type="checkbox" class="menu-item-checkbox" name="menu-item[<?php echo esc_attr( $_nav_menu_placeholder ) ; ?>][menu-item-label]" value="0"> <?php echo esc_html( $item['label'] ) ; ?>
 						</label>
