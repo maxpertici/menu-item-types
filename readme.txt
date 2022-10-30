@@ -16,7 +16,23 @@ You can also easily override the templates and/or create your own custom element
 
 [vimeo https://vimeo.com/659116094]
 
-= Menu Item Types can be extended =
+== Filters ==
+
+`
+// Disable Post Type Archive Metabox
+add_filter( 'mitypes_has_post_type_archive_metabox', '__return_false' ) ;
+
+// Disable Buildin Item types
+add_filter( 'mitypes_has_buildin_item_types', '__return_false' ) ;
+
+// Mix Buildin and Plugin Item types in the metabox
+add_filter( 'mitypes_mix_metabox_item_types', '__return_true' ) ;
+
+// Filter Supported Item types
+add_filter( 'mitypes_supported_types', function(){ return ['image']; } );
+`
+
+== Menu Item Types can be extended ==
 
 There are already additional plugins.
 You can also create your own elements like these plugins do:
