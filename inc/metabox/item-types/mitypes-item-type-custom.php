@@ -94,7 +94,7 @@ function mitypes_item_type_custom_metabox(){
             /**
              * filter supported types
              */
-            $supported_types = apply_filters( 'mitypres_supported_types', $supported_types ) ;
+            $supported_types = apply_filters( 'mitypes_supported_types', $supported_types ) ;
 
 
             /**
@@ -104,7 +104,7 @@ function mitypes_item_type_custom_metabox(){
 
             $types_is_mixed = false ;
 
-            if( apply_filters( 'mitypes_mix_metabox_item_type', false ) ){
+            if( apply_filters( 'mitypes_mix_metabox_item_types', false ) ){
 
                 $types_is_mixed = true ;
 
@@ -148,7 +148,7 @@ function mitypes_item_type_custom_metabox(){
 
                     if( ! in_array( $type, $supported_types ) ){ continue ; }
 
-					if( 'buildin' === $item['origin'] && false === apply_filters( 'mitypes_has_buildin_item_type', true ) ){ continue ; }
+					if( 'buildin' === $item['origin'] && false === apply_filters( 'mitypes_has_buildin_item_types', true ) ){ continue ; }
 
                     if( false === apply_filters( "mitypes_has_{$type}_item_type_support", true ) ){ continue ; }
 

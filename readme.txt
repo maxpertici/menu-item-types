@@ -44,6 +44,16 @@ Menu Item Types adds a new ACF location to target different types of menu items.
 
 == Changelog ==
 
+= 1.2 =
+* Add filter : mitypes_has_post_type_archive_metabox
+* Add filter : mitypes_has_buildin_item_types
+* Add filter : mitypes_mix_metabox_item_types
+* Add filter : mitypes_supported_types
+* Add filter : mitypes_has_{$type}_item_type_support
+* Add render callback option : thx [ogorzalka PR](https://github.com/maxpertici/menu-item-types/pull/2)
+* Improve svg support : thx [ogorzalka PR](https://github.com/maxpertici/menu-item-types/pull/2)
+* Improve ACF's test : thx [alexwoollam PR](https://github.com/maxpertici/menu-item-types/pull/1)
+
 = 1.1 =
 * Improved support for custom elements with the ability to register an icon.
 * FIX post_type_archive label
