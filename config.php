@@ -3,7 +3,7 @@
 defined( 'ABSPATH' ) or	die();
 
 // Plugin version
-define( 'MITYPES_VERSION', 1.1 );
+define( 'MITYPES_VERSION', 1.2 );
 
 // Plugin names
 define( 'MITYPES_PLUGIN_NAME' , 'Menu Item types' );
