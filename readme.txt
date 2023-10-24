@@ -60,6 +60,9 @@ Menu Item Types adds a new ACF location to target different types of menu items.
 
 == Changelog ==
 
+= 1.3 =
+* Fix : fix ACF location match. now you can create a location test with the menu item type name & another native item type.
+
 = 1.2 =
 * Add filter : mitypes_has_post_type_archive_metabox
 * Add filter : mitypes_has_buildin_item_types
