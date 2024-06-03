@@ -3,7 +3,7 @@
 Plugin Name:  Menu Item Types
 Plugin URI:   https://maxpertici.fr#menu-item-types
 Description:  Use elements of a personalized type in the navigation menus.
-Version:      1.3
+Version:      1.4
 Author:       @maxpertici
 Author URI:   https://maxpertici.fr
 Contributors:

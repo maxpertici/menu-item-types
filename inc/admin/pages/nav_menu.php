@@ -16,8 +16,11 @@ function mitypes_nav_menu_enqueue_scripts( $hook ){
     }
 
     wp_register_style( 'mitypes_nav_menu_style', plugins_url( '../css/mitypes-nav-menu.css', __FILE__ ) );
-    wp_enqueue_style( 'mitypes_nav_menu_style' );
-    
+    $nav_menu_items_has_icons = apply_filters('mitypes_nav_menu_items_has_icons', true);
+    if( true === $nav_menu_items_has_icons ){
+        wp_enqueue_style( 'mitypes_nav_menu_style' );
+    }
+
     wp_register_script( 'mitypes_nav_menu_script', plugins_url( '../js/mitypes-nav-menu.js', __FILE__ ), false, true);
     wp_enqueue_script( 'mitypes_nav_menu_script' );
 
@@ -70,7 +73,9 @@ function mitypes_mit_items_icons_css( $hook ){
 
     include( MITYPES_INC_PATH . 'item-types.php' ) ;
 
-    if( isset( $menu_item_types['plugin'] ) && count( $menu_item_types['plugin'] ) > 0 ){
+    $nav_menu_items_has_icons = apply_filters('mitypes_nav_menu_items_has_icons', true);
+
+    if( true === $nav_menu_items_has_icons && isset( $menu_item_types['plugin'] ) && count( $menu_item_types['plugin'] ) > 0 ){
 
         echo '<style>';
         foreach( $menu_item_types['plugin'] as $item ) :
@@ -84,7 +89,6 @@ function mitypes_mit_items_icons_css( $hook ){
 
         endforeach;
         echo '</style>';
-
     }
 
 }

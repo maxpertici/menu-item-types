@@ -4,7 +4,7 @@ Donate link:
 Tags: Menu, Custom, Nav item
 Requires at least: 5.8
 Tested up to: 6.1
-Stable tag: 1.3
+Stable tag: 1.4
 Requires PHP: 7.0
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -30,6 +30,9 @@ add_filter( 'mitypes_mix_metabox_item_types', '__return_true' ) ;
 
 // Filter Supported Item types
 add_filter( 'mitypes_supported_types', function(){ return ['image']; } );
+
+// Disable Nav Item Icons
+add_filter( 'mitypes_nav_menu_items_has_icons', '__return_false' ) ;
 `
 
 == Menu Item Types can be extended ==
@@ -59,6 +62,9 @@ Menu Item Types does not provide graphic formatting. It provides the tools to cr
 Menu Item Types adds a new ACF location to target different types of menu items.
 
 == Changelog ==
+
+= 1.4 =
+* Add filter : mitypes_nav_menu_items_has_icons
 
 = 1.3 =
 * Fix : fix ACF location match. now you can create a location test with the menu item type name & another native item type.
