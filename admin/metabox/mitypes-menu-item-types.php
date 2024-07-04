@@ -23,7 +23,6 @@ function mitypes_setup_nav_menu_item( $menu_item ){
 	
     if( $menu_item->type == 'custom' ){
 
-        // include( MITYPES_INC_PATH . 'item-types.php' ) ;
         $factory = MenuItemTypesFactory::instance();
         $menu_item_types = $factory->getTypes();
 

@@ -32,7 +32,6 @@ function mitypes_nav_menu_enqueue_scripts( $hook ){
 
 function mitypes_nav_menu_mark_item_type( $item_id, $item, $depth, $args, $id )  {
 
-    // include( MITYPES_INC_PATH . 'item-types.php' ) ;
     $factory = MenuItemTypesFactory::instance();
     $menu_item_types = $factory->getTypes();
 
@@ -75,7 +74,6 @@ add_action( 'admin_head', 'mitypes_mit_items_icons_css' );
 
 function mitypes_mit_items_icons_css( $hook ){
 
-    // include( MITYPES_INC_PATH . 'item-types.php' ) ;
     $factory = MenuItemTypesFactory::instance();
     $menu_item_types = $factory->getTypes();
 

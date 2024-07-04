@@ -14,7 +14,6 @@ function mitypes_menu_item_custom_output( $item_output, $item, $depth, $args ) {
     // $custom_item_data = get_post_meta( $item->ID , '_mitypes_custom_item_data' , true );
 
     // is supported ? no ? classic output.
-    // include( MITYPES_INC_PATH . 'item-types.php' ) ;
     $factory = MenuItemTypesFactory::instance();
     $menu_item_types = $factory->getTypes();
 
@@ -55,7 +54,6 @@ function mitypes_menu_item_custom_output( $item_output, $item, $depth, $args ) {
         $title = apply_filters( 'mitypes_the_title', $item->title, $item->ID );
         $title = apply_filters( 'mitypes_nav_menu_item_title', $title, $item, $args, $depth );
 
-        // include( MITYPES_INC_PATH . 'item-types.php' ) ;
         $factory = MenuItemTypesFactory::instance();
         $menu_item_types = $factory->getTypes();
 

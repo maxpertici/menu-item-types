@@ -42,7 +42,6 @@ add_filter( 'nav_menu_meta_box_object', 'mitypes_add_item_type_custom_metabox', 
  */
 function mitypes_item_type_custom_metabox(){
 
-	// include( MITYPES_INC_PATH . 'item-types.php' ) ;
 	$factory = MenuItemTypesFactory::instance();
 	$menu_item_types = $factory->getTypes();
 
