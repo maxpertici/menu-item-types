@@ -1,6 +1,4 @@
 <?php
-
-
 /**
  * Register Menu Item Type
  * 
@@ -9,6 +7,7 @@
  * label
  * field-group
  * render
+ * callback
  *
  * @return void
  */
@@ -22,14 +21,13 @@ function mitypes_register_type( $args = array() ){
         'render'      => null,
     );
 
-    // @TODO : check $type requirements
-    
-    if( isset( $args['fields'] ) ){
-        $args['field-group'] = $args['fields'];
+    // check $type requirements
+    $type = wp_parse_args( $args, $defaults );
+    if( ! $type['slug'] || ! $type['label'] || ! $type['render'] ){
+        return;
     }
 
-    $type = wp_parse_args( $args, $defaults );
-
+    // Add to mitypes_item_types
     add_filter( 'mitypes_item_types', function( $types ) use ( $type ) {
         $types[] = $type;
         return $types;
