@@ -63,6 +63,13 @@ Menu Item Types adds a new ACF location to target different types of menu items.
 
 == Changelog ==
 
+= 1.5 =
+* Add : 2 hooks mitypes_init & mitypes_setup
+* Add : mitypes_register_type() function 
+* Add : callback in type definition for exec actions or attach hooks ater loading the type
+* Fix : field-group loading logic
+* Fix : image type render
+
 = 1.4 =
 * Add filter : mitypes_nav_menu_items_has_icons
 
