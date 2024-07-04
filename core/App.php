@@ -52,7 +52,7 @@ final class App extends Plugin {
 			add_action( 'acf/init', [ $this, 'loadTypesFactory' ] );
 		}
 
-		do_action('mitypes/init');
+		do_action('mitypes_init');
 	}
 
 
@@ -155,7 +155,7 @@ final class App extends Plugin {
 			$front->init();
 		}
 
-		do_action( 'mitypes/setup' );
+		do_action( 'mitypes_setup' );
 		do_action( 'mitypes_loaded' );
 	}
 
