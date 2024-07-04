@@ -1,0 +1,12 @@
+{
+  "name": "maxpertici/menu-item-types",
+  "require-dev": {},
+  "autoload": {
+    "files": [
+      "functions/register.php"
+    ],
+    "psr-4": {
+      "MXP\\MITypes\\": "core/"
+    }
+  }
+}
