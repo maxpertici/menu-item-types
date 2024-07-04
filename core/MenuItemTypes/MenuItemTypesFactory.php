@@ -104,12 +104,18 @@ final class MenuItemTypesFactory extends Singleton {
 
 		if( $has_field_group ){
 
+			$field_group = null ;
+
 			if( is_string( $type['field-group'] ) && ! empty( $type['field-group'] ) && file_exists( $type['field-group'] ) ){
-				include( $type['field-group'] );
+				$field_group = include( $type['field-group'] );
 			}
 
 			if( ! function_exists( 'acf_add_local_field_group' ) ){
 				return ;
+			}
+
+			if( is_array( $field_group ) ){
+				acf_add_local_field_group( $field_group );
 			}
 
 			if( is_array( $type['field-group'] ) ){
