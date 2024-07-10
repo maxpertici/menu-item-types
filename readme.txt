@@ -3,7 +3,7 @@ Contributors: maxpertici
 Donate link: 
 Tags: Menu, Custom, Nav item
 Requires at least: 5.8
-Tested up to: 6.5.4
+Tested up to: 6.6
 Stable tag: 1.5
 Requires PHP: 7.0
 License: GPLv2
