@@ -68,16 +68,6 @@ final class App extends Plugin {
 		load_plugin_textdomain( 'menu-item-types', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
 	}
 
-	/**
-	 * Extend Menu Item Types Collection
-	 *
-	 * @return void
-	 */
-	public function extendMenuItemTypesCollection(){
-		$additionnals_items = apply_filters( 'mitypes/collection/extend', [] );
-		$this->itemsColection = array_merge( $this->itemsColection, $additionnals_items ) ;
-	}
-
 
 	/**
 	 * Check if ACF is loaded
