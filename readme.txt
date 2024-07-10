@@ -9,6 +9,7 @@ Requires PHP: 7.0
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
+Menu Item Types makes it easy to add and create custom menu item types to your navigation menus.
 
 == Description ==
 Menu Item Types makes it easy to add links to your archive pages, titles, items without URL, paragraphs or images to your navigation menus.
@@ -45,6 +46,7 @@ You can also create your own elements like these plugins do:
 * [Menu Item Types — Action](https://wordpress.org/plugins/menu-item-types-action/)
 
 == Customize the plugin ==
+
 `
 // Disable Post Type Archive Metabox
 add_filter( 'mitypes_has_post_type_archive_metabox', '__return_false' ) ;
