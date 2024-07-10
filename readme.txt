@@ -16,8 +16,35 @@ You can also easily override the templates and/or create your own custom element
 
 [vimeo https://vimeo.com/659116094]
 
-== Filters ==
 
+== Menu Item Types can be extended ==
+You can create your own item type like this :
+`
+function register_my_custom_type(){
+
+    $args = array(
+        'slug'        => "my-custom-type",
+        'icon'        => 'https//url-to-icon-file..svg',
+        'label'       => __( 'My Custom Type', 'my-custom-type' ),
+        'field-group' => 'path/to/acf/field-group-array.php',
+		'render'      => 'path/to/render/my-custom-render.php',
+        'callback'    => function(){
+            // add filter on 'mitypes_nav_menu_link_attributes' if you need it
+        }
+    );
+
+    mitypes_register_type( $args );
+}
+add_filter( 'mitypes_init', 'register_my_custom_type' );
+`
+
+There are already additional plugins.
+You can also create your own elements like these plugins do:
+
+* [Menu Item Types — Button](https://wordpress.org/plugins/menu-item-types-button/)
+* [Menu Item Types — Action](https://wordpress.org/plugins/menu-item-types-action/)
+
+== Customize the plugin ==
 `
 // Disable Post Type Archive Metabox
 add_filter( 'mitypes_has_post_type_archive_metabox', '__return_false' ) ;
@@ -34,15 +61,6 @@ add_filter( 'mitypes_supported_types', function(){ return ['image']; } );
 // Disable Nav Item Icons
 add_filter( 'mitypes_nav_menu_items_has_icons', '__return_false' ) ;
 `
-
-== Menu Item Types can be extended ==
-
-There are already additional plugins.
-You can also create your own elements like these plugins do:
-
-* [Menu Item Types — Button](https://wordpress.org/plugins/menu-item-types-button/)
-* [Menu Item Types — Action](https://wordpress.org/plugins/menu-item-types-action/)
-
 
 == Installation ==
 1. Install the plugin and activate.
