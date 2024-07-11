@@ -31,7 +31,7 @@ function register_my_custom_type(){
 		'render'      => 'path/to/render/my-custom-render.php',
         'callback'    => function(){
             // Use callback for customize your item
-            // youcan add filter on 'mitypes_nav_menu_link_attributes' if you need
+            // you can add filter on 'mitypes_nav_menu_link_attributes' if you need
         }
     );
 
