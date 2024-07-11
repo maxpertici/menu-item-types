@@ -25,12 +25,13 @@ function register_my_custom_type(){
 
     $args = array(
         'slug'        => "my-custom-type",
-        'icon'        => 'https//url-to-icon-file..svg',
+        'icon'        => 'https://url-to-icon-file.svg',
         'label'       => __( 'My Custom Type', 'my-custom-type' ),
         'field-group' => 'path/to/acf/field-group-array.php',
 		'render'      => 'path/to/render/my-custom-render.php',
         'callback'    => function(){
-            // add filter on 'mitypes_nav_menu_link_attributes' if you need it
+            // Use callback for customize your item
+            // youcan add filter on 'mitypes_nav_menu_link_attributes' if you need
         }
     );
 
