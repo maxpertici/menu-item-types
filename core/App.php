@@ -37,7 +37,7 @@ final class App extends Plugin {
 	 */
 	public function init(){
 
-		$this->loadTranslations();
+		add_action('init', [ $this, 'loadTranslations' ]);
 
 		if( ! $this->isAcfLoaded() ){
 			add_action('admin_notices',  [ $this, 'adminNoticeAcfPluginRequired' ] );
@@ -61,7 +61,7 @@ final class App extends Plugin {
 	 *
 	 * @return void
 	 */
-	protected function loadTranslations(){
+	public function loadTranslations(){
 		$locale = get_locale();
 		$locale = apply_filters( 'plugin_locale', $locale, 'menu-item-types' );
 		load_textdomain( 'menu-item-types', WP_LANG_DIR . '/plugins/menu-item-types-' . $locale . '.mo' );
