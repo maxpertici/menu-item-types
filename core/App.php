@@ -62,7 +62,7 @@ final class App extends Plugin {
 	 * @return void
 	 */
 	public function loadTranslations(){
-		$locale = get_locale();
+		$locale = get_user_locale();
 		$locale = apply_filters( 'plugin_locale', $locale, 'menu-item-types' );
 		load_textdomain( 'menu-item-types', WP_LANG_DIR . '/plugins/menu-item-types-' . $locale . '.mo' );
 		load_plugin_textdomain( 'menu-item-types', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
