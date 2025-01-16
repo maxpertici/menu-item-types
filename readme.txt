@@ -4,7 +4,7 @@ Donate link:
 Tags: Menu, Custom, Nav item
 Requires at least: 5.8
 Tested up to: 6.6
-Stable tag: 1.5
+Stable tag: 1.6
 Requires PHP: 7.0
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -83,6 +83,10 @@ Menu Item Types does not provide graphic formatting. It provides the tools to cr
 Menu Item Types adds a new ACF location to target different types of menu items.
 
 == Changelog ==
+
+= 1.6 =
+* Fix : translation's notices
+* Add : user's locale support
 
 = 1.5 =
 * Add : 2 hooks mitypes_init & mitypes_setup
