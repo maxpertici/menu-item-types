@@ -19,7 +19,7 @@ You can also easily override the templates and/or create your own custom element
 
 
 == Create your own item type ==
-ou need to declare your new type in, functions.php, a plugin, child theme, or your custom theme like this :
+You need to declare your new type in, functions.php, a plugin, child theme, or your custom theme like this :
 
 `
 function register_my_custom_type(){
