@@ -1,19 +1,22 @@
 <?php
+use MXP\MITypes\App;
+
+$App = App::instance();
 
 return [
-    'slug'   => 'parapraph',
+    'slug'   => 'paragraph',
     'label'  => __( 'Paragraph', 'menu-item-types'),
     'icon'   => '',
     'render' => '',
     'field-group' => array(
         
-        'key'      => MITYPES_ACF_PREFIX_GROUP.'paragraph',
+        'key'      => $App->acf_group_prefix.'paragraph',
         'title'    => __( 'Paragraph settings group', 'menu-item-types' ),
         
         'fields' => array(
 
             array(
-                'key'   => MITYPES_ACF_PREFIX_FIELD . 'paragraph_text',
+                'key'   => $App->acf_field_prefix . 'paragraph_text',
                 'label' => __( 'Text' , 'menu-item-types'),
                 'name'  => 'mitypes_paragraph_text',
                 'type'  => 'textarea',

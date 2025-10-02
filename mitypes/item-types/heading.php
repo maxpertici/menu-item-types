@@ -1,16 +1,20 @@
 <?php
 
+use MXP\MITypes\App;
+
+$App = App::instance();
+
 return [
     'slug'   => 'heading',
     'label'  => __( 'Heading', 'menu-item-types'),
     'icon'   => '',
     'render' => '',
     'field-group' =>  array(
-        'key'    => MITYPES_ACF_PREFIX_GROUP.'heading',
+        'key'    => $App->acf_group_prefix.'heading',
         'title'  => __( 'Heading settings group', 'menu-item-types' ),
         'fields' => array(
             array(
-                'key'   => MITYPES_ACF_PREFIX_FIELD . 'heading_selector',
+                'key'   => $App->acf_field_prefix . 'heading_selector',
                 'label' => __( 'Heading level' , 'menu-item-types'),
                 'name'  => 'mitypes_heading_selector',
                 'type'  => 'select',

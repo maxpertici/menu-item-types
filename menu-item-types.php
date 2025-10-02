@@ -3,7 +3,7 @@
 Plugin Name:  Menu Item Types
 Plugin URI:   https://maxpertici.fr#menu-item-types
 Description:  Use elements of a personalized type in the navigation menus.
-Version:      1.6
+Version:      1.7
 Author:       @maxpertici
 Author URI:   https://maxpertici.fr
 Contributors:
@@ -17,7 +17,6 @@ defined( 'ABSPATH' ) or die();
 
 use MXP\MITypes\App;
 
-require_once( 'config.php' );
 $loader = require __DIR__ . '/vendor/autoload.php';
 
 $App = App::instance();

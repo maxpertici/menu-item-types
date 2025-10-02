@@ -1,5 +1,9 @@
 <?php
 
+use MXP\MITypes\App;
+
+$App = App::instance();
+
 return [
     'slug'   => 'nolink',
     'label'  => __( 'No link', 'menu-item-types'),
@@ -7,7 +11,7 @@ return [
     'render' => '',
     'field-group' => array(
 
-        'key'      => MITYPES_ACF_PREFIX_GROUP.'nolink',
+        'key'      => $App->acf_group_prefix.'nolink',
         'title'    => __( 'Nolink settings group', 'menu-item-types' ),
         
         'fields'   => array(),
@@ -15,10 +19,8 @@ return [
         'location' => array(
             array(
                 array(
-                    // 'param' => 'nav_menu_item',
                     'param' => 'mitypes',
                     'operator' => '==',
-                    // 'value' => 'all',
                     'value' => 'nolink',
                 ),
             ),

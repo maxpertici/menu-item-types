@@ -8,6 +8,9 @@ use MXP\MITypes\MenuItemTypes\MenuItemTypesFactory;
 final class App extends Plugin {
 
 	public $prefix = '#mitypes' . '_' ;
+	
+	public $acf_group_prefix = 'group_mit_' ;
+	public $acf_field_prefix = 'field_mit_' ;
 
 	private $itemsColection = [];
 
@@ -52,7 +55,7 @@ final class App extends Plugin {
 			add_action( 'acf/init', [ $this, 'loadTypesFactory' ] );
 		}
 
-		do_action('mitypes_init');
+		// do_action('mitypes_init');
 	}
 
 
@@ -134,6 +137,8 @@ final class App extends Plugin {
 		if( ! $this->isAcfLoaded() ){
 			return;
 		}
+
+		do_action('mitypes_init');
 
 		if( is_admin() ){
 			$admin = Admin::instance();

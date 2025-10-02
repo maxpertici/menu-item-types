@@ -1,5 +1,10 @@
 <?php
 
+use MXP\MITypes\App;
+
+$App = App::instance();
+
+
 /**
  * Load image size in "mitypes_image_size" field
  *
@@ -34,6 +39,8 @@ function mitypes_nav_menu_enqueue_scripts__for_image_type( $hook ){
     wp_enqueue_media();
 }
 
+
+
 return [
     'slug'   => 'image',
     'label'  => __( 'Image', 'menu-item-types'),
@@ -44,11 +51,11 @@ return [
         add_action( 'admin_enqueue_scripts', 'mitypes_nav_menu_enqueue_scripts__for_image_type' );
     },
     'field-group' => array(
-        'key'      => MITYPES_ACF_PREFIX_GROUP.'image',
+        'key'      => $App->acf_group_prefix.'image',
         'title'    => __( 'Image settings group', 'menu-item-types' ),
         'fields' => array(
             array(
-                'key' => MITYPES_ACF_PREFIX_FIELD.'image_selector',
+                'key' => $App->acf_field_prefix.'image_selector',
                 'label' => __( 'Image', 'menu-item-types' ),
                 'name' => 'mitypes_image_media',
 
@@ -77,7 +84,7 @@ return [
             ),
 
             array(
-                'key'   => MITYPES_ACF_PREFIX_FIELD.'image_size',
+                'key'   => $App->acf_field_prefix.'image_size',
                 'label' => __( 'Size', 'menu-item-types' ),
                 'name'  => 'mitypes_image_size',
 
@@ -105,15 +112,11 @@ return [
             ),
             
         ),
-
-
         'location' => array(
             array(
                 array(
-                    // 'param' => 'nav_menu_item',
                     'param' => 'mitypes',
                     'operator' => '==',
-                    // 'value' => 'all',
                     'value' => 'image',
                 ),
             ),
