@@ -3,9 +3,9 @@ Contributors: maxpertici
 Donate link: 
 Tags: Menu, Custom, Nav item
 Requires at least: 5.8
-Tested up to: 6.7.1
-Stable tag: 1.6
-Requires PHP: 7.0
+Tested up to: 6.9.3
+Stable tag: 1.7
+Requires PHP: 8.0
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -18,27 +18,61 @@ You can also easily override the templates and/or create your own custom element
 [vimeo https://vimeo.com/659116094]
 
 
-== Menu Item Types can be extended ==
-You can create your own item type like this :
+== Create your own item type ==
+You need to declare your new type in a plugin, child theme, or your custom theme like this :
+
 `
 function register_my_custom_type(){
 
     $args = array(
         'slug'        => "my-custom-type",
-        'icon'        => 'https://url-to-icon-file.svg',
         'label'       => __( 'My Custom Type', 'my-custom-type' ),
-        'field-group' => 'path/to/acf/field-group-array.php',
 		'render'      => 'path/to/render/my-custom-render.php',
-        'callback'    => function(){
-            // Use callback for customize your item
-            // you can add filter on 'mitypes_nav_menu_link_attributes' if you need
-        }
     );
 
     mitypes_register_type( $args );
 }
-add_filter( 'mitypes_init', 'register_my_custom_type' );
+add_action( 'mitypes_init', 'register_my_custom_type' );
 `
+
+You can do more than that on $args.
+
+`
+$args = array(
+    'slug'   => "my-custom-type",
+    'label'  => __( 'My Custom Type', 'my-custom-type' ),
+    'render' => 'path/to/my-custom-type-render.php',
+
+    // Link your custom icon
+    'icon' => 'https://url-to-icon-file.svg',
+    
+    // Return ACF Group field array
+    'field-group' => [
+        'key'   => 'uniq_key',
+        'title' => 'Group Title',
+        'fields => [ ... ],
+        'location' => [
+            [
+                [
+                    'param' => 'mitypes',
+                    'operator' => '==',
+                    'value' => 'my-custom-type',
+                ],
+            ],
+        ],
+
+    ],
+
+    // Use callback for customize your item
+    // you can add filter on 'mitypes_nav_menu_link_attributes' if you need
+    'callback' => function(){ ... }
+);
+`
+
+And finally, you can work in the render with some variables.
+You have two variables available:
+* $item which is the WP_Post of the menu item, with which you can, for example, retrieve custom field data.
+* $args which is the array of arguments used during the generation of the menu item.
 
 There are already additional plugins.
 You can also create your own elements like these plugins do:
@@ -83,6 +117,12 @@ Menu Item Types does not provide graphic formatting. It provides the tools to cr
 Menu Item Types adds a new ACF location to target different types of menu items.
 
 == Changelog ==
+
+= 1.7 =
+* Fix : mitypes_init hook timing
+* Fix : buildin paragraph slug (maybe if you excluded it with the error, it will be back in your admin, sorry)
+* PHP 8.x required
+
 
 = 1.6 =
 * Fix : translation's notices
