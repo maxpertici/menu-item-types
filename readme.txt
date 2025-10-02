@@ -19,7 +19,7 @@ You can also easily override the templates and/or create your own custom element
 
 
 == Create your own item type ==
-You need to declare your new type in a plugin, child theme, or your custom theme like this :
+ou need to declare your new type in, functions.php, a plugin, child theme, or your custom theme like this :
 
 `
 function register_my_custom_type(){
@@ -136,7 +136,7 @@ Menu Item Types adds a new ACF location to target different types of menu items.
 * Fix : mitypes_init hook timing
 * Fix : buildin paragraph slug (maybe if you excluded it with the error, it will be back in your admin, sorry)
 * Fix : image size in Image type
-* Update readme.txt with more code information
+* Update readme.txt with more code information (thanks to Shoulders for his help)
 * PHP 8.x required
 
 
