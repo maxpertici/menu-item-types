@@ -123,6 +123,8 @@ Menu Item Types adds a new ACF location to target different types of menu items.
 = 1.7 =
 * Fix : mitypes_init hook timing
 * Fix : buildin paragraph slug (maybe if you excluded it with the error, it will be back in your admin, sorry)
+* Fix : image size in Image type
+* Update readme.txt with more code information
 * PHP 8.x required
 
 
