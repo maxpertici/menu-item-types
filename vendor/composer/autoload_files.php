@@ -6,5 +6,5 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
-    'ec224cf6c752fb07fdf33257d272c280' => $baseDir . '/functions/register.php',
+    '223b7f274868971ca7628883dd886300' => $baseDir . '/functions/register.php',
 );
