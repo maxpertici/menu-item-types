@@ -29,7 +29,10 @@ if( isset( $img_id ) && (int) $img_id > 0 ) :
 
     $size = 'thumbnail' ;
     $img_size = get_field('mitypes_image_size', $item->ID );
-    if( isset( $img_size ) && $img_size != '' ){ $size = array_keys($img_size) ; }
+
+    if( isset( $img_size ) && is_array( $img_size ) && isset( $img_size['value'] ) ){
+        $size = $img_size['value'] ;
+    }
 
     echo wp_kses( $args->before, $img_tags );
     echo '<div' . wp_kses( $attributes, $img_tags ) . '>';
