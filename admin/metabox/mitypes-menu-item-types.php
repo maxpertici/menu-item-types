@@ -9,15 +9,10 @@ $app = App::instance();
 require_once( $app->getDirectoryPath() . 'admin/metabox/item-types/mitypes-item-type-post_type_archive.php' );
 require_once( $app->getDirectoryPath() . 'admin/metabox/item-types/mitypes-item-type-custom.php' );
 
-
 /**
- * 
- * 
- * handler for add menuitem in nva-menu admin screen
+ * Handler for add menuitem in nav-menu admin screen
  * check with custom and flag and param added url of item
  */
-
-add_filter( 'wp_setup_nav_menu_item' , 'mitypes_setup_nav_menu_item' );
 
 function mitypes_setup_nav_menu_item( $menu_item ){
 	
@@ -137,3 +132,5 @@ function mitypes_setup_nav_menu_item( $menu_item ){
 
 	return $menu_item;
 }
+
+add_filter( 'wp_setup_nav_menu_item' , 'mitypes_setup_nav_menu_item' );

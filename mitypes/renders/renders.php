@@ -4,10 +4,12 @@ use MXP\MITypes\MenuItemTypes\MenuItemTypesFactory;
 
 defined( 'ABSPATH' ) or	die();
 
-add_filter( 'walker_nav_menu_start_el', 'mitypes_menu_item_custom_output', 10, 4 );
 
-// https://developer.wordpress.org/reference/hooks/walker_nav_menu_start_el/
-
+/**
+ * Custom output for menu item
+ *
+ * @see https://developer.wordpress.org/reference/hooks/walker_nav_menu_start_el/
+ */
 function mitypes_menu_item_custom_output( $item_output, $item, $depth, $args ) {
 
     $custom_item_type = get_post_meta( $item->ID , '_mitypes_custom_item_type' , true );
@@ -97,6 +99,9 @@ function mitypes_menu_item_custom_output( $item_output, $item, $depth, $args ) {
 
     return $item_output ;
 }
+
+add_filter( 'walker_nav_menu_start_el', 'mitypes_menu_item_custom_output', 10, 4 );
+
 
 
 /**

@@ -5,12 +5,8 @@ use MXP\MITypes\MenuItemTypes\MenuItemTypesFactory;
 defined( 'ABSPATH' ) or	die();
 
 /**
- * Enqueue script for admin WP:AM setings page
- *
- * @since 1.0
+ * Enqueue script for admin
  */
-add_action( 'admin_enqueue_scripts', 'mitypes_nav_menu_enqueue_scripts' );
-
 function mitypes_nav_menu_enqueue_scripts( $hook ){
 
     if ( 'nav-menus.php' != $hook ) {
@@ -28,8 +24,15 @@ function mitypes_nav_menu_enqueue_scripts( $hook ){
 
 }
 
+add_action( 'admin_enqueue_scripts', 'mitypes_nav_menu_enqueue_scripts' );
 
 
+
+/**
+ * Customize custom menu item types in menu screen
+ *
+ * @return void
+ */
 function mitypes_nav_menu_mark_item_type( $item_id, $item, $depth, $args, $id )  {
 
     $factory = MenuItemTypesFactory::instance();
@@ -43,7 +46,6 @@ function mitypes_nav_menu_mark_item_type( $item_id, $item, $depth, $args, $id ) 
     if( '' != $custom_item_type ){
     
         // find item type
-
         $mit_buildin = array_keys( $menu_item_types['buildin'] );
         $mit_plugin  = array_keys( $menu_item_types['plugin'] );
         $miytpes_supported = array_merge( $mit_buildin, $mit_plugin );
@@ -52,13 +54,9 @@ function mitypes_nav_menu_mark_item_type( $item_id, $item, $depth, $args, $id ) 
             $item_type = $custom_item_type ;
             $hide_url_of_nav_item = true ;
         }
-
     }
 
-    // $wp_buildin  = array( 'post_type', 'taxonomy' );
-    
     echo '<script> mitypes_set_menu_item_type_css( '.$item_id.', "' . $item_type . '", ' . $hide_url_of_nav_item . ' ); </script>';
-
 }
 
 add_action( 'wp_nav_menu_item_custom_fields', 'mitypes_nav_menu_mark_item_type', 10, 5 );
@@ -66,12 +64,8 @@ add_action( 'wp_nav_menu_item_custom_fields', 'mitypes_nav_menu_mark_item_type',
 
 
 /**
- * 
- * @since : 1.1
+ * Add CSS for menu item types
  */
-
-add_action( 'admin_head', 'mitypes_mit_items_icons_css' );
-
 function mitypes_mit_items_icons_css( $hook ){
 
     $factory = MenuItemTypesFactory::instance();
@@ -94,5 +88,6 @@ function mitypes_mit_items_icons_css( $hook ){
         endforeach;
         echo '</style>';
     }
-
 }
+
+add_action( 'admin_head', 'mitypes_mit_items_icons_css' );
