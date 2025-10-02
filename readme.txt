@@ -50,7 +50,9 @@ $args = array(
     'field-group' => [
         'key'   => 'uniq_key',
         'title' => 'Group Title',
-        'fields => [ ... ],
+        'fields => [
+            ...
+        ],
         'location' => [
             [
                 [
