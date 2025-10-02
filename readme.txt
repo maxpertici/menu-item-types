@@ -73,8 +73,20 @@ $args = array(
 
 And finally, you can work in the render with some variables.
 You have two variables available:
-* $item which is the WP_Post of the menu item, with which you can, for example, retrieve custom field data.
-* $args which is the array of arguments used during the generation of the menu item.
+
+`
+
+
+// $item is the WP_Post of the menu item, with which you can, for example, retrieve custom field data.
+
+$id = get_field( 'acf-slug', $item->ID ) ;
+
+
+// $args is an object containing the complete configuration of the wp_nav_menu() call,
+// including the current menu (WP_Term), classes, IDs, wrappers, depth, walker, menu location, etc.
+// More info : https://developer.wordpress.org/reference/functions/wp_nav_menu/
+
+`
 
 There are already additional plugins.
 You can also create your own elements like these plugins do:
